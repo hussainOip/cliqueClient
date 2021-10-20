@@ -49,7 +49,8 @@ export function tokenGetter() {
 }
 
 const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
-  reconnection:true
+  reconnection:true,
+  transports: ['websocket']
 } };
 
 
