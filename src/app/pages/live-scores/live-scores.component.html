@@ -1,0 +1,82 @@
+<app-sidebar>
+</app-sidebar>
+
+<!-- <div class="main-content">
+    <app-header></app-header>
+    <main>
+        <section>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="post my-3"  *ngFor="let sport of sportsDetail; let i=index">
+                        <div style="padding: 50px;">
+                            <div class="row">
+                                <div class="col-md-6 my-auto">
+                                    <h1>Sport Event # {{i+1}}</h1>
+                                </div>
+                                <div class="col-md-6 my-auto add-post"> 
+                                    <div class="date">
+                                        <span>Date: {{sport.event_date | date: 'yyyy/MM/dd'}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive margin-padding mt-0 pt-0">
+                            <table class="table my-table">
+                              <tr>
+                                <th class="min-w"></th>
+                                <th>Spread</th>
+                                <th>Mony</th>
+                                <th>Total</th>
+                              </tr>
+                              <tr *ngFor="let line of convertToArry(sport.lines)">
+                                <td class="my-team"><a style = "text-transform:uppercase;">{{line.affiliate.affiliate_name}}</a></td>
+                                <td>
+                                    <div>
+                                        <p>{{line.spread.point_spread_away_delta}}</p>
+                                        <p>{{line.spread.point_spread_home_money_delta}}</p>
+                                    </div>
+                                   </td>
+                                <td>
+                                    <div>
+                                        <p>{{line.moneyline.moneyline_away_delta}}</p>
+                                        <p>{{line.moneyline.moneyline_home_delta}}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <p>{{line.total.total_over_delta}}</p>
+                                        <p>{{line.total.total_under_money_delta}}</p>
+                                    </div>
+                                </td>
+                              </tr>
+                              <div class="p-4">
+                                  <div class="date">
+                                      <span>Event Date: {{sport.event_date | date: 'yyyy/MM/dd'}}</span>
+                                  </div>
+                              </div>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="post my-3" *ngIf="isScoreData">
+                        <div style="padding: 50px;">
+                            <div class="row">
+                                <div class="col-md-6 my-auto">
+                                    <h3>No records found.</h3>
+                                </div>
+                                <div class="col-md-6 my-auto add-post"> 
+                                    <div class="date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </section>
+    </main>
+</div>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading> -->

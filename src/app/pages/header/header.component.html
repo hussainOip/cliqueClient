@@ -1,0 +1,26 @@
+<header class="centering">
+
+    <!-- <div class="searchwrapper">
+        <div class="select-input">
+            <input type="text" name="" placeholder="Search">
+            <i class="fa fa-search"></i>
+        </div>
+    </div> -->
+
+    <div class="social-icons">
+        <div class="dropdown">
+            <button class="datedropbutton" [routerLink]="['/profile']"><img src="{{setUserImage()}}">{{getUserName()}}
+                
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <div class="time" style="margin-top: 15px;">
+            <h5>{{ today | date : 'medium':'GMT' }} <span> (GMT+1) </span></h5>
+        </div>
+    </div>
+    <div *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin'"><button class="btn btn-default notification" (click)="showHideMenu()" style="background-color: white; height: 50px; width: 50px;border-radius: 50%;"><i class="fas fa-bell" style="font-size: 25px;"></i></button></div>
+</header>
+
+<app-right-sidebar *ngIf="isRightMenuShow"></app-right-sidebar>

@@ -1,0 +1,91 @@
+<app-sidebar></app-sidebar>
+
+<div class="main-content">
+    <div class="row">
+        <div class="col-lg-9">
+
+            <div class="post my-3" *ngFor="let post of postData">
+                <div class="post-header">
+                    <div class="profile-img-text">
+                        <img src="{{setImageForPost(post.user_image)}}">
+                        <div class="profile-img-text-2">
+                            <p>{{post.first_name}} {{post.last_name}}</p>
+                            <span style="font-size: 10px; color: gray;">{{post.created_at| dateAgo}}</span>
+                        </div>
+                    </div>
+                    <div class="profile-head-button">
+                    </div>
+                </div>
+
+                <h5 style="padding: 20px 70px 0px 70px;">{{post.title}}</h5>
+
+                <div class="post-image">
+                    <img src="{{imageUrl}}{{post.image_url}}">
+                </div>
+
+                <div class="for-post-padding">
+                    <div class=" text-right">
+                        <button class="btn btn-default mr-3" (click)="redirectToFb(imageUrl+post.image_url)"><i class="fab fa-facebook-square"
+                            style="font-size: 30px; color: #1fa4f1"></i></button>
+                        
+                            <button class="btn btn-default mr-3" (click)="redirectToTwitter(imageUrl+post.image_url)"><i class="fab fa-twitter-square"
+                            style="font-size: 30px; color: #1fa4f1"></i></button>
+                            
+                        <button class="btn btn-default" (click)="likePost(post.post_id)">
+                            <i class="far fa-thumbs-up" style="font-size: 30px; color: #1fa4f1"></i>
+                        </button>
+                    </div>
+                    <div class="post-tips">
+                        <div class="icon-not">
+                            <i class="far fa-bell" aria-hidden="true"></i>
+                            <span *ngFor="let top of post.top5Comment"><img class="teammates"
+                                    src="{{top.user_image !='' ? imageUrl+top.user_image : 'assets/img/defaultProfileImage.png'}}"
+                                    style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-left: -20px;">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="post-comments">
+                        <div class="comments">
+                            <p>Comments: {{post.comments.length}}</p>
+                        </div>
+                        <div class="views-likes">
+                            <p>Views : {{post.total_views}}</p>
+                            <p>Likes : {{post.total_likes}}</p>
+                        </div>
+                    </div>
+
+                    <div class="post-a-comment">
+                        <div class="comment-box">
+                            <img src="{{setUserImage()}}">
+                            <div class="input-comment">
+                                <input type="text" name="" placeholder="Post a Comment" [(ngModel)]="post.comment" (keyup)="$event.keyCode == 13 && postComment(post.post_id, post.comment)">
+                                <a (click)="postComment(post.post_id, post.comment)">
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="post.comments?.length">
+                        <span *ngFor="let comment of post.comments | slice:0:post.commentLimit; let i=index">
+                            <div class="post-a-comment">
+                                <div class="comment-box mt-3" style="background: aliceblue;">
+                                    <img src="{{setImageForPost(comment.user_image)}}">
+                                    <div class="input-comment">
+                                        <p>
+                                            <strong>{{comment.first_name}} {{comment.last_name}}: </strong>
+                                            {{comment.comment}}
+                                        </p>
+                                        <p style="font-size: 10px; color: gray;">{{comment.created_at| dateAgo}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>

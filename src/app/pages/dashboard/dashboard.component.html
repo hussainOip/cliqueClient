@@ -1,0 +1,282 @@
+<app-sidebar></app-sidebar>
+
+<div class="main-content">
+    <app-header></app-header>
+
+    <main>
+
+        <section>
+            <div class="heading m-0">
+                <h3>News <span>Feed</span></h3>
+            </div>
+        </section>
+
+        <section>
+            <div class="row">
+
+                <div class="col-lg-9">
+
+                    <div class="tabs-side">
+
+                        <div>
+                            <ul class="nav nav-pills mb-3" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" [ngClass]="{'active' : homeTab == true }" data-toggle="pill" role="tab" aria-controls="pills-home" aria-selected="true" style="margin-right: 45px; cursor: pointer;" (click)="setHomeTab()">All</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" [ngClass]="{'active' : profileTab == true }" data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false" style="cursor: pointer;" (click)="setProfileTab()">All Games</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-pref">
+                            <!-- <ul>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link">Premier League</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link">Filter</a>
+                                </li>
+                            </ul> -->
+                        </div>
+
+                    </div>
+
+                    <div class="tab-content animate__animated animate__fadeIn" id="pills-tabContent" *ngIf="!isShowPost">
+                        <div class="tab-pane fade" role="tabpanel" aria-labelledby="pills-profile-tab" *ngIf="profileTab" [ngClass]="{'show': profileTab == true, 'active' : profileTab == true }">
+                            <div class="row">
+
+                                <div class="col-lg-mine py-3 px-0" *ngFor="let sport of allGames; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]">
+                                    <div class="match">
+                                        <!-- <span>{{sport.sport_name}}</span> -->
+                                        <p style="    font-size: 16px !important; width: 185px !important;">{{sport.sport_name}}</p>
+                                        <hr>
+                                        <!-- <div class="team-1">
+                                            <div class="team-name">
+                                                <p>Group</p>
+                                            </div>
+                                            <div class="team-score">
+                                                <p>{{sport.group}}</p>
+                                            </div>
+                                        </div> -->
+                                       
+                                        <!-- <div class="team-2">
+                                            <div class="team-logo">
+                                                <img src="assets/img/users/team-2.png">
+                                            </div>
+                                            <div class="team-name">
+                                                <p>Mla</p>
+                                            </div>
+                                            <div class="team-score">
+                                                <p>28</p>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-mine px-0 py-3 ml-auto">
+                                    <div class="view-all">
+                                        <button (click)="setHomeTab()">View Post</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content animate__animated animate__fadeIn" id="pills-tabContent" *ngIf="isShowPost">
+
+                        <div class="tab-pane fade" role="tabpanel" aria-labelledby="pills-home-tab" *ngIf="homeTab" [ngClass]="{'show': homeTab == true, 'active' : homeTab == true }">
+                            <div class="row">
+
+                                <!-- <div class="col-lg-mine py-3 px-0" *ngFor="let sport of allGames | slice:0:4; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]"> -->
+                                <div class="col-lg-mine py-3 px-0" *ngFor="let sport of allGames ; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]">
+                                    <div class="sports-tags">
+                                        <!-- <span>{{sport.title}}</span> -->
+                                        <p>{{sport.sport_name}}</p>
+                                        
+                                        <!-- <div class="team-1">
+                                            <div class="team-name">
+                                                <p>Group</p>
+                                            </div>
+                                            <div class="team-score">
+                                                <p>{{sport.group}}</p>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="team-2">
+                                            <div class="team-logo">
+                                                <img src="assets/img/users/team-2.png">
+                                            </div>
+                                            <div class="team-name">
+                                                <p>Mla</p>
+                                            </div>
+                                            <div class="team-score">
+                                                <p>28</p>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-mine px-0 py-3 my-auto">
+                                    <div class="view-all">
+                                        <button (click)="setProfileTab()">View All Game</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row animate__animated animate__fadeIn" *ngIf="isShowPost">
+                        <div class="col-lg-12">
+
+                            <div class="post my-3" *ngFor="let post of postData">
+                                <div class="post-header">
+                                    <div class="profile-img-text">
+                                        <img src="{{setImageForPost(post.user_image)}}">
+                                        <div class="profile-img-text-2">
+                                            <p>{{post.first_name}} {{post.last_name}}</p>
+                                            <!-- <span>{{timeDifference(post.created_at)}}</span> -->
+                                            <span style="font-size: 10px; color: gray;">{{post.created_at|
+                                                dateAgo}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-head-button">
+                                        <!-- <button>Win</button> -->
+                                    </div>
+                                </div>
+
+                                <h5 class="text-post-h5">{{post.title}}</h5>
+
+                                <div class="post-image" [routerLink]="['/post/']+post.post_id" style="cursor: pointer;">
+                                    <img src="{{imageUrl}}{{post.image_url}}">
+                                </div>
+
+                                <div class="for-post-padding">
+
+                                    <div class="post-tips">
+                                        <div class="icon-not">
+                                            <i class="far fa-bell" aria-hidden="true"></i>
+                                            <span *ngFor="let top of post.top5Comment"><img class="teammates2"
+                                                    src="{{top.user_image !='' ? imageUrl+top.user_image : 'assets/img/defaultProfileImage.png'}}"
+                                                     title="{{top.first_name}} {{top.last_name}}"></span>
+                                        </div>
+                                        <div class=" text-right">
+                                            <button class="btn btn-default mr-3" (click)="redirectToFb(imageUrl+post.image_url)"><i class="fab fa-facebook-square"
+                                                style="font-size: 30px; color: #1fa4f1"></i></button>
+                                            
+                                                <button class="btn btn-default mr-3" (click)="redirectToTwitter(imageUrl+post.image_url)"><i class="fab fa-twitter-square"
+                                                style="font-size: 30px; color: #1fa4f1"></i></button>
+
+                                            <button class="btn btn-default" (click)="likePost(post.post_id)"><i class="far fa-thumbs-up"
+                                            style="font-size: 30px; color: #1fa4f1"></i>
+                                        </button></div>
+
+                                        <!-- <div class="tips">
+                                            <p>+19,475 Tips</p>
+                                        </div> -->
+                                    </div>
+
+                                    <div class="post-comments">
+                                        <div class="comments">
+                                            <p>Comments: {{post.comments.length}}</p>
+                                        </div>
+                                        <div class="views-likes">
+                                            <p>Views : {{post.total_views}}</p>
+                                            <p>Likes : {{post.total_likes}}</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="post-a-comment">
+                                        <div class="comment-box">
+                                            <img src="{{setUserImage()}}">
+                                            <div class="input-comment">
+                                                <input type="text" name="" placeholder="Post a Comment" [(ngModel)]="post.comment" (keyup)="$event.keyCode == 13 && postComment(post.post_id, post.comment)">
+                                                <a (click)="postComment(post.post_id, post.comment)"><i
+                                                        class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="post.comments?.length">
+                                        <span *ngFor="let comment of post.comments | slice:0:post.commentLimit; let i=index">
+                                            <div class="post-a-comment">
+                                                <div class="comment-box mt-3" style="background: aliceblue;">
+                                                    <img src="{{setImageForPost(comment.user_image)}}">
+                                                    <div class="input-comment">
+                                                        <p><strong>{{comment.first_name}} {{comment.last_name}}:
+                                                            </strong> {{comment.comment}}</p>
+                                                        <p style="font-size: 10px; color: gray;">{{comment.created_at|
+                                                            dateAgo}}</p>
+                                                        <!-- <small style="font-size: 10px; color: gray;"><span class="mr-2">Edit</span><span>Delete</span></small> -->
+                                        <!-- <p class="text-right">{{timeDifference(comment.created_at)}}</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            </span>
+                            <div class="my-4 text-center" *ngIf="post.comments.length > 1">
+                                <button class="btn btn-defult p-2 btn-arrows" (click)="hideComment(post)"><i
+                                                    class="fas fa-chevron-up"></i></button>
+                                <button class="btn btn-defult p-2 btn-arrows" (click)="viewMoreComment(post)"><i
+                                                    class="fas fa-chevron-down"></i></button>
+                                <!-- <span (click)="viewMoreComment(post)">View More</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" *ngIf="totalPostCount > limit"><button class="btn btn-default p-2" (click)="loadMorePost()">More Post</button></div>
+            </div>
+            <!-- <div class="col-lg-3 sticky-div-2">
+
+                <div class="py-3 px-0" *ngFor="let sport of allGames | slice:5:10; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]">
+                    <div class="sports-tags">
+                        
+                        <p>{{sport.sport_name}}</p>
+                        <hr>
+
+                    </div>
+                </div>
+
+            </div> -->
+</div>
+</div>
+
+<div class="col-lg-3 px-3 sticky-div">
+
+    <div class="teammates-div">
+        <h3>Team mates</h3>
+        <div class="teammates">
+            <img *ngFor="let mate of matesLeaderData.mates" src="{{mate.user_image !='' ? imageUrl+mate.user_image : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{mate.first_name}} {{mate.last_name}}">
+        </div>
+    </div>
+
+    <div class="leaders-div">
+        <h3>Leaders</h3>
+        <div class="teammates">
+            <img *ngFor="let leader of matesLeaderData.leaders" src="{{leader.user_image !='' ? imageUrl+leader.user_image : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{leader.first_name}} {{leader.last_name}}">
+        </div>
+    </div>
+
+    <div class="sports">
+        <h3>Sports Playing</h3>
+        <div class="sports-tags extra-class">
+            <p *ngFor="let sport of allGames" [routerLink]="['/liveScore/'+ sport.sport_id]">{{sport.sport_name}}</p>
+            <!-- <p>NHL</p>
+            <p>NASCAR</p>
+            <p>BOXING</p>
+            <p>Horse Racing</p>
+            <p>Motor Sports</p>
+            <p>Soccer</p>
+            <p>Tennis</p>
+            <p>WNBA</p> -->
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+</section>
+</main>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+</div>

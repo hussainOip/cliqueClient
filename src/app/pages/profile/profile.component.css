@@ -1,0 +1,347 @@
+SECTION {
+    /*background: url(img/left-login.png) no-repeat;*/
+    background-size: cover;
+    height: 100vh;
+    white-space: 100vw;
+    animation: gradient-move 10s infinite ease;
+    transition: 0.5s animation;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/*Login*/
+
+.left-img {
+    height: 100%;
+}
+
+.left-img img {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.left-box-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(247 247 247 / 25%);
+    height: 713px;
+    width: 695px;
+}
+
+.text-alignments {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.text-alignments h1 {
+    font-size: 80px;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 91.54px;
+}
+
+.text-alignments span {
+    color: #5ec4ff;
+}
+
+.text-alignments p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.text-alignments button {
+    padding: 10px 25px;
+    border: 1px solid #5dc4ff;
+    background: #5dc4ff;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: 0.5s all;
+}
+
+.form-side h3 {
+    font-size: 22px;
+    line-height: 36px;
+    padding: 20px 0px;
+    font-weight: 600;
+}
+
+.forms-input-email label,
+.forms-input-password label {
+    display: block;
+    margin-bottom: 1px;
+}
+
+.forms-input-email,
+.forms-input-password {
+    padding: 20px 0;
+}
+
+.forms-input-email input,
+.forms-input-password input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+    padding: 12px 0px 5px 10px;
+}
+
+.form-remember a {
+    float: right;
+}
+
+.form-remember {
+    padding-bottom: 20px;
+}
+
+.btn-m button {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 6px 0;
+    background: none;
+    border: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.5s all;
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+.for-hr {
+    position: relative;
+}
+
+.for-hr p {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    background: white;
+    padding: 0px 10px;
+    transform: translateX(-12px);
+}
+
+.for-hr hr {
+    margin: 30px 0;
+}
+
+.sign-in button {
+    background: black;
+    color: white;
+}
+
+.btn-m button:hover {}
+
+.sign-in button:hover {
+    background: #5ec4ff;
+    color: white;
+}
+
+.sign-up button:hover,
+.google-sign-in button:hover,
+.text-alignments button:hover {
+    background: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.sign-up button {
+    background: white;
+    border: 1px solid black;
+}
+
+.google-sign-in button {
+    background: white;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.google-sign-in img {
+    padding-right: 10px;
+}
+
+.forms-input-email input:focus,
+.forms-input-password input:focus {
+    outline: none;
+    border-bottom: 2px solid #5ec4ff;
+}
+
+
+/*Edit Profile*/
+
+.pic-edit-profile {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.pic-edit-profile img {
+    object-fit: cover;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.pic-edit-profile i {
+    background: white;
+    color: #5dc4ff;
+    position: absolute;
+    bottom: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    right: 5px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.centerized {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 50px;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-image: linear-gradient(0deg, #afccf8, #d6c3fb);
+    }
+    10% {
+        background-image: linear-gradient(30deg, #afccf8, #d6c3fb);
+    }
+    20% {
+        background-image: linear-gradient(60deg, #afccf8, #d6c3fb);
+    }
+    30% {
+        background-image: linear-gradient(90deg, #afccf8, #d6c3fb);
+    }
+    40% {
+        background-image: linear-gradient(120deg, #afccf8, #d6c3fb);
+    }
+    50% {
+        background-image: linear-gradient(150deg, #afccf8, #d6c3fb);
+    }
+    60% {
+        background-image: linear-gradient(180deg, #afccf8, #d6c3fb);
+    }
+    70% {
+        background-image: linear-gradient(210deg, #afccf8, #d6c3fb);
+    }
+    80% {
+        background-image: linear-gradient(240deg, #afccf8, #d6c3fb);
+    }
+    90% {
+        background-image: linear-gradient(270deg, #afccf8, #d6c3fb);
+    }
+    100% {
+        background-image: linear-gradient(300deg, #afccf8, #d6c3fb);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .left-box-center {
+        width: 580px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .left-box-center {
+        width: 420px;
+        height: 500px;
+    }
+    .text-alignments h1 {
+        font-size: 50px;
+        line-height: 54px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .left-box-center {
+        width: 670px;
+        height: 700px;
+    }
+    .text-alignments h1 {
+        font-size: 80px;
+        line-height: 94px;
+    }
+    .form-side {
+        padding: 100px 150px;
+    }
+    .edit-pro {
+        padding: 0px;
+    }
+    .centerized {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .left-box-center {
+        width: 330px;
+        height: 400px;
+    }
+    .text-alignments p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 23px;
+    }
+    .text-alignments h1 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .form-side {
+        padding: 50px 20px;
+    }
+    .centerized {
+        width: 80%;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .text-alignments p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    .left-box-center {
+        width: 280px;
+        height: 350px;
+    }
+    .form-remember a {
+        font-size: 13px;
+        margin-top: 3px;
+    }
+    input#remember-me {
+        height: 10px;
+    }
+    .form-remember label {
+        font-size: 12px;
+    }
+    .centerized {
+        width: 90%;
+        padding: 0px;
+    }
+}

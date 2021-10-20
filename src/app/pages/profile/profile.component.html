@@ -1,0 +1,43 @@
+<app-sidebar></app-sidebar>
+
+<section>
+    <div class="centerized">
+        <div class="form-side edit-pro">
+            <div class="pic-edit-profile">
+                <a>
+                    <img src="{{userImage}}">
+                    <i class="fa fa-edit" (click)="showHidDropImage()"></i>
+                </a>
+                <div style="position: relative;bottom: 162px;left: 325px;" *ngIf="isShowImage">
+                    <ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                        <ngx-dropzone-label>Drop your image!</ngx-dropzone-label>
+                        <ngx-dropzone-image-preview *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label></ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                    </ngx-dropzone>
+                </div>
+            </div>
+            <h3>Edit Profile</h3>
+            <div class="forms-input-email">
+                <label>First Name</label>
+                <input type="text" name="fname"  onkeypress="return /[a-z ]/i.test(event.key)" maxlength="20" placeholder="Jason" [(ngModel)]="userInfo.first_name">
+            </div>
+
+            <div class="forms-input-email">
+                <label>Last Name</label>
+                <input type="text" name="lname"  onkeypress="return /[a-z ]/i.test(event.key)" maxlength="15" placeholder="Roy" [(ngModel)]="userInfo.last_name">
+            </div>
+
+            <div class="btn-m sign-in">
+                <a>
+                    <button (click)="saveProfile()">Save</button>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

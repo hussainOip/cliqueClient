@@ -1,0 +1,82 @@
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="container-1200" style="">
+    <main>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12 px-0">
+                    <div class="ibox float-e-margins mb-0">
+                        <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>Chat room </strong>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 px-0">
+                    <div class="ibox chat-view">
+                        <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-md-9 px-1">
+                                    <div class="chat-discussion" #scrollMe>
+
+                                        <div class="chat-message left" *ngFor="let chat of groupChatData" [ngClass]="{'left': myId != chat.sender_id, 'right': myId == chat.sender_id }">
+                                            <img class="message-avatar" src="{{chat.user_image !='' ? imageUrl+chat.user_image : 'assets/img/defaultProfileImage.png'}}" alt="">
+                                            <div class="message">
+                                                <a class="message-author"> <strong style="font-size: 12px;">{{chat.first_name}}
+                                                    {{chat.last_name}}</strong></a>
+                                                <span class="message-date" style="font-size: 8px;"><i
+                                                    class="fas fa-minus-square mr-2" title='Delete text'
+                                                    style="font-size: 15px; color: rgb(255, 118, 118);"
+                                                    *ngIf="myId == chat.sender_id" (click)="deleteMsg(chat.id)"></i>
+                                                {{chat.created_at | dateAgo}}</span>
+                                                <span class="message-content">
+                                                {{chat.msg}}
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 px-1">
+                                    <div class="chat-users">
+                                        <div class="users-list">
+                                            <span *ngFor="let user of userList" (click)="redirectToSingleChat(user)">
+                                            <div class="chat-user" *ngIf="user.user_id != myId">
+                                                <span class="pull-right label label-primary" style="font-size: 10px;"
+                                                    *ngIf="user.online != null"><span class="dot"></span>Online</span>
+                                            <img class="chat-avatar" src="{{user.user_image !='' ? imageUrl+user.user_image : 'assets/img/defaultProfileImage.png'}}" alt="">
+                                            <div class="chat-user-name">
+                                                <a>{{user.first_name}} {{user.last_name}}</a>
+                                            </div>
+                                        </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12" style="padding-bottom: 20px;">
+                                <div class="chat-message-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control message-input" name="message" placeholder="Enter a message" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && saveNewGroupChats()" style="margin-top: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</main>
+</div>

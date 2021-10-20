@@ -1,0 +1,86 @@
+<app-sidebar>
+</app-sidebar>
+
+<div class="main-content">
+    <app-header></app-header>
+    <main>
+
+        <section>
+
+            <div class="row">
+                <div class="col-lg-9">
+
+                    <div class="post my-3">
+                        <div style="padding: 50px;">
+                            <div class="row">
+                                <div class="col-md-6 my-auto">
+                                    <h1>List of Posts</h1>
+                                </div>
+                                <div class="col-md-6 my-auto add-post">
+                                    <button class="btn btn-primary btn-config" [routerLink]="['/postForm']">Add Post
+                                    <i class="fas fa-plus-square"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <table class="table table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col" style="width: 125px;">Update</th>
+                                        <th scope="col" style="width: 125px;">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let post of postList | paginate: config;">
+                                        <th scope="row" style="padding-top: 50px;">{{post.post_id}}</th>
+                                        <th scope="row" style="padding-top: 50px; width: 70%;">{{post.title}}</th>
+                                        <th scope="row" style="width: 125px;"><img src="{{baseUrlForImage}}{{post.image_url}}" alt="" style="width: 100px; height: 100px; border-radius: 0px;"></th>
+                                        <td style="width: 125px; padding-top: 42px;"><button class="btn btn-primary btn-config" [routerLink]="['/postForm/'] + post.post_id">Update <i
+                                                    class="far fa-edit"></i></button></td>
+                                        <td style="width: 125px; padding-top: 42px;"><button class="btn btn-danger btn-config" (click)="staticModal.show(); setDeleteId(post.post_id)">Delete <i
+                                                    class="far fa-trash-alt"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p *ngIf="isRecord" class="mt-2">no records found.</p>
+                            <div class="float-right">
+                                <pagination-controls (pageChange)="pageChanged($event)" class="ngx-pagination-color"></pagination-controls>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<!-- <button type="button" class="btn btn-primary" (click)="staticModal.show()">Delete Post</button> -->
+<style>
+
+</style>
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-sm m-auto" style="padding: 10px 10px 0px 10px;">
+        <div class="modal-content" style="padding: 10px;">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">Delete Post</h4>
+                <button id="deleteModalOff" type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="p-2"> Are you sure you want to delete?</p>
+                <div class="text-right">
+                    <button class="btn btn-primary btn-config mr-2" (click)="deletePost()"> Yes</button>
+                    <button class="btn btn-danger btn-config" (click)="staticModal.hide()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

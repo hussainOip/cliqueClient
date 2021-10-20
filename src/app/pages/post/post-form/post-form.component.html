@@ -1,0 +1,44 @@
+<app-sidebar>
+</app-sidebar>
+
+<div class="main-content">
+    <app-header></app-header>
+    <main>
+
+        <section>
+            <div class="row">
+                <div class="col-lg-9">
+
+                    <div class="post my-3">
+                        <div class="post-header">
+                            <h1 *ngIf="!isEdit">Add your post</h1>
+                            <h1 *ngIf="isEdit">Update your post</h1>
+                        </div>
+                        <div class="post-image">
+                            <div class="form-side">
+                                <div class="forms-input-email">
+                                    <input type="text" name="" placeholder="Enter your post title" maxlength="200" [(ngModel)]="title">
+                                </div>
+                            </div>
+                            <div *ngIf="isEdit && files.length == 0" class="mb-4">
+                                <img src="{{baseUrlForImage}}{{editImg}}" alt="">
+                            </div>
+                            <ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                                <ngx-dropzone-label>Drop your image!</ngx-dropzone-label>
+                                <ngx-dropzone-image-preview *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                    <ngx-dropzone-label></ngx-dropzone-label>
+                                </ngx-dropzone-image-preview>
+                            </ngx-dropzone>
+
+                            <div>
+                                <button class="btn-mm" (click)="sendPost()" *ngIf="!isEdit">Submit Post</button>
+                                <button class="btn-mm" (click)="updatePost()" *ngIf="isEdit">Update Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </section>
+    </main>
+</div>
