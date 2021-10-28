@@ -15,10 +15,37 @@ export class LiveScoresComponent implements OnInit {
   constructor(public apiService: ApiService, public notificationsService: NotificationsService, public activatedRoute: ActivatedRoute) { }
   sportsDetail: any = [];
   ngOnInit(): void {
-    // this.sportId = this.activatedRoute.params['value']['id'];
-    document.getElementById("showBoard").classList.add('d-block');
-    // this.getSportDetailsById();
-  }
+     this.sportId = this.activatedRoute.params['value']['id'];
+    
+     document.getElementById("showBoard").classList.add('d-block');
+     
+
+     
+
+    if(this.sportId){
+  
+      
+      document.getElementById(`g-all`).classList.remove('d-block');
+      document.getElementById(`g-football`).classList.remove('d-block');
+      document.getElementById(`g-nba`).classList.remove('d-block');
+      document.getElementById(`g-nhl`).classList.remove('d-block');
+      document.getElementById(`g-baseball`).classList.remove('d-block');
+
+      document.getElementById(`g-${this.sportId}`).classList.add('d-block');
+    }else{
+      
+    
+      document.getElementById(`g-football`).classList.remove('d-block');
+      document.getElementById(`g-nba`).classList.remove('d-block');
+      document.getElementById(`g-nhl`).classList.remove('d-block');
+      document.getElementById(`g-baseball`).classList.remove('d-block');
+
+      document.getElementById(`g-all`).classList.add('d-block');
+
+    }
+
+    
+    }
 
   getSportDetailsById() {
     this.loading = true;

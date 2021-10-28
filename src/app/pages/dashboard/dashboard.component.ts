@@ -33,16 +33,14 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // document.getElementById("showBoard").classList.remove('d-block');
+    document.getElementById("showBoard").classList.remove('d-block');
    // document.getElementById("showBoard").classList.add('d-none');
    
-   document.getElementById("showBoard").classList.add('d-block');
-   
+   //document.getElementById("showBoard").classList.add('d-block');
+
     this.getAllPsot();
     this.getMatesAndLeaders();
-   //  this.sports();
-
-    
+     this.sports();
   }
 
   setHomeTab() {

@@ -1,11 +1,4 @@
 
-    <div style="margin-top: 64px; margin-left:82px; margin-right: 20px;">
-        <div id="DOM_element_id_in_your_website_1635331960421"></div>
-        <div id="DOM_element_id_in_your_website_1635332956204"></div>            
-        <div id="DOM_element_id_in_your_website_1635333048507"></div>
-        <div id="DOM_element_id_in_your_website_1635333116676"></div>
-    </div>
-
     
 <app-sidebar></app-sidebar>
 
@@ -32,9 +25,9 @@
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" [ngClass]="{'active' : homeTab == true }" data-toggle="pill" role="tab" aria-controls="pills-home" aria-selected="true" style="margin-right: 45px; cursor: pointer;" (click)="setHomeTab()">All</a>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                     <a class="nav-link" [ngClass]="{'active' : profileTab == true }" data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false" style="cursor: pointer;" (click)="setProfileTab()">All Games</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
 
@@ -97,12 +90,22 @@
                         <div class="tab-pane fade" role="tabpanel" aria-labelledby="pills-home-tab" *ngIf="homeTab" [ngClass]="{'show': homeTab == true, 'active' : homeTab == true }">
                             <div class="row">
 
+                            <div class="sports-tags extra-class row">
+                                <p  [routerLink]="['/liveScore/nba']">NBA</p> 
+                                <p  [routerLink]="['/liveScore/football']">Football</p> 
+                                <p  [routerLink]="['/liveScore/nhl']">NHL</p>
+                                <p  [routerLink]="['/liveScore/baseball']">Baseball</p>
+
+                            </div>
+                        
+
                                 <!-- <div class="col-lg-mine py-3 px-0" *ngFor="let sport of allGames | slice:0:4; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]"> -->
-                                <div class="col-lg-mine py-3 px-0" *ngFor="let sport of allGames ; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]">
-                                    <div class="sports-tags">
+                                <!-- <div class="col-lg-mine py-3 px-0" *ngFor="let sport of allGames ; let i=index" style="font-size: 11px; cursor: pointer;" [routerLink]="['/liveScore/'+ sport.sport_id]">
+                                    <div class="sports-tags"> -->
                                         <!-- <span>{{sport.title}}</span> -->
-                                        <p>{{sport.sport_name}}</p>
+                                        <!-- <p>{{sport.sport_name}}</p> -->
                                         
+
                                         <!-- <div class="team-1">
                                             <div class="team-name">
                                                 <p>Group</p>
@@ -122,14 +125,14 @@
                                                 <p>28</p>
                                             </div>
                                         </div> -->
-                                    </div>
-                                </div>
+                                    <!-- </div>
+                                </div> -->
 
-                                <div class="col-lg-mine px-0 py-3 my-auto">
+                                <!-- <div class="col-lg-mine px-0 py-3 my-auto">
                                     <div class="view-all">
                                         <button (click)="setProfileTab()">View All Game</button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -269,15 +272,21 @@
     <div class="sports">
         <h3>Sports Playing</h3>
         <div class="sports-tags extra-class">
-            <p *ngFor="let sport of allGames" [routerLink]="['/liveScore/'+ sport.sport_id]">{{sport.sport_name}}</p>
-            <!-- <p>NHL</p>
+            <p  [routerLink]="['/liveScore/nba']">NBA</p>
+            <p  [routerLink]="['/liveScore/football']">Football</p>
+            <p  [routerLink]="['/liveScore/nhl']">NHL</p>
+            <p  [routerLink]="['/liveScore/baseball']">Baseball</p>
+     
+
+            <!-- <p *ngFor="let sport of allGames" [routerLink]="['/liveScore/'+ sport.sport_id]">{{sport.sport_name}}</p>
+             <p>NHL</p>
             <p>NASCAR</p>
             <p>BOXING</p>
             <p>Horse Racing</p>
             <p>Motor Sports</p>
             <p>Soccer</p>
             <p>Tennis</p>
-            <p>WNBA</p> -->
+            <p>WNBA</p>  -->
 
         </div>
     </div>
