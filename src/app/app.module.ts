@@ -97,7 +97,7 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
       config: {
         tokenGetter: tokenGetter,
 //                allowedDomains: ['localhost:5000', 'http://localhost:5000', 'webprojectmockup.com', 'https://ectmockup.com:9447', 'webprojectmockup.com:9447','https://click-server105.herokuapp.com','click-server105.herokuapp.com'],
-                allowedDomains: ['*','http://www.cliquesports.co','www.cliquesports.co','cliquesports.co'],
+                allowedDomains: ['*','http://www.cliquesports.co','www.cliquesports.co','cliquesports.co','https://click-server105.herokuapp.com','click-server105.herokuapp.com','http://click-server105.herokuapp.com'],
                 authScheme: '',
       },
     }),
