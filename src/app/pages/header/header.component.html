@@ -1,26 +1,46 @@
 <header class="centering">
-
-    <!-- <div class="searchwrapper">
-        <div class="select-input">
-            <input type="text" name="" placeholder="Search">
-            <i class="fa fa-search"></i>
-        </div>
-    </div> -->
-
-    <div class="social-icons">
-        <div class="dropdown">
-            <button class="datedropbutton" [routerLink]="['/profile']"><img src="{{setUserImage()}}">{{getUserName()}}
-                
-            </button>
+    <div class="social-icons topBar">
+        <div class="topBarUl row">
+            <div class="welComeName col-lg-9">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <button class="datedropbutton" [routerLink]="['/profile']">
+                            Welcome Back! <strong>{{getUserName()}}</strong>
+                        </button>
+                    </div>
+                    <div class="col-lg-7 welComeSearch">    
+                        <div class="frmGroup">
+                            <!-- <i class="fas fa-search"></i>
+                            <input type="text" name="search" placeholder="Search..."> -->
+                        </div>
+                        <button [routerLink]="['/postForm']"  class="addNew">
+                            <i class="fas fa-plus"></i> 
+                            <span>Add New</span>
+                        </button>
+                        <button *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin'" class="notificationBell" (click)="showHideMenu()">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button [routerLink]="['/groupChat']"  class="chatIco">
+                            <i class="far fa-comment"></i>
+                        </button>
+                        <button [routerLink]="['/userSettings']" class="chatIco">
+                            <i class="fas fa-user-friends"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3">
+                <button class="datedropbutton" [routerLink]="['/profile']">
+                    <div class="imgNot">
+                        <img width="30" src="{{setUserImage()}}">
+                    </div>
+                    {{getUserName()}} 
+                    <span class="dotsUser">...</span>
+                </button>
+            </div>
         </div>
     </div>
-
-    <div>
-        <div class="time" style="margin-top: 15px;">
-            <h5>{{ today | date : 'medium':'GMT' }} <span> (GMT+1) </span></h5>
-        </div>
-    </div>
-    <div *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin'"><button class="btn btn-default notification" (click)="showHideMenu()" style="background-color: white; height: 50px; width: 50px;border-radius: 50%;"><i class="fas fa-bell" style="font-size: 25px;"></i></button></div>
 </header>
 
 <app-right-sidebar *ngIf="isRightMenuShow"></app-right-sidebar>

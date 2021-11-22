@@ -1,0 +1,105 @@
+.firstPage {
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.firstPage:before {
+    content: '';
+    position: absolute;
+    right: -12%;
+    bottom: -12%;
+    width: 40%;
+    height: 100%;
+    background-image: url(src/assets/img/firstIco.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+.logoFirst img {
+    max-width: 18.182vw;
+    width: 16.364vw;
+    height: 5.515vw;
+}
+.logoFirst {
+    margin-bottom: 6.061vw;
+}
+.buttonsFirst button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25.455vw;
+    max-width: 100%;
+    margin-top: 1.212vw;
+    margin-bottom: 1.212vw;
+    border: 0.061vw solid #ffffff;
+    background: #ffffff;
+    border-radius: 0.303vw;
+    height: 2.909vw;
+    font-family: Poppins;
+    font-weight: normal;
+    color: #000000;
+    transition: all .3s linear 0s;
+    font-size: 1vw;
+}
+.buttonsFirst {
+    text-align: center;
+}
+.buttonsFirst button:hover {
+    background: #000;
+    border-color: #fff;
+    color: #fff;
+}
+.buttonsFirst button:focus,.signUpWithUs button:focus {
+    outline: 0;
+}
+body {
+    font-family: Poppins;
+}
+.signUpWithUs {
+    color: #fff;
+    margin-top: 3.03vw;
+}
+.signUpWithUs p {
+    font-size: 0.97vw;
+    font-weight: 400;
+    font-family: Poppins;
+    margin-bottom: 1vw;
+}
+.signUpWithUs button {
+    background: #EA2F2A;
+    border: 0.061vw solid #EA2F2A;
+    color: #fff;
+    border-radius: 0.303vw;
+    padding: 0.606vw 1.618vw;
+    font-size: 0.877vw;
+    margin: 0 .5vw;
+}
+.signUpWithUs button.tw{
+    background-color: #00AFF0;
+    border-color: #00AFF0;
+}
+.signUpWithUs button.fb{
+    background-color: #3A559F;
+    border-color: #3A559F;
+}
+.signUpWithUs button:hover {
+    opacity: .8;
+}
+.firstPage .container {
+    max-width: 69.091vw;
+    padding-right: 0.909vw;
+    padding-left: 0.909vw;
+}
+.firstPage .container .row {
+    margin-right: -0.909vw;
+    margin-left: -0.909vw;
+}
+.firstPage .col-lg-12 {
+    padding-right: 0.909vw;
+    padding-left: 0.909vw;
+}

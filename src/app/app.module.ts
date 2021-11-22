@@ -40,7 +40,10 @@ import { environment } from 'src/environments/environment';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxLoadingModule } from 'ngx-loading';
 import { PhoneNumberComponent } from './pages/authentications/phone-number/phone-number.component';
-
+import { FirstComponent } from './pages/authentications/first/first.component';
+import { LeadersComponent } from './pages//leaders/leaders.component';
+import { ScoresidebarComponent } from './pages/scoresidebar/scoresidebar.component';
+import { LeadProfileComponent } from './pages/lead-profile/lead-profile.component';
 
 export function tokenGetter() {
   var detail: any = JSON.parse(localStorage.getItem('socialUserDetails'));
@@ -75,7 +78,11 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
     LiveScoresComponent,
     SinglePostComponent,
     UserSettingsComponent,
-    PhoneNumberComponent
+    PhoneNumberComponent,
+    FirstComponent,
+    LeadersComponent,
+    ScoresidebarComponent,
+    LeadProfileComponent
   ],
   imports: [
     BrowserModule,

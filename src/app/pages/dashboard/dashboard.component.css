@@ -1,7 +1,5 @@
 * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    padding: 0px;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     list-style: none;
 }
@@ -10,874 +8,710 @@ body {
     background: #f3f2ff;
 }
 
-#sidebar-toggle {
-    display: none;
+button:focus{
+	outline: none;
 }
 
-.sidebar {
-    height: 100%;
-    width: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background-color: #3db3f7;
-    transition: width 500ms;
-    overflow-y: auto;
-    border-radius: 0px 30px 30px 0px;
+main{
+	padding: 0 !important;
+}
+.mainRight {
+    padding-right: 0 !important;
 }
 
-.sidebar::-webkit-scrollbar {
-    display: none;
+div.mainRight > .boxCommomn {
+    padding-right: 0;
 }
-
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    padding: 0rem 1rem;
-    margin: 1rem 0rem;
-}
-
-.sidebar-menu {
-    padding: 0rem;
-}
-
-.sidebar li {
-    margin-bottom: 1.6rem;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.active2,
-.sidebar li:hover {
-    background-color: white;
-    border-radius: 0px;
-    color: black;
-    transition: 500ms;
-    border-radius: 30px 0 0 30px;
-    margin-left: 8px;
-}
-
-.sidebar li:hover a {
-    color: black;
-}
-
-.active2 a li span img,
-.sidebar li span img:hover {
-    filter: invert(56%) sepia(92%) saturate(659%) hue-rotate(173deg) brightness(97%) contrast(99%);
-}
-
-.sidebar li:hover .img-for-hover {
-    filter: invert(56%) sepia(92%) saturate(659%) hue-rotate(173deg) brightness(97%) contrast(99%);
-}
-
-img.img-for-hover {
-    width: 25px;
-    height: 25px;
-}
-
-.sidebar a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.active2 a,
-.sidebar li a:hover {
-    color: white;
-}
-
-.sidebar a span:last-child {
-    padding-left: 0.6rem;
-}
-
-#sidebar-toggle:checked~.sidebar {
-    width: 80px;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header,
-#sidebar-toggle:checked~.sidebar li span:last-child {
-    display: block;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header img {
-    width: 100%;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header,
-#sidebar-toggle:checked~.sidebar li {
-    display: flex;
-    justify-content: center;
-}
-
-#sidebar-toggle:checked~.sidebar>.bggreen {
-    display: none;
-}
-
-#sidebar-toggle:checked~.main-content {
-    margin-left: 80px;
-}
-
-#sidebar-toggle:checked~.main-content header {
-    left: 80px;
-    width: calc(100% - 80px)
-}
-
-.main-content {
+.mainSidebar {
+    width: 300px;
+    background: #393C41;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px 0px 60px 60px;
     position: relative;
-    margin-left: 80px;
-    transition: margin-left 500ms;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
 }
-
-header {
-    position: fixed;
-    top: 0;
-    left: 80px;
-    width: calc( 100% - 80px);
-    z-index: 100;
-    height: 70px;
-    padding: 0rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f1f1ff;
-    transition: left 500ms;
+.col-lg-9.mainCont {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 300px);
+    flex: 0 0 calc(100% - 300px);
+    max-width: calc(100% - 300px);
 }
-
-.searchwrapper {
-    display: flex;
-    align-items: center;
+div.mainCont {
+    padding: 50px 50px;
 }
-
-.social-icons {
-    display: flex;
-    align-items: center;
-}
-
-.uhaveamessage {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: red;
-    position: absolute;
-    top: 10px;
-}
-
-.member {
-    margin: 0px !important;
-}
-
-.social-icons span,
-.social-icons .image {
-    margin: 0 1.2rem;
-}
-
-.social-icons p {
-    margin: 0px;
-    margin-left: 1.2rem;
-}
-
-.social-icons .image {
-    height: 80px;
-    width: 80px;
+div.mainCont {
+    background-image: url(src/assets/img/mainBg.jpg);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../../../assets/img/users/profile-img.png");
-    border-radius: 50%;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
 }
-
-
-/*.fa-bell:before,.fa-envelope:before ,.fa-flag:before {
-    background-color: #9cbf85;
-    color: #0A043C;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px;
-}*/
-
-.close-sidebar {
-    text-align: center;
-    color: white;
-    cursor: pointer;
-}
-
-.close-sidebar li {
-    text-align: center;
-    color: white;
-    cursor: pointer;
-}
-
-.close-sidebar label {
-    margin-bottom: 0px;
-}
-
-main {
-    margin-top: 70px;
-    background-color: #f3f2ff;
-    padding: 20px 30px;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-.whitebg {
-    padding: 20px;
-    border-radius: 20px;
-    background: white;
-}
-
-
-/*Edited*/
-
-.dropdown button {
-    position: relative;
-    min-width: 250px;
-    width: auto;
-    height: 70px;
-    font-size: 18px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    cursor: pointer;
-    color: black;
-}
-
-.dropdown ul {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background: #ccc;
-    transform-origin: top;
-    transform: perspective(1000px) rotateX(-90deg);
-    transition: 0.5s;
-}
-
-.dropdown ul.dropdownactive2 {
-    transform: perspective(1000px) rotateX(0deg);
-}
-
-.dropdown ul li {
-    list-style: none;
-}
-
-.dropdown ul li a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    background: #3eb3f7;
-    color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
-    transition: 0.5s;
-}
-
-.dropdown ul li a:hover {
-    background: #1c1c32;
-    border-left: 3px solid #025faa;
-    border-right: 3px solid #025faa;
-}
-
-.twoicons a {
-    font-size: 20px;
-    color: black;
-}
-
-.reddot {
-    position: relative;
-}
-
-.reddot span {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: red;
-    margin: 0px;
-    top: 0;
-    right: -1px;
-    border-radius: 100%;
-}
-
-
-/*Main*/
-
-.breadcrumb {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding: 8px 1rem;
-    margin: 1rem;
-    list-style: none;
-    background-color: transparent;
-    border-radius: .25rem;
+.sports-tags.extra-class {
     align-items: center;
+    justify-content: center;
 }
-
-.breadcrumb-item a {
-    color: black;
-}
-
-.breadcrumb-item span {
-    color: #3e83bf;
-}
-
-
-/*New*/
-
-button.datedropbutton img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50px;
-    margin: 0px 6px;
-}
-
-.select-input {
+.extra-class .imgTab {
+    background: #fff;
+    width: auto;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     position: relative;
 }
-
-.select-input i {
+.extra-class .imgTab img {
     position: absolute;
-    left: 15px;
-    top: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 44px;
 }
-
-.select-input input {
-    padding: 15px 40px;
-    border: 1px solid #f1f1ff;
-    border-radius: 4px;
-    width: 320px;
+.extra-class .imgTab + span {
+    display: inline-block;
 }
-
-.fa-caret-down:before {
-    content: "\f0d7";
-    color: rgb(0 0 0 / 41%);
+.sports-tags.extra-class .col-lg-3 > div {
+    width: 70px;
+    text-align: center;
 }
-
-.time {
-    width: auto;
-    background: white;
-    padding: 15px 30px;
+.sports-tags.extra-class .col-lg-3:nth-child(2) > div,.sports-tags.extra-class .col-lg-3:nth-child(3) > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+.sports-tags.extra-class .col-lg-3:nth-child(4) > div {
+    margin-left: auto;
+}
+.boxCommomn {
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px !important;
     border-radius: 10px;
 }
-
-.time h5 {
-    margin: 0;
+.PostWaliRow {
+    max-height: 700px;
+    margin-top: 10px;
+    overflow-y:scroll;
+    position: relative;
+    padding-bottom: 250px;
 }
-
-.time span {
-    color: #b7bcc5;
+.PostWaliRow::-webkit-scrollbar-track,
+.midBox::-webkit-scrollbar-track,
+.mainRight::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+	border-radius: 10px;
+	background-color: #f5f5f500;
 }
-
-.heading span {
-    color: #b7bcc5;
-    font-weight: 200;
+.PostWaliRow::-webkit-scrollbar,
+.midBox::-webkit-scrollbar,
+.mainRight::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
 }
-
-.teammates img {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
+.PostWaliRow::-webkit-scrollbar-thumb,
+.midBox::-webkit-scrollbar-thumb,
+.mainRight::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+	background-color: transparent;
 }
-
-.teammates {
-    height: auto;
-    width: 100%;
-    overflow-y: auto;
+.PostWaliRow > .col-lg-12 {
+    padding-right: 0;
+    border-radius: 10px;
 }
-
-.teammates::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+.profile-img-text img {
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
 }
-
-.teammates-div,
-.leaders-div {
-    padding: 30px 0;
-}
-
-.sports-tags p {
-    display: block;
-    padding: 10px 15px;
-    background: #d5d5f7;
-    margin: 10px 5px;
-    border-radius: 8px;
-    cursor: pointer;
-    min-width: auto;
-    text-align: center;
-    font-weight: 500;
-}
-
-.sports-tags p:hover {
-    background: #3db3f7;
-    color: white;
-    transition: 0.5s all;
-}
-
-@supports (position: sticky) {
-    .col-lg-3.px-3.sticky-div {
-      position: sticky;
-      top: 0;
-    }
-  }
-
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    color: #3eb3f7;
-    background-color: transparent;
-    border-bottom: 3px solid #3eb3f7;
-    border-radius: 0;
-}
-
-.nav-link {
-    color: #c3c7d1;
-}
-
-.tabs-side {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #d5d5f7;
-}
-
-.settings-pref ul {
-    display: flex;
-}
-
-
-/*Post*/
-
-.post-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #80808036;
-    padding: 30px 50px;
-}
-
 .profile-img-text {
     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
-
-.profile-img-text-2 p {
-    margin: 0;
+.profile-img-text .profile-img-text-2 p {
+    margin-bottom: 0;
+    line-height: 11px;
+    font-size: 14px;
+    color: #000;
+    padding-top: 10px;
 }
-
-.profile-img-text img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    margin: 15px;
-}
-
-.profile-img-text-2 {
-    margin: auto;
-}
-
-.profile-head-button {
-    margin: auto 0px;
-}
-
-.profile-head-button button {
-    padding: 10px 20px;
-    background: #d8f0fd;
-    border: none;
-    color: #3eb3f7;
-    font-weight: 600;
-    border-radius: 10px;
-}
-
-.post {
-    background: white;
-    border-radius: 20px;
-}
-
-.post-image img {
+.bottomTextPost .post-image img {
     width: 100%;
-    height: 450px;
+    border-radius: 10px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 50px;
+    object-position: top;
 }
-
 .post-image {
-    padding: 40px 50px;
+    margin-bottom: 15px;
 }
-
-a:hover {
-    color: #3eb3f7;
-    text-decoration: underline;
+.bottomTextPost h5.text-post-h5 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    font-family: Poppins;
+    line-height: 24px;
 }
-
-.for-post-padding {
-    padding: 0px 50px 50px 50px;
-}
-
 .post-tips {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
+    border-top: 1px solid #EBEBEB;
+    padding-top: 15px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
 }
-
-.post-comments {
-    justify-content: space-between;
-    display: flex;
-    margin: 5px 0px;
-    color: #b7bcc5;
+.leftPost button {
+    color: #1DAAA6;
 }
-
-.post-a-comment {}
-
+.leftPost button i {
+    background: rgba(149,151,161,.10);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px !important;
+    border-radius: 50%;
+    color: #1DAAA6 !important;
+}
+.leftPost button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-right: 20px;
+    display: flex;
+    float: left;
+    align-items: center;
+}
+.leftPost button span {
+    padding-left: 7px;
+}
+.rightPost .btnShare button {
+    background: transparent;
+    border: 0;
+    color: #1DAAA6;
+}
+.rightPost {
+    position: absolute;
+    right: 0;
+}
+.post-a-comment .comment-box img {
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.post-a-comment .input-comment {
+    display: block;
+    width: calc(100% - 50px);
+    position: relative;
+}
 .comment-box {
     display: flex;
+    align-items: center;
 }
-
-.comment-box img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+.post-a-comment .input-comment input {
+    width: 100%;
+    height: 40px;
+    background: #f4f4f5;
+    border: 1px solid #f4f4f5;
     border-radius: 50px;
-    margin: auto 10px;
+    padding: 10px 15px;
+    color: #000;
+    font-size: 13px;
 }
-
-.input-comment {
-    margin: auto 0;
-    position: relative;
-    width: 100%;
-}
-
-.input-comment input {
-    width: 100%;
-    padding: 10px 50px 10px 10px;
-    border: 1px solid #f1f2f4;
-    border-radius: 13px;
-}
-
-.input-comment i {
+.post-a-comment .input-comment a {
     position: absolute;
-    right: 20px;
+    background: #fff;
+    right: 2.5px;
+    top: 2.5px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    transition: all .3s linear 0s;
+}
+.post-a-comment .input-comment a i {
+    position: absolute;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    color: #d5d5f7;
+    transform: translate(-50%, -50%);
 }
-
-.views-likes {
-    display: flex;
+.post-a-comment .input-comment a:hover {
+    background: #1DAAA6;
+    color: #fff;
 }
-
-.views-likes p {
-    margin: 0px 10px;
+.post-a-comment .input-comment p {
     margin-bottom: 0;
 }
-
-.comments p {
-    margin-bottom: 5px;
+.post-a-comment.postedComment {
+    padding: 10px;
+    background: aliceblue;
+    margin-top: 20px;
 }
-
-.icon-not i {
-    padding: 17px;
-    border-radius: 50px;
-    border: 1px solid;
-    margin: 3px;
-    width: 50px;
-    height: 50px;
+.post-a-comment.postedComment .comment-box {
+    margin-top: 0 !important;
+}
+.post.my-3.boxCommomn {
+    border-bottom: 1px solid #EBEBEB;
+    padding-bottom: 30px;
+    border-radius: 10px;
+}
+.midBox .boxCommomn h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.liveScore h3 {
     text-align: center;
-    color: #b7bcc5;
 }
-
-.tips p {
-    margin: auto;
-    color: #b7bcc5;
+ul.liveUl {
+    padding-left: 15px;
+    padding-right: 15px;
 }
-
-.tips {
-    margin: auto 0px;
-}
-
-.icon-not img {
-    margin-left: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.team-1,
-.team-2 {
+ul.liveUl li {
     display: flex;
-    justify-content: space-between;
-}
-
-.team-name p,
-.team-score p {
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.match {
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0px 25px;
-}
-
-.col-lg-mine {
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    max-width: auto;
-}
-
-.view-all {
-    width: 100%;
-    margin: auto;
-}
-
-.view-all button {
-    width: 100%;
-    border: none;
-    background: white;
-    color: #3eb3f7;
-    transition: 0.5s all;
-    padding: 6px 15px;
-    margin: 10px 5px;
-    border-radius: 8px;
-    cursor: pointer;
-    min-width: auto;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-weight: 500;
-
 }
-
-.extra-class p{
-    margin-right:10px;
-    margin-left:0;
+ul.liveUl li h6 {
+    font-size: 15px;
+    max-width: 100px;
 }
-
-.sports {
-    height: 60vh;
-    overflow: auto;
+ul.liveUl li strong {
+    font-weight: 700;
+    font-size: 14px;
+    min-width: 60px;
 }
-
-.col-lg-3.px-3.sticky-div{
-    position: fixed;
-    right: 0;
-    max-width: 24%;
-    top: 60px;
+ul.liveUl li img {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.midBox .boxCommomn h3 strong {
+    font-weight: 700;
+}
+.midBox .boxCommomn .teammates-div h3 {
+    font-weight: normal;
+}
+.midBox .boxCommomn .teammates {width: 20%;float: left;text-align: center;margin: 0;}
+.teammates-div,.leaders-div {
+    clear: both;
+    display: inline-block;
+}
+.leaders-div a{
+	color: inherit;
+	float: right;
+	font-size: 70%;
+}
+.midBox .boxCommomn .teammates img,
+.midBox .boxCommomn .leaders-div img {
+    margin-left: auto !important;
+    margin-right: auto;
+}
+.midBox .boxCommomn .teammates span,.midBox .boxCommomn .leaders-div span {
+    font-size: 60%;
+    font-weight: 400;
+    width: 100%;
+    overflow: hidden;
+    white-space: pre;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.morePost button {
+    background: #1daaa6;
+    padding: 10px 40px !important;
+    color: #fff;
+    width: auto;
+}
+.morePost button:hover {
+    color: #fff;
+    opacity: .8;
+}
+.boxCommomn h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.recentActivity img {
+    width: 100%;
+}
+.mainRight {
     height: 100vh;
-    overflow: auto;
+    overflow-y: scroll;
+    padding-bottom: 150px;
+}
+/*992 to 1200*/
+@media(min-width:992px ) and (max-width: 1200px){
+	/*Common Css Start*/
+	.mainSidebar { 
+        width: 250px;
+        max-width: 250px;
+        padding: 30px 0px 40px 50px;
+    }
+    .col-lg-9.mainCont {
+	    flex: 0 0 calc(100% - 250px);
+	    max-width: calc(100% - 250px);
+	    padding: 30px 30px;
+	}
+	.extra-class .imgTab {
+	    width: 40px;
+	    height: 40px;
+	}
+	.extra-class .imgTab img {
+	    max-width: 24px;
+	}
+	.sports-tags.extra-class .col-lg-3 > div {
+	    width: 40px;
+	    font-size: .6rem;
+	}
+	.mainRight {
+	    padding-right: 0 !important;
+	}
+
+	.boxCommomn {
+	    margin-bottom: 15px !important;
+	}
+	/*Common Css End*/
+	.profile-img-text img {
+	    width: 30px;
+	    height: 30px;
+	}
+	.profile-img-text .profile-img-text-2 p {
+	    font-size: 11px;
+	    line-height: 0px;
+	}
+	.profile-img-text .profile-img-text-2 span {
+	    font-size: 8px !important;
+	}
+	.bottomTextPost .post-image img {
+	    height: 250px;
+	}
+	.post-image {
+	    margin-bottom: 10px;
+	}
+	.bottomTextPost h5.text-post-h5 {
+	    font-size: 11px;
+	    line-height: 16px;
+	}
+	.post-tips {
+	    margin-top: 10px;
+	    padding-top: 10px;
+	}
+	.leftPost button i {
+	    width: 30px;
+	    height: 30px;
+	    line-height: 30px;
+	    font-size: 12px !important;
+	}
+	.leftPost button {
+	    font-size: 12px;
+	}
+	.rightPost button {
+	    font-size: 12px;
+	}
+	.post-a-comment .comment-box img {
+	    width: 30px;
+	    height: 30px;
+	}
+	.post-a-comment .input-comment {
+	    width: calc(100% - 40px);
+	}
+	.post-a-comment .input-comment input {
+	    height: 30px;
+	    padding: 10px 10px;
+	    font-size: 10px;
+	}
+	.post-a-comment .input-comment a {
+	    height: 25px;
+	    width: 25px;
+	    font-size: 12px;
+	}
+	.post-a-comment.postedComment .input-comment {
+	    font-size: 11px;
+	}
+	.post-a-comment.postedComment p:last-child {
+	    font-size: 8px !important;
+	}
+	.PostWaliRow {
+	    padding-bottom: 400px;
+	}
+	.morePost button {
+	    font-size: 12px;
+	    padding: 6px 20px !important;
+	}
+	.midBox .boxCommomn h3 {
+	    font-size: 13px;
+	}
+	ul.liveUl li h6 {
+	    font-size: 10px;
+	    max-width: 70px;
+	    margin-bottom: 0;
+	}
+	ul.liveUl li img {
+	    width: 32px;
+	    padding-left: 8px;
+	    padding-right: 8px;
+	}
+	ul.liveUl li strong {
+	    font-size: 10px;
+	    min-width: 40px;
+	}
+	.midBox .boxCommomn .teammates img, .midBox .boxCommomn .leaders-div img {
+	    margin-right: auto !important;
+	    width: 30px !important;
+	    height: 30px !important;
+	}
+	.midBox .boxCommomn .teammates span, .midBox .boxCommomn .leaders-div span {
+	    font-size: 45%;
+	    padding-left: 5px;
+	    padding-right: 5px;
+	}
+}
+/*1201 to 1440*/
+@media(min-width:1201px ) and (max-width: 1440px){
+	/*Common Css Start*/
+	.mainSidebar {
+        width: 270px;
+        max-width: 250px;
+        padding: 30px 0px 40px 50px;
+    }
+    .col-lg-9.mainCont {
+	    flex: 0 0 calc(100% - 270px);
+	    max-width: calc(100% - 270px);
+	    padding: 30px 30px;
+	}
+	.extra-class .imgTab {
+	    width: 50px;
+	    height: 50px;
+	}
+	.extra-class .imgTab img {
+	    max-width: 24px;
+	}
+	.sports-tags.extra-class .col-lg-3 > div {
+	    width: 50px;
+	    font-size: .8rem;
+	}
+	.mainRight {
+	    padding-right: 0 !important;
+	}
+	.boxCommomn {
+	    margin-bottom: 20px !important;
+	}
+	/*Common Css End*/
+	.profile-img-text img {
+	    width: 35px;
+	    height: 35px;
+	}
+	.profile-img-text .profile-img-text-2 p {
+	    font-size: 13px;
+	    line-height: 0px;
+	}
+	.profile-img-text .profile-img-text-2 span {
+	    font-size: 10px !important;
+	}
+	.bottomTextPost .post-image img {
+	    height: 300px;
+	}
+	.post-image {
+	    margin-bottom: 12px;
+	}
+	.bottomTextPost h5.text-post-h5 {
+	    font-size: 13px;
+	    line-height: 18px;
+	}
+	.post-tips {
+	    margin-top: 12px;
+	    padding-top: 12px;
+	}
+	.leftPost button i {
+	    width: 35px;
+	    height: 35px;
+	    line-height: 35px;
+	    font-size: 14px !important;
+	}
+	.leftPost button {
+	    font-size: 14px;
+	}
+	.rightPost button {
+	    font-size: 14px;
+	}
+	.post-a-comment .comment-box img {
+	    width: 35px;
+	    height: 35px;
+	}
+	.post-a-comment .input-comment {
+	    width: calc(100% - 35px);
+	}
+	.post-a-comment .input-comment input {
+	    height: 35px;
+	    padding: 12px 12px;
+	    font-size: 12px;
+	}
+	.post-a-comment .input-comment a {
+	    height: 30px;
+	    width: 30px;
+	    font-size: 14px;
+	}
+	.post-a-comment.postedComment .input-comment {
+	    font-size: 13px;
+	}
+	.post-a-comment.postedComment p:last-child {
+	    font-size: 10px !important;
+	}
+	.PostWaliRow {
+	    padding-bottom: 340px;
+	}
+	.morePost button {
+	    font-size: 14px;
+	    padding: 10px 30px !important;
+	}
+	.midBox .boxCommomn h3 {
+	    font-size: 15px;
+	}
+	ul.liveUl li h6 {
+	    font-size: 12px;
+	    max-width: 90px;
+	    margin-bottom: 0;
+	}
+	ul.liveUl li img {
+	    width: 38px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	}
+	ul.liveUl li strong {
+	    font-size: 12px;
+	    min-width: 50px;
+	}
+	.midBox .boxCommomn .teammates img, .midBox .boxCommomn .leaders-div img {
+	    margin-right: auto !important;
+	    width: 40px !important;
+	    height: 40px !important;
+	}
+	.midBox .boxCommomn .teammates span, .midBox .boxCommomn .leaders-div span {
+	    font-size: 50%;
+	    padding-left: 8px;
+	    padding-right: 8px;
+	}
 }
 
-.sports::-webkit-scrollbar {
-    width: 5px;
-    background:rgb(255, 255, 255);
-}
-
-.sports::-webkit-scrollbar-track {
-    background:rgb(0, 0, 0);
-    border-radius: 15px;
-}
-
-.sports::-webkit-scrollbar-thumb {
-    border-radius: 15px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    background:grey;
-} 
-
-.col-lg-mine.py-3.px-0 {
-    padding-bottom: 0px !important;
-}
-
-
-.view-all button:hover,
-.profile-head-button button:hover {
-    background: #3eb3f7;
-    color: white;
-    transition: 0.5s all;
-}
-
-.text-right {
-    margin: auto 0;
-}
-
-.text-post-h5 {
-    padding: 20px 20px 10px;
-    text-align: center;
-}
-
-button.btn.btn-defult.p-2.btn-arrows {
-    background: #3db3f7;
-    margin: 5px;
-    color: white;
-    width: 70px;
-}
-
-.teammates2 {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-left: -20px !important;
-}
-
-@media only screen and (max-width: 1200px) {
-    .post-header {
-        padding: 10px 10px !important;
-    }
-    .post-image {
-        padding: 20px 20px;
-    }
-    .post-image img {
-        border-radius: 20px;
-    }
-    .for-post-padding {
-        padding: 0px 30px 30px 30px;
-    }
-    .comment-box img {
-        width: 40px;
-        height: 40px;
-    }
-    .teammates2 {
-        height: 40px;
-        width: 40px;
-    }
-    .comment-box {
-        padding: 10px 0;
-    }
-    .teammates {
-        margin: 10px 0px;
-    }
-    .teammates img {
-        width: 40px !important;
-        height: 40px !important;
-    }
-    .sports-tags p {
-        padding: 5px 10px;
-        width: auto;
-        font-size: 15px;
-        min-width: auto;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    .select-input input {
-        width: 200px;
-    }
-    main {
-        padding: 15px 15px;
-    }
-    .match {
-        padding: 0px 10px;
-    }
-    .col-lg-mine {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    .col-lg-3.px-3.sticky-div{
-        position: relative;
-        max-width: 100%;
-        height: 100%;
-        right: auto;
-        top: auto;
-        overflow: visible;
-    }
-    .sports{
-        height: auto;
-        overflow: auto;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .post-image img {
-        border-radius: 10px;
-        height: 200px;
-    }
-    .view-all {
-        width: 100%;
-    }
-    main {
-        margin-top: 120px;
-    }
-    .for-post-padding {
-        padding: 0px 10px 10px 10px;
-    }
-    button.btn.btn-defult.p-2.btn-arrows {
-        width: 40px;
-        padding: 5px !important;
-    }
-    .heading h3 {
-        font-size: 40px;
-        letter-spacing: 0;
-        margin-bottom: 15px;
-        margin-top: 10px;
-        text-align: center;
-    }
-    .match p {
-        font-size: 10px !important;
-    }
-    .team-1 p,
-    .team-2 p {
-        font-size: 12px;
-    }
-    .team-name {
-        margin-right: 15px;
-    }
-    .post-tips{
-        display: block;
-    }
-
-    .icon-not {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 10px 0;
-    }
-    
-    img.teammates2 {
-        margin-bottom: 0;
-    }
-    
-    .text-right {
-        margin: auto 0;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .icon-not img {
-        margin-bottom: 0px !important;
-    }
-    
-    .comments {
-        text-align: center;
-    }
-    
-    .comments p {
-        margin-bottom:  0 !important;
-    }
-    
-    .views-likes {
-        display: block;
-        text-align: center;
-    }
-    .post-comments{
-        display: block;
-    }
-    
-}
-
-@media only screen and (max-width: 424px) {
-    .col-lg-mine {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    .post-image {
-        padding: 0px 20px 20px;
-    }
-    .text-post-h5 {
-        padding: 20px 20px;
-    }
-}
-
-@media only screen and (max-width: 320px) {}
-
-.input-comment p{
-    width: 100%;
-    word-break: break-word;
+@media(min-width:1441px ) and (max-width: 1620px){
+	/*Common Css Start*/
+	.sports-tags.extra-class .col-lg-3 > div {
+	    width: 65px;
+	}
+	.extra-class .imgTab {
+	    width: 65px;
+	    height: 65px;
+	}
+	.extra-class .imgTab img {
+	    max-width: 38px;
+	}
+	.extra-class .imgTab + span {
+	    font-size: 1rem;
+	}
+	/*Common Css End*/
+	.profile-img-text img {
+	    width: 40px;
+	    height: 40px;
+	}
+	.profile-img-text .profile-img-text-2 p {
+	    font-size: 14px;
+	    line-height: 0px;
+	}
+	.profile-img-text .profile-img-text-2 span {
+	    font-size: 12px !important;
+	}
+	.bottomTextPost .post-image img {
+	    height: 350px;
+	}
+	.post-image {
+	    margin-bottom: 13px;
+	}
+	.bottomTextPost h5.text-post-h5 {
+	    font-size: 14px;
+	    line-height: 20px;
+	}
+	.post-tips {
+	    margin-top: 14px;
+	    padding-top: 14px;
+	}
+	.leftPost button i {
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    font-size: 15px !important;
+	}
+	.leftPost button {
+	    font-size: 15px;
+	}
+	.rightPost button {
+	    font-size: 15px;
+	}
+	.post-a-comment .comment-box img {
+	    width: 40px;
+	    height: 40px;
+	}
+	.post-a-comment .input-comment {
+	    width: calc(100% - 40px);
+	}
+	.post-a-comment .input-comment input {
+	    height: 40px;
+	    padding: 14px 14px;
+	    font-size: 14px;
+	}
+	.post-a-comment .input-comment a {
+	    height: 35px;
+	    width: 35px;
+	    font-size: 15px;
+	}
+	.post-a-comment.postedComment .input-comment {
+	    font-size: 15px;
+	}
+	.post-a-comment.postedComment p:last-child {
+	    font-size: 12px !important;
+	}
+	.midBox .boxCommomn h3 {
+	    font-size: 16px;
+	}
+	ul.liveUl li h6 {
+	    font-size: 14px;
+	    max-width: 90px;
+	    margin-bottom: 0;
+	}
+	ul.liveUl li img {
+	    width: 40px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	}
+	ul.liveUl li strong {
+	    font-size: 13px;
+	    min-width: 60px;
+	}
+	.midBox .boxCommomn .teammates img, .midBox .boxCommomn .leaders-div img {
+	    margin-right: auto !important;
+	    width: 45px !important;
+	    height: 45px !important;
+	}
+	.midBox .boxCommomn .teammates span, .midBox .boxCommomn .leaders-div span {
+	    font-size: 55%;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	}
 }

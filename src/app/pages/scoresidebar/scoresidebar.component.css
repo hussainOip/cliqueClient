@@ -1,0 +1,202 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    background: #f3f2ff;
+}
+button:focus{
+    outline: none;
+} 
+
+#sidebar-toggle {
+    display: none;
+}
+#sidebar-toggle:checked~.sidebar {
+    width: 80px;
+}
+#sidebar-toggle:checked~.sidebar .sidebar-header,
+#sidebar-toggle:checked~.sidebar li span:last-child {
+    display: block;
+}
+#sidebar-toggle:checked~.sidebar .sidebar-header img {
+    width: 100%;
+}
+#sidebar-toggle:checked~.sidebar .sidebar-header,
+#sidebar-toggle:checked~.sidebar li {
+    display: flex;
+    justify-content: center;
+}
+#sidebar-toggle:checked~.sidebar>.bggreen {
+    display: none;
+}
+#sidebar-toggle:checked~.main-content {
+    margin-left: 80px;
+}
+#sidebar-toggle:checked~.main-content header {
+    left: 80px;
+    width: calc(100% - 80px)
+}
+.sidebar-menu ul a {color: #fff !important;}
+.sidebar .sidebar-header {
+    margin-bottom: 60px;
+}
+.sidebar .sidebar-header img {
+    width: 100%;
+    max-width: 170px;
+}
+.sidebar-menu ul a {
+    display: block;
+    height: 60px;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+.sidebar-menu ul a:before {
+    content: '';
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transition: all .3s linear 0s;
+}
+.sidebar-menu ul li {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+}
+.sidebar-menu ul li span.textMenu {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: al .3s linear 0s;
+}
+.sidebar-menu ul li span i {
+    font-size: 18px !important;
+    transition: all .3s linear 0s;
+}
+.sidebar-menu ul a li.active2 {
+    text-align: left;
+}
+.sidebar-menu ul a.active2,.sidebar-menu ul a:hover {
+    color: #1DAAA6 !important;
+    text-decoration: none;
+}
+.sidebar-menu ul a.active2:before,.sidebar-menu ul a:hover:before {
+    right: 0;
+}
+.sidebar-menu ul a.active2 i,.sidebar-menu ul a:hover i {
+    display: inherit;
+}
+.mainSidebar {
+    width: 300px;
+    background: #393C41;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px 0px 60px 60px;
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
+}
+
+.sidebar-menu ul a {
+    text-align: center;
+}
+.sidebar-menu ul li img {
+    width: 25px;
+}
+.backToMain {
+    position: absolute;
+    bottom: 30px;
+    color: #fff;
+}
+.backToMain a {
+    color: #fff;
+    text-decoration: none;
+    opacity: .8;
+    transition: all .3s linear 0s;
+}
+.backToMain a:hover {
+    opacity: 1;
+}
+/*992 to 1200*/
+@media(min-width:992px ) and (max-width: 1200px){
+    .sidebar .sidebar-header img {
+        max-width: 120px;
+    }
+    .sidebar .sidebar-header {
+        margin-bottom: 40px;
+    }
+    .sidebar-menu ul a {
+        height: 40px;
+        padding-left: 25px;
+        margin-bottom: 7px ;
+        padding-right: 25px;
+    }
+    .sidebar-menu ul li span i {
+        font-size: 12px !important;
+    }
+    .sidebar-menu ul li {
+        line-height: 40px;
+    }
+    .sidebar-menu ul li span.textMenu {
+        font-size: 12px;
+        padding-left: 9px;
+    }
+}
+/*1201 to 1440*/
+@media(min-width:1201px ) and (max-width: 1440px){
+    .sidebar .sidebar-header img {
+        max-width: 140px;
+    }
+    .sidebar .sidebar-header {
+        margin-bottom: 40px;
+    }
+    .sidebar-menu ul a {
+        height: 50px;
+        padding-left: 25px;
+        margin-bottom: 9px ;
+        padding-right: 25px;
+    }
+    .sidebar-menu ul li span i {
+        font-size: 14px !important;
+    }
+    .sidebar-menu ul li {
+        line-height: 50px;
+    }
+    .sidebar-menu ul li span.textMenu {
+        font-size: 14px;
+        padding-left: 9px;
+    }
+}
+@media(min-width:1441px ) and (max-width: 1620px){
+    .sidebar .sidebar-header img {
+        max-width: 150px;
+    }
+    .sidebar-menu ul a {
+        height: 52px;
+    }
+    .sidebar-menu ul li span.textMenu {
+        font-size: 14px;
+    }
+    .sidebar-menu ul li {
+        line-height: 55px;
+    }
+    .sidebar-menu ul li span i {
+        font-size: 16px !important;
+    }
+}

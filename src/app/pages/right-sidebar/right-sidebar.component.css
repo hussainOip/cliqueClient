@@ -15,16 +15,17 @@ body {
 }
 
 .sidebar {
-    height: 90%;
+    height: 95%;
     width: 315px;
     position: fixed;
-    top: 40;
+    top: 5%;
     right: 0;
     z-index: 100;
-    background-color: #3db3f7;
+    background-color: #1DAAA6;
     transition: width 500ms;
     overflow: auto;
     border-radius: 35px 0px 0px 0px;
+    color: #fff;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -415,7 +416,7 @@ button.datedropbutton img {
 }
 
 .sports-tags p:hover {
-    background: #3db3f7;
+    background: #1DAAA6;
     color: white;
     transition: 0.5s all;
 }

@@ -1,0 +1,457 @@
+/*Common Start*/
+* {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background: #f3f2ff;
+}
+
+button:focus{
+	outline: none;
+}
+
+main{
+	padding: 0 !important;
+}
+.mainRight {
+    padding-right: 0 !important;
+}
+div.mainRight > .boxCommomn {
+    padding-right: 0;
+}
+.mainSidebar {
+    width: 300px;
+    background: #393C41;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px 0px 60px 60px;
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
+}
+.col-lg-9.mainCont {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 300px);
+    flex: 0 0 calc(100% - 300px);
+    max-width: calc(100% - 300px);
+}
+div.mainCont {
+    padding: 50px 50px;
+}
+div.mainCont {
+    background-image: url(src/assets/img/mainBg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+}
+.sports-tags.extra-class {
+    align-items: center;
+    justify-content: center;
+}
+.extra-class .imgTab {
+    background: #fff;
+    width: auto;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+}
+.extra-class .imgTab img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 44px;
+}
+.extra-class .imgTab + span {
+    display: inline-block;
+}
+.sports-tags.extra-class .col-lg-3 > div {
+    width: 70px;
+    text-align: center;
+}
+.sports-tags.extra-class .col-lg-3:nth-child(2) > div,.sports-tags.extra-class .col-lg-3:nth-child(3) > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+.sports-tags.extra-class .col-lg-3:nth-child(4) > div {
+    margin-left: auto;
+}
+.boxCommomn {
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px !important;
+    border-radius: 10px;
+}
+.PostWaliRow {
+    max-height: 700px;
+    margin-top: 10px;
+    overflow-y:scroll;
+    position: relative;
+    padding-bottom: 250px;
+}
+.PostWaliRow::-webkit-scrollbar-track,
+.midBox::-webkit-scrollbar-track,
+.mainRight::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+	border-radius: 10px;
+	background-color: #f5f5f500;
+}
+.PostWaliRow::-webkit-scrollbar,
+.midBox::-webkit-scrollbar,
+.mainRight::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+.PostWaliRow::-webkit-scrollbar-thumb,
+.midBox::-webkit-scrollbar-thumb,
+.mainRight::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+	background-color: transparent;
+}
+.PostWaliRow > .col-lg-12 {
+    padding-right: 0;
+    border-radius: 10px;
+}
+.boxCommomn h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.recentActivity img {
+    width: 100%;
+}
+.mainRight {
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 150px;
+}
+.tab-content>.tab-pane{
+	display: block;
+}
+/*Common End*/
+
+/*Self PageStart*/
+.tableWalaCoumn {padding-top: 30px;}
+.tableTn {
+    background: #fff;
+    border-radius: 15px;
+}
+.topAreaTable {
+    padding: 15px 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.filtertable {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.filtertable > div {margin-left: ;}
+.actionFilter ul {
+    display: none;
+}
+.topAreaTable h3 {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 19px;
+}
+.filtertable > div {
+    height: 40px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,.5);
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #696974;
+    font-weight: 400;
+    position: relative;
+    margin-left: 20px;
+    transition:all .3s linear 0s;
+}
+.filtertable .dropFilter select {
+    border: 0;
+    padding-right: 40px;
+    color: #44444F;
+    font-weight: 500;
+}
+.filtertable .dropFilter:before {
+    content: '';
+    position: absolute;
+    right: 38px;
+    border-right: 1px solid #F1F1F5;
+    height: 100%;
+}
+.filtertable > div.filterIcon {
+    width:40px;
+    justify-content:center;
+     color:#1DAAA6;
+}
+.filtertable > div.filterIcon:hover {
+    background: #1DAAA6;
+    color: #fff;
+}
+.filtertable > div.actionFilter i {
+    padding-left: 30px;
+    color: #1DAAA6;
+}
+
+.filtertable > div.actionFilter span {
+    color: #44444F;
+    font-weight: 500;
+}
+.tableTn .table .thead-dark th {
+    background: #FAFAFB;
+    font-size: 11px;
+    font-weight: 600;
+    color: #44444F;
+    font-family: Poppins;
+    text-transform: uppercase;
+    border-bottom: 1px solid #FAFAFB;
+    border-top: 1px solid #FAFAFB;
+    text-align: center;
+}
+.tableTn .table td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.tableTn .table td {
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+button.genButton {
+    padding: 10px 30px;
+    border: 1px solid #1DAAA6;
+    background: #1DAAA6;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: Poppins;
+    letter-spacing: .2px;
+    position: relative;
+    overflow: hidden;
+}
+button.genButton:before {content: '';position: absolute;left: -100%;background: #fff;width: 100%;height: 100%;top: 0;z-index: 0;opacity: 0;transition: all .3s linear 0s;}
+button.genButton:hover span {
+    position: relative;
+    z-index: 1;
+    color: #1DAAA6;
+}
+button.genButton:hover:before {
+    left: 0;
+    opacity: 1;
+}
+.tableTn .table td {
+    border: 0;
+}
+/*Self Page End*/
+
+/*992 to 1200*/
+@media(min-width:992px ) and (max-width: 1200px){
+	/*Common Css Start*/
+	.mainSidebar { 
+        width: 250px;
+        max-width: 250px;
+        padding: 30px 0px 40px 50px;
+    }
+    .col-lg-9.mainCont {
+	    flex: 0 0 calc(100% - 250px);
+	    max-width: calc(100% - 250px);
+	    padding: 30px 30px;
+	}
+	.extra-class .imgTab {
+	    width: 40px;
+	    height: 40px;
+	}
+	.extra-class .imgTab img {
+	    max-width: 24px;
+	}
+	.sports-tags.extra-class .col-lg-3 > div {
+	    width: 40px;
+	    font-size: .6rem;
+	}
+	.mainRight {
+	    padding-right: 0 !important;
+	}
+
+	.boxCommomn {
+	    margin-bottom: 15px !important;
+	}
+	/*Common Css End*/
+	/*Self Start*/
+	.topAreaTable h3 {
+	    font-size: 14px;
+	}
+	.filtertable > div {
+	    height: 30px;
+	    margin-left: 12px;
+	    font-size: 9px;
+	}
+	.filtertable > div.filterIcon {
+	    width: 30px;
+	}
+	.tableTn .table .thead-dark th {
+	    font-size: 7px;
+	    padding: 0.5rem;
+	}
+	.tableTn .table td img {
+	    width: 30px;
+	    height: 30px;
+	}
+	.tableTn .table td {
+	    font-size: 10px;
+	    padding: 8px;
+	}
+	button.genButton {
+	    padding: 6px 15px;
+	    font-size: 7px;
+	}
+	.topAreaTable {
+	    padding: 10px 15px;
+	}
+	main {
+	    margin-top: 30px !important;
+	}
+}
+/*1201 to 1440*/
+@media(min-width:1201px ) and (max-width: 1440px){
+	/*Common Css Start*/
+	.mainSidebar {
+        width: 270px;
+        max-width: 250px;
+        padding: 30px 0px 40px 50px;
+    }
+    .col-lg-9.mainCont {
+	    flex: 0 0 calc(100% - 270px);
+	    max-width: calc(100% - 270px);
+	    padding: 30px 30px;
+	}
+	.extra-class .imgTab {
+	    width: 50px;
+	    height: 50px;
+	}
+	.extra-class .imgTab img {
+	    max-width: 24px;
+	}
+	.sports-tags.extra-class .col-lg-3 > div {
+	    width: 50px;
+	    font-size: .8rem;
+	}
+	.mainRight {
+	    padding-right: 0 !important;
+	}
+	.boxCommomn {
+	    margin-bottom: 20px !important;
+	}
+	/*Common Css End*/
+	/*Self Start*/
+	.topAreaTable h3 {
+	    font-size: 16px;
+	}
+	.filtertable > div {
+	    height: 35px;
+	    margin-left: 14px;
+	    font-size: 11px;
+	}
+	.filtertable > div.filterIcon {
+	    width: 35px;
+	}
+	.tableTn .table .thead-dark th {
+	    font-size: 9px;
+	    padding: 0.8rem;
+	}
+	.tableTn .table td img {
+	    width: 35px;
+	    height: 35px;
+	}
+	.tableTn .table td {
+	    font-size: 12px;
+	    padding: 10px;
+	}
+	button.genButton {
+	    padding: 8px 20px;
+	    font-size: 9px;
+	}
+	.topAreaTable {
+	    padding: 15px 20px;
+	}
+	main {
+	    margin-top: 30px !important;
+	}
+	/*Self End*/
+}
+
+@media(min-width:1441px ) and (max-width: 1620px){
+	/*Common Css Start*/
+	.sports-tags.extra-class .col-lg-3 > div {
+	    width: 65px;
+	}
+	.extra-class .imgTab {
+	    width: 65px;
+	    height: 65px;
+	}
+	.extra-class .imgTab img {
+	    max-width: 38px;
+	}
+	.extra-class .imgTab + span {
+	    font-size: 1rem;
+	}
+	/*Common Css End*/
+	/*Self Start*/
+	.topAreaTable h3 {
+	    font-size: 18px;
+	}
+	.filtertable > div {
+	    height: 38px;
+	    margin-left: 15px;
+	    font-size: 12px;
+	}
+	.filtertable > div.filterIcon {
+	    width: 38px;
+	}
+	.tableTn .table .thead-dark th {
+	    font-size: 10px;
+	    padding: 0.9rem;
+	}
+	.tableTn .table td img {
+	    width: 38px;
+	    height: 38px;
+	}
+	.tableTn .table td {
+	    font-size: 14px;
+	    padding: 11px;
+	}
+	button.genButton {
+	    padding: 10px 25px;
+	    font-size: 11px;
+	}
+	.topAreaTable {
+	    padding: 15px 20px;
+	}
+	main {
+	    margin-top: 30px !important;
+	}
+	/*Self End*/
+}

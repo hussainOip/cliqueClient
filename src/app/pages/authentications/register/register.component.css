@@ -1,257 +1,251 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-
-/*Login*/
-
-.left-img {
-    height: 100%;
-}
-
-.left-img img {
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.leftLogin {
     background-position: center;
-    position: relative;
+    background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.818vw;
 }
-
-.left-box-center {
+.leftLogin .left-img {
+    max-width: 36.364vw;
+}
+.leftLogin h1 {
+    font-size: 4.242vw !important;
+    font-weight: 700;
+    text-transform: none;
+    line-height: 5.152vw;
+    margin-bottom: 0.485vw;
+}
+.leftLogin button {
+    background: #000;
+    border: 0.061vw solid #000;
+    color: #fff;
+    border-radius: 0.303vw;
+    padding: 0.606vw 1.818vw;
+    margin-top: 1.818vw;
+    letter-spacing: .0.303vw;
+    transition: all .3s linear 0s;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.5vw;
+}
+.leftLogin button:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+.rightLogin {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.909vw;
+    padding-left: 0.909vw;
+}
+.rightLogin .form-side {
+    max-width: 50vw;
+    padding: 1.818vw 0;
+    width: 75%;
+}
+.rightLogin .form-side > img {
     position: absolute;
-    top: 50%;
+    right: 3.03vw;
+    top: 1.121vw;
+    width: 12.121vw;
+    height: 4.061vw;
+}
+.rightLogin .form-side h3 {
+    font-size: 1.636vw;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+.rightLogin .form-side label {
+    display: block;
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 0.848vw;
+    text-transform: capitalize;
+    margin-bottom: 0.5vw;
+}
+.rightLogin .formTn:before {content: '';position: absolute;left: 0;top: 0;border-top: 0.121vw solid #C0BDCC;width: 3.03vw;opacity: .8;}
+.formTn {
+    position: relative;
+    padding-top: 1.5vw;
+    margin-top: 1.5vw;
+}
+.rightLogin .form-side input,.rightLogin .form-side select {
+    width: 100%;
+    height: 2.5vw;
+    padding: 0vw 0.909vw;
+    border-radius: 3.03vw;
+    box-shadow: none;
+    border: 0.061vw solid #fff;
+    font-size: 0.97vw;
+    line-height: 5vw;
+}
+.rightLogin .form-side input[type="checkbox"] {
+    width: auto;
+}
+.frmGroup {
+    margin-bottom: 1vw;
+}
+.form-remember.frmGroup {
+    clear: both;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+}
+.form-remember input {
+    display: none;
+}
+.form-remember span {
+    padding-left: 1.515vw;
+    position: relative;
+}
+.form-remember span:before {content: '';position: absolute;left: 0;top: 0.121vw;background: #fff;width: 0.909vw;height: 0.909vw;border-radius: 0.121vw;transition: all .3s linear 0s;}
+.form-remember.frmGroup label {
+    float: left;
+}
+.form-remember.frmGroup > a {
+    float: right;
+    color: #fff;
+    font-size: 0.909vw;
+}
+.sign-in.frmGroup {
+    clear: both;
+    margin-top: 1.212vw;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+}
+.for-hr hr {
+    border: 0vw solid #fff;
+    opacity: .2;
+    margin: 0;
+}
+.formTn button {
+    background: #1DAAA6;
+    border: 0.061vw solid #1DAAA6;
+    color: #fff;
+    padding: 0.606vw 1.818vw;
+    border-radius: 1.818vw;
+    transition: all .3s linear 0s;
+    font-size: 1vw;
+    line-height: 1.5vw;
+}
+.for-hr p {
+    position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(247 247 247 / 25%);
-    height: 713px;
-    width: 695px;
+    margin-bottom: 0;
+    color: #1daaa6;
+    font-weight: 700;
+    letter-spacing: 0.061vw;
 }
-
-.text-alignments {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+.btn-m.sign-up {
+    margin: 1.818vw 0 0;
+    display: inline-block;
 }
-
-.text-alignments h1 {
-    font-size: 80px;
-    color: white;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 91.54px;
+.btn-m.sign-up button {
+    display: inline-block;
+    width: auto;
 }
-
-.text-alignments span {
-    color: #5ec4ff;
+.btn-m.google-sign-in {
+    display: inline-block;
+    width: auto;
+    margin-left: 1.212vw;
 }
-
-.text-alignments p {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 32px;
+.formTn button:hover {
+    background: #000;
+    border-color: #fff;
 }
-
-.text-alignments button {
-    padding: 10px 25px;
-    border: 1px solid #5dc4ff;
-    background: #5dc4ff;
-    color: white;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: 0.5s all;
-}
-
-.form-side h3 {
-    font-size: 22px;
-    line-height: 36px;
-    padding: 20px 0px;
-    font-weight: 600;
-}
-
-.forms-input-email label,
-.forms-input-password label {
-    display: block;
-    margin-bottom: 1px;
-}
-
-.forms-input-email,
-.forms-input-password {
-    padding: 20px 0;
-}
-
-.forms-input-email input,
-.forms-input-password input {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid rgb(0, 0, 0, 0.2);
-    padding: 12px 0px 5px 10px;
-}
-
-.form-remember a {
-    float: right;
-}
-
-.form-remember {
-    padding-bottom: 20px;
-}
-
-.btn-m button {
-    width: 100%;
-    padding: 10px 0px;
-    margin: 6px 0;
-    background: none;
-    border: none;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: 0.5s all;
-    -webkit-transition: background 0.5s linear;
-    -moz-transition: background 0.5s linear;
-    -o-transition: background 0.5s linear;
-    transition: background 0.5s linear;
-}
-
 .for-hr {
     position: relative;
 }
-
-.for-hr p {
+.for-hr:before {content: '';position: absolute;left: 0;top: 50%;border: 0.061vw solid #fff;opacity: .6;width: calc(50% - 1.515vw);}
+.for-hr:after {content: '';position: absolute;right: 0;top: 50%;border: 0.061vw solid #fff;opacity: .6;width: calc(50% - 1.515vw);}
+.rightLogin .form-side input[type="checkbox"]:checked + span:before {
+    background: #1daaa6;
+}
+.rightLogin .form-side input[type="checkbox"]:checked + span:after {
+    opacity: 1;
+}
+.rightLogin .form-side input[type="checkbox"] + span:after {
+    content: '✓';
     position: absolute;
-    top: -12px;
-    left: 50%;
-    background: white;
-    padding: 0px 10px;
-    transform: translateX(-12px);
+    left: 0.182vw;
+    transition: all .3s linear 0s;
+    opacity: 0;
 }
-
-.for-hr hr {
-    margin: 30px 0;
+body {
+    font-size: 0.97vw;
+    line-height: 1.455vw;
 }
-
-.sign-in button {
-    background: black;
-    color: white;
+.row {
+    margin-left: -0.909vw;
+    margin-right: -0.909vw;
 }
-
-.btn-m button:hover {}
-
-.sign-in button:hover {
-    background: #5ec4ff;
-    color: white;
+div.frmGroupHalf {
+    width: calc(50% - 0.606vw);
+    float: left;
 }
-
-.sign-up button:hover,
-.google-sign-in button:hover,
-.text-alignments button:hover {
-    background: black;
-    color: white;
-    border: 1px solid black;
+.forms-input-email.frmGroup.frmGroupHalf:nth-child(2), .forms-input-email.frmGroup.frmGroupHalf:nth-child(5), .forms-input-email.frmGroup.frmGroupHalf:nth-child(7) {margin-right: 0.606vw;}
+.forms-input-email.frmGroup.frmGroupHalf:nth-child(3), .forms-input-email.frmGroup.frmGroupHalf:nth-child(6), .forms-input-email.frmGroup.frmGroupHalf:nth-child(8) {
+    margin-left: 0.606vw;
 }
-
-.sign-up button {
-    background: white;
-    border: 1px solid black;
+.socialSign h4 {
+    font-size: 0.727vw;
+    font-family: Poppins;
+    font-weight: 400;
+    margin-top: 1.212vw;
 }
-
-.google-sign-in button {
-    background: white;
-    border: 1px solid rgb(0, 0, 0, 0.2);
+ul.socialUl {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0.97vw;
+    margin-top: 0.727vw;
 }
-
-.google-sign-in img {
-    padding-right: 10px;
+ul.socialUl li {
+    display: inline-block;
 }
-
-.forms-input-email input:focus,
-.forms-input-password input:focus {
+ul.socialUl li button {
+    font-size: 0.827vw;
+    background: #EA2F2A;
+    border: 0.061vw solid #EA2F2A;
+    padding: 0.7vw 1.7vw;
+    border-radius: 0.424vw;
+    margin-right: 0.606vw;
+    color: #fff;
+    font-weight: 500;
+}
+ul.socialUl li button:hover{
+    opacity: .8;
+}
+ul.socialUl li:nth-child(2) button {
+    background: #00AFF0;
+    border-color: #00AFF0;
+}
+ul.socialUl li:last-child button {
+    background: #3A559F;
+    border-color: #3A559F;
+}
+span.orSignUpWith {CLEAR: BOTH;font-size: 0.727vw;width: 100%;display: block;margin-bottom: 0.909vw;}
+button:focus{
     outline: none;
-    border-bottom: 2px solid #5ec4ff;
-}
-
-@media screen and (max-width: 1440px) {
-    .left-box-center {
-        width: 580px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .left-box-center {
-        width: 420px;
-        height: 500px;
-    }
-    .text-alignments h1 {
-        font-size: 50px;
-        line-height: 54px;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .left-box-center {
-        width: 670px;
-        height: 700px;
-    }
-    .text-alignments h1 {
-        font-size: 80px;
-        line-height: 54px;
-    }
-    .text-alignments {
-        text-align: center;
-    }
-    .form-side {
-        padding: 100px 150px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .left-box-center {
-        width: 330px;
-        height: 400px;
-    }
-    .text-alignments p {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 23px;
-    }
-    .text-alignments h1 {
-        font-size: 30px;
-        line-height: 34px;
-    }
-    .form-side {
-        padding: 50px 20px;
-    }
-}
-
-@media screen and (max-width: 374px) {
-    .text-alignments p {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-    }
-    .left-box-center {
-        width: 280px;
-        height: 350px;
-    }
-    .form-remember a {
-        font-size: 13px;
-        margin-top: 3px;
-    }
-    input#remember-me {
-        height: 10px;
-    }
-    .form-remember label {
-        font-size: 12px;
-    }
-    .text-alignments {
-        width: 80%;
-        text-align: center;
-    }
 }

@@ -52,6 +52,8 @@ export class PostListComponent implements OnInit {
     this.apiService.getPostList().subscribe((res: any)=>{
       this.loading = false;
       this.postList = res.data;
+
+      console.log(res.data);
       this.config = {
         itemsPerPage: 10,
         currentPage: 1,

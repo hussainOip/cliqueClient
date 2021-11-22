@@ -1,0 +1,55 @@
+<input type="checkbox" id="sidebar-toggle">
+<div class="sidebar" [ngClass]="{'sideMenuShrink' : showHideMenu == true}">
+
+    <div class="sidebar-header" [routerLink]="['/dashboard']">
+        <img class="m-auto" src="assets/img/logon.png">
+    </div>
+
+    <div class="sidebar-menu">
+        <ul>
+            <a class="active2">
+                <li>
+                    <span><img src="assets/img/nfl.png"></span>
+                    <span class="textMenu">NFL</span>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <span class="textMenu">Fixture & Results</span>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <span class="textMenu">Scoreboard</span>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <span class="textMenu">Match Info</span>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <span class="textMenu">Game Leaders</span>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <span class="textMenu">Play by Play</span>
+                </li>
+            </a>
+            <a>
+                <li class="">
+                    <span (click)="logout()">
+                    	<i class="fas fa-sign-out-alt" style="font-size: 25px;"></i>
+                    </span>
+                    <span class="textMenu">Logout</span>
+                </li>
+            </a>
+
+        </ul>
+    </div>
+    <div class="backToMain">
+    	<a [routerLink]="['/dashboard']">< Back to Main Menu</a>
+    </div>
+</div>

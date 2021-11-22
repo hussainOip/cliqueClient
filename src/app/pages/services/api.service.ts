@@ -114,8 +114,12 @@ export class ApiService {
       responseType: 'json',
       headers: new HttpHeaders({
         isFile: isFile,
-        lastName: userInfo.last_name,
-        firstName: userInfo.first_name
+        name: userInfo.name,
+        address: userInfo.address,
+        city:  userInfo.city,
+        leader: userInfo.leader,
+        experience: userInfo.experience,
+        profit: userInfo.profit
       })
     });
   }
@@ -163,4 +167,17 @@ export class ApiService {
   getSportDetailsById(data) {
     return this.http.post(this.baseUrl + '/score/getSportDetailsById', data);
   }
+
+
+  getLeadById(id) {
+    return this.http.post(this.baseUrl + '/social/getLeadById', id,
+    {
+    responseType: 'json',
+    headers: new HttpHeaders({
+      title: id
+    })});
+  }
+
+  
+
 }

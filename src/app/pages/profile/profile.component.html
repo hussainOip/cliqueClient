@@ -1,43 +1,147 @@
-<app-sidebar></app-sidebar>
+<section class="profileSection">
+   <div class="container">
+      <div class="row form-side">
+         <div class="logoPro" [routerLink]="['/dashboard']"><img src="assets/img/logoDark.png"></div>
+         <div class="col-lg-3 pic-edit-profile">
+            <img src="{{userImage}}">
+            
+            <a href="javascript:void" style="text-decoration: none;">
+               <div  class="changePhoto btnDiv"> <span (click)="showHidDropImage()">Change Photo</span></div>
+            </a>
 
-<section>
-    <div class="centerized">
-        <div class="form-side edit-pro">
-            <div class="pic-edit-profile">
-                <a>
-                    <img src="{{userImage}}">
-                    <i class="fa fa-edit" (click)="showHidDropImage()"></i>
-                </a>
-                <div style="position: relative;bottom: 162px;left: 325px;" *ngIf="isShowImage">
-                    <ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
-                        <ngx-dropzone-label>Drop your image!</ngx-dropzone-label>
-                        <ngx-dropzone-image-preview *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
-                            <ngx-dropzone-label></ngx-dropzone-label>
-                        </ngx-dropzone-image-preview>
-                    </ngx-dropzone>
-                </div>
+            <a href="javascript:void" style="text-decoration: none;" [routerLink]="['/dashboard']" >            
+               <div class="backTo btnDiv"> <span >Back To Profile</span></div>
+            </a>
+
+            <div style="position: relative;bottom: 162px;left: 325px; z-index:2" *ngIf="isShowImage" class="UploaderPImg">
+               <ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                   <ngx-dropzone-label>Drop your image!</ngx-dropzone-label>
+                   <ngx-dropzone-image-preview *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                       <ngx-dropzone-label></ngx-dropzone-label>
+                   </ngx-dropzone-image-preview>
+               </ngx-dropzone>
             </div>
-            <h3>Edit Profile</h3>
-            <div class="forms-input-email">
-                <label>First Name</label>
-                <input type="text" name="fname"  onkeypress="return /[a-z ]/i.test(event.key)" maxlength="20" placeholder="Jason" [(ngModel)]="userInfo.first_name">
+         </div>
+         <div class="col-lg-6 fieldsPForm">
+            <div class="formMainHead">
+               <h3>
+                  Leader Profile Setting
+               </h3>
             </div>
+            <div class="row formPRow">
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Name</span></label>
+                     <input type="text" name="name" onkeypress="return /[a-z ]/i.test(event.key)" maxlength="20" placeholder="Jason" [(ngModel)]="userInfo.name">
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Email</span></label>
+                     <input type="email" name="email" placeholder="email" [(ngModel)]="userInfo.email" >
+                  </div>
+               </div>
+               <div class="col-lg-12">
+                  <div class="forms-input-email">
+                     <label><span>Address</span></label>
+                     <input type="text" name="address"  onkeypress="return /[a-z ]/i.test(event.key)"  placeholder="Address" [(ngModel)]="userInfo.address">
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>State/City</span></label>
+                     <input type="text"[(ngModel)]="userInfo.city" name="city"  placeholder="city" >
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Leader</span></label>
+                     <select [(ngModel)]="userInfo.leader"   name="leader" >
 
-            <div class="forms-input-email">
-                <label>Last Name</label>
-                <input type="text" name="lname"  onkeypress="return /[a-z ]/i.test(event.key)" maxlength="15" placeholder="Roy" [(ngModel)]="userInfo.last_name">
+                        <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData.leaders"  >{{leader.first_name}}</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Experience</span></label>
+                     <input type="text" name="experience" [(ngModel)]="userInfo.experience" placeholder="Experience">
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Profit</span></label>
+                     <input type="text" name="profit"  [(ngModel)]="userInfo.profit" placeholder="Profit">
+                  </div>
+               </div>
+               <div class="col-lg-12">
+                  <div class="forms-input-email uploaderInput">
+                     <label for="fileUploader">
+                        <span>Upload Verification Document</span>
+                        <input type="file" name="fileUp" id="fileUploader">
+                        <div class="uploadedArea">
+                           <span><i class="fas fa-upload"></i>Drop your file or click to Upload</span>
+                        </div>
+                     </label>
+                  </div>
+               </div>
+               <div class="col-lg-12">
+                  <div class="forms-input-email selectPayment">
+                     <span class="likelabel">Payment</span>
+                     <div class="Selectedpayment">
+                        <label for="paypal">
+                           <input type="radio" name="payment" id="paypal">
+                           <span class="paymentBtn">Paypal</span>
+                        </label>
+                        <label for="stripe">
+                           <input type="radio" name="payment" id="stripe" checked>
+                           <span class="paymentBtn">Stripe</span>
+                        </label>
+                        <label for="credit">
+                           <input type="radio" name="payment" id="credit">
+                           <span class="paymentBtn">Credit / Debit Card</span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <div class="btn-m sign-in col-lg-12">
+                  <a>
+                       <button (click)="saveProfile()"><span>Save</span></button>
+                  </a>
+               </div>
             </div>
-
-            <div class="btn-m sign-in">
-                <a>
-                    <button (click)="saveProfile()">Save</button>
-                </a>
+         </div>
+         <div class="col-lg-3">
+            <div class="formMainHead">
+               <h3>Leader Profile Setting</h3>
+               <div class="specialCheckBoxes">
+                  <ul class="socialFormSelection">
+                     <li>
+                        <label for="gmailSelection">
+                           <input type="checkbox" name="gmailSelect" id="gmailSelection">
+                           <button><i class="fab fa-google-plus-g"></i> Gmail</button>
+                           <div><i></i><span>Connected</span></div>
+                        </label>
+                     </li>
+                     <li class="tw">
+                        <label for="twSelection">
+                           <input type="checkbox" name="twSelect" id="twSelection">
+                           <button><i class="fab fa-twitter"></i> Twitter</button>
+                           <div><i></i><span>Connected</span></div>
+                        </label>
+                     </li>
+                     <li class="fb">
+                        <label for="fbSelection">
+                           <input type="checkbox" name="fbSelect" id="fbSelection" />
+                           <button><i class="fab fa-facebook"></i> Facebook</button>
+                           <div><i></i><span>Connected</span></div>
+                        </label>
+                     </li>
+                  </ul>
+               </div>
             </div>
-
-
-        </div>
-    </div>
-
+         </div>
+      </div>
+   </div>
 </section>
-
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

@@ -1,15 +1,23 @@
+
 .section,
 .section-1,
 .section-2,
-.section-3,
 .section-4,
 .section-5,
 .section-6 {
     background: white !important;
 }
-
+.pading80 {
+    padding: 80px 0;
+}
+.padding80Bot{
+	padding-bottom: 80px;
+}
 .section-1 {
     position: relative;
+}
+.discover p {
+    margin-bottom: 0;
 }
 
 /* 
@@ -27,4 +35,140 @@
 .input-comment p{
     width: 100%;
     word-break: break-word;
+}
+/*981 to 767*/
+@media(min-width: 981px) and (max-width: 1200px){
+	.logo img {
+	    max-width: 140px;
+	}
+	a.nav__link.order button {
+	    padding: 0px 18px;
+	    font-size: 10px;
+	}
+	.nav-menu .menu-item a {
+	    margin: 0 5px;
+	}
+	.verified-class h1 {
+	    font-size: 36px !important;
+	}
+	.verified-class p, .bet-today p {
+	    font-size: 14px;
+	    line-height: 1.7;
+	}
+	.verified-class {
+	    padding: 100px 0;
+	}
+	.pading80[_ngcontent-fej-c16] {
+	    padding: 60px 0;
+	}
+	.bet-today2 img {
+	    max-width: 350px;
+	}
+
+	.bet-today h1 {
+	    font-size: 32px !important;
+	    line-height: 1.2;
+	}
+
+	.discover h1 {
+	    font-size: 32px !important;
+	    line-height: 1.2;
+	}
+
+	.discover p {
+	    font-size: 14px;
+	    line-height: 1.7;
+	    max-width: 800px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.leaders h1 {
+	    font-size: 32px !important;
+	    line-height: 1.2;
+	}
+
+	.leaders p {
+	    font-size: 14px;
+	    line-height: 1.7;
+	}
+
+	.leaders p + br {
+	    display: none;
+	}
+
+	.leaders img {
+	    max-width: 380px;
+	}
+
+	.payment h1 {
+	    font-size: 32px !important;
+	    line-height: 1.2;
+	    margin-bottom: 30px;
+	}
+
+	.card-payment {
+	    padding: 20px;
+	}
+	.card-payment img {
+	    width: 40px;
+	}
+	.card-payment h3 {
+	    font-size: 16px;
+	    padding-bottom: 11px;
+	}
+	.card-payment p {
+	    font-size: 14px;
+	    line-height: 1.7;
+	}
+	.padding80Bot[_ngcontent-fej-c16] {
+	    padding-bottom: 60px;
+	}
+	.text-testi p {
+	    font-size: 10px;
+	}
+	.testi-profile img {
+	    width: 50px;
+	    height: 50px;
+	    margin-left: 15px;
+	    margin-right: 15px;
+	}
+	.saying p {
+	    font-size: 14px;
+	}
+	.saying span {
+	    font-size: 14px;
+	}
+	.footer-left img {
+	    max-width: 120px;
+	}
+	.footer-left p {
+	    font-size: 14px;
+	    line-height: 1.7;
+	}
+	.socialIco.icons span {
+	    width: 32px;
+	    height: 32px;
+	    padding: 8px 0;
+	    font-size: 12px;
+	}
+	.footer-right ul li {
+	    padding: 10px 10px;
+	    font-size: 14px;
+	}
+	.footer-right ul {
+	    padding: 0;
+	}
+	.section-7 > .container > .row.py-5 {
+	    padding: 2rem  0 3rem !important;
+	}
+	.below-footer p {
+	    font-size: 12px;
+	}
+	.below-footer {
+	    padding: 13px 0;
+	}
+	.section-6  h1 {
+	    MARGIN-TOP: 0;
+	}
 }

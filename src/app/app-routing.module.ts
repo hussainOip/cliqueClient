@@ -4,6 +4,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/authentications/login/login.component';
+import { FirstComponent } from './pages/authentications/first/first.component';
+import { LeadProfileComponent } from './pages/lead-profile/lead-profile.component';
+import { LeadersComponent } from './pages/leaders/leaders.component';
 import { RegisterComponent } from './pages/authentications/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './pages/authentications/forgot-password/forgot-password.component';
@@ -21,6 +24,10 @@ import { AuthService } from './pages/services/auth.service';
 const routes: Routes = [
   {path:"", component: HomeComponent, pathMatch: "full" },
   {path:"login", component: LoginComponent },
+  {path:"first", component: FirstComponent },
+  {path:"leadprofile", component: LeadProfileComponent },
+  {path:"leadprofile/:id", component: LeadProfileComponent },
+  {path:"leaders", component: LeadersComponent },
   {path:"register", component: RegisterComponent },
   {path:"forgotPassword", component: ForgotPasswordComponent },
   {path:"verifyForgotPassword", component: VerifyForgotPasswordComponent },
@@ -36,6 +43,8 @@ const routes: Routes = [
   {path:"liveScore/:id", component: LiveScoresComponent, canActivate:[AuthService] },
   {path:"userSettings", component: UserSettingsComponent, canActivate:[AuthService] },
   {path:"post/:id", component: SinglePostComponent, canActivate:[AuthService] },
+
+
 ];
 
 @NgModule({

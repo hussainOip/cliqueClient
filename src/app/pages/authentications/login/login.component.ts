@@ -16,6 +16,14 @@ export class LoginComponent implements OnInit {
   constructor ( public apiService: ApiService, public notificationsService: NotificationsService, public router: Router, public authService: SocialAuthService) { }
 
   ngOnInit(): void {
+
+    
+   const userData = JSON.parse(localStorage.getItem('socialUserDetails'));
+    
+   if(userData.token){
+    this.router.navigateByUrl('/dashboard');
+   }
+   
     document.getElementById("showBoard").classList.remove('d-block');
     document.getElementById("showBoard").classList.add('d-none');
   }

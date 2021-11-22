@@ -17,7 +17,7 @@ export class LiveScoresComponent implements OnInit {
   ngOnInit(): void {
      this.sportId = this.activatedRoute.params['value']['id'];
     
-     document.getElementById("showBoard").classList.add('d-block');
+     document.getElementById("showBoard").classList.add('d-none');
      
 
      

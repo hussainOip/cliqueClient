@@ -1,86 +1,198 @@
-<app-sidebar>
-</app-sidebar>
-
-<div class="main-content">
-    <app-header></app-header>
-    <main>
-
-        <section>
-
-            <div class="row">
-                <div class="col-lg-9">
-
-                    <div class="post my-3">
-                        <div style="padding: 50px;">
+<div class="row">
+    <div class="col-lg-3 mainSidebar">   
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9 mainCont">  
+        <div class="main-content">
+            <app-header></app-header>
+            <main>
+                <section>
+                    <div class="row">
+                        <div class="col-lg-9 mainLeft">
                             <div class="row">
-                                <div class="col-md-6 my-auto">
-                                    <h1>List of Posts</h1>
-                                </div>
-                                <div class="col-md-6 my-auto add-post">
-                                    <button class="btn btn-primary btn-config" [routerLink]="['/postForm']">Add Post
-                                    <i class="fas fa-plus-square"></i></button>
-                                </div>
+                                <div class="col-lg-12">
+                                    <ul class="maintab col-lg-12">
+                                        <!-- <li class="activeTab"><span>Recent</span></li> -->
+                                        <!-- <li><span>Most Popular</span></li>
+                                        <li><span>Recomended</span></li> -->
+                                    </ul>
+                                    <div class="postData">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <h3>Recent Post</h3>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <ul class="inTab">
+                                                    <!-- <li class="activeTab"><span>Feeds</span></li> -->
+                                                    <!-- <li><span>All</span></li>
+                                                    <li><span>Following</span></li>
+                                                    <li><span>Latest</span></li>
+                                                    <li><span>Popular</span></li> -->
+                                                </ul>   
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="col-lg-12">
+                                                <div class="row postRepeaterDiv">
+                                                    <div class="col-lg-6" *ngFor="let post of postList | paginate: config;">
+                                                        <div class="postsTnOnPost">
+                                                            <div class="featuredImg" [routerLink]="['/postForm/'] + post.post_id">
+                                                                <img src="{{baseUrlForImage}}{{post.image_url}}" alt="">
+                                                                <div class="pTitle">
+                                                                    {{post.title}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="postBottomData">
+                                                                <div class="uSerData">
+                                                                    <img src="assets/img/user.png">
+                                                                    <span class="uName">Saeed Khan</span>
+                                                                </div>
+                                                                <div class="rightPostData">
+                                                                     <button class="btn btn-default" (click)="likePost(post.post_id)">
+                                                                        <i class="far fa-heart"></i>
+                                                                        <span class="likeCount">520</span>
+                                                                    </button>
+                                                                    <button class="btn btn-default">
+                                                                        <i class="fas fa-comment"></i>
+                                                                        <span>512</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <!--      <button class="btn btn-primary btn-config" [routerLink]="['/postForm']">Add Post -->
+                                                            <!-- <div class="pId">{{post.post_id}}</div> -->
+                                                            <!-- <div class="updateBtn">
+                                                                <button class="btn btn-primary btn-config" [routerLink]="['/postForm/'] + post.post_id">
+                                                                    Update <i class="far fa-edit"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="DeleteBtn"> 
+                                                                <button class="btn btn-danger btn-config" (click)="staticModal.show(); setDeleteId(post.post_id)">
+                                                                    Delete <i class="far fa-trash-alt"></i>
+                                                                </button>
+                                                            </div> -->
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                 </div>
+                                <!-- <div class="col-lg-5 followWalaCol">
+                                    <div class="suggestionFor">
+                                        <h4>Suggestion For You</h4>
+                                        <span>See All</span>
+                                    </div>
+                                    <div class="followMain">
+                                        <div class="followBox">
+                                            <div class="followList">
+                                                <div class="followBoxLeft">
+                                                    <img src="assets/img/avatar.png">
+                                                    <div class="followBoxData">
+                                                        <p>Cathrin Mirable</p>
+                                                        <p>@Cath.rin</p>
+                                                    </div>
+                                                </div>
+                                                <div class="followButton">
+                                                    <button><span>Follow</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="followBox">
+                                            <div class="followList">
+                                                <div class="followBoxLeft">
+                                                    <img src="assets/img/avatar.png">
+                                                    <div class="followBoxData">
+                                                        <p>Cathrin Mirable</p>
+                                                        <p>@Cath.rin</p>
+                                                    </div>
+                                                </div>
+                                                <div class="followButton">
+                                                    <button><span>Follow</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="followBox">
+                                            <div class="followList">
+                                                <div class="followBoxLeft">
+                                                    <img src="assets/img/avatar.png">
+                                                    <div class="followBoxData">
+                                                        <p>Cathrin Mirable</p>
+                                                        <p>@Cath.rin</p>
+                                                    </div>
+                                                </div>
+                                                <div class="followButton">
+                                                    <button class="followed"><span>Followed</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="latestPostActivity">
+                                        <h4>Latest Post Activity</h4>
+                                        <img src="assets/img/latesAct.png">
+                                        <div class="actBot">
+                                            <h4>White Tower, NewYork</h4>
+                                            <div class="actRight">
+                                                <button class="btn btn-default">
+                                                    <i class="far fa-heart"></i>
+                                                    <span class="likeCount">520</span>
+                                                </button>
+                                                <button class="btn btn-default">
+                                                    <i class="fas fa-comment"></i>
+                                                    <span>512</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="allPost">
+                                        <button>See All Post</button>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div>
-                            <table class="table table-bordered table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No.</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col" style="width: 125px;">Update</th>
-                                        <th scope="col" style="width: 125px;">Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let post of postList | paginate: config;">
-                                        <th scope="row" style="padding-top: 50px;">{{post.post_id}}</th>
-                                        <th scope="row" style="padding-top: 50px; width: 70%;">{{post.title}}</th>
-                                        <th scope="row" style="width: 125px;"><img src="{{baseUrlForImage}}{{post.image_url}}" alt="" style="width: 100px; height: 100px; border-radius: 0px;"></th>
-                                        <td style="width: 125px; padding-top: 42px;"><button class="btn btn-primary btn-config" [routerLink]="['/postForm/'] + post.post_id">Update <i
-                                                    class="far fa-edit"></i></button></td>
-                                        <td style="width: 125px; padding-top: 42px;"><button class="btn btn-danger btn-config" (click)="staticModal.show(); setDeleteId(post.post_id)">Delete <i
-                                                    class="far fa-trash-alt"></i></button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p *ngIf="isRecord" class="mt-2">no records found.</p>
-                            <div class="float-right">
-                                <pagination-controls (pageChange)="pageChanged($event)" class="ngx-pagination-color"></pagination-controls>
+                        <div class="col-lg-3 px-3 mainRight">
+                            <div class="boxCommomn">
+                                <div class="recentActivity">
+                                    <!-- <h3>
+                                        Recent Activity 
+                                        <span>...</span>
+                                    </h3> -->
+                                    <img src="assets/img/recent oactivity1.jpg">
+                                </div>
+                            </div>
+                            <div class="boxCommomn">
+                                <div class="recentActivity">
+                                    <!-- <h3>
+                                        Recent Activity 
+                                        <span>...</span>
+                                    </h3> -->
+                                    <img src="assets/img/recent oactivity.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3"></div>
-            </div>
-        </section>
-    </main>
-</div>
-
-
-<!-- <button type="button" class="btn btn-primary" (click)="staticModal.show()">Delete Post</button> -->
-<style>
-
-</style>
-<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
-    <div class="modal-dialog modal-sm m-auto" style="padding: 10px 10px 0px 10px;">
-        <div class="modal-content" style="padding: 10px;">
-            <div class="modal-header">
-                <h4 id="dialog-static-name" class="modal-title pull-left">Delete Post</h4>
-                <button id="deleteModalOff" type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="p-2"> Are you sure you want to delete?</p>
-                <div class="text-right">
-                    <button class="btn btn-primary btn-config mr-2" (click)="deletePost()"> Yes</button>
-                    <button class="btn btn-danger btn-config" (click)="staticModal.hide()">No</button>
+                </section>
+            </main>
+        </div>
+        <!-- <button type="button" class="btn btn-primary" (click)="staticModal.show()">Delete Post</button> -->
+        <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+            <div class="modal-dialog modal-sm m-auto" style="padding: 10px 10px 0px 10px;">
+                <div class="modal-content" style="padding: 10px;">
+                    <div class="modal-header">
+                        <h4 id="dialog-static-name" class="modal-title pull-left">Delete Post</h4>
+                        <button id="deleteModalOff" type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="p-2"> Are you sure you want to delete?</p>
+                        <div class="text-right">
+                            <button class="btn btn-primary btn-config mr-2" (click)="deletePost()"> Yes</button>
+                            <button class="btn btn-danger btn-config" (click)="staticModal.hide()">No</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
     </div>
 </div>
-
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

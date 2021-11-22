@@ -1,717 +1,647 @@
+/*Common Start*/
 * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    padding: 0px;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     list-style: none;
 }
 
-#sidebar-toggle {
-    display: none;
+body {
+    background: #f3f2ff;
 }
 
-.sidebar {
-    height: 100%;
-    width: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background-color: #3db3f7;
-    transition: width 500ms;
-    overflow-y: auto;
-    border-radius: 0px 30px 30px 0px;
+button:focus{
+    outline: none;
 }
 
-.sidebar::-webkit-scrollbar {
-    display: none;
+main{
+    padding: 0 !important;
 }
-
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    padding: 0rem 1rem;
-    margin: 1rem 0rem;
+.mainRight {
+    padding-right: 0 !important;
 }
-
-.sidebar-menu {
-    padding: 0rem;
+div.mainRight > .boxCommomn {
+    padding-right: 0;
 }
-
-.sidebar li {
-    margin-bottom: 1.6rem;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.active2,
-.sidebar li:hover {
-    background-color: white;
-    border-radius: 0px;
-    color: black;
-    transition: 500ms;
-    border-radius: 30px 0 0 30px;
-    margin-left: 8px;
-}
-
-.sidebar li:hover a {
-    color: black;
-}
-
-.active2 a li span img,
-.sidebar li span img:hover {
-    filter: invert(56%) sepia(92%) saturate(659%) hue-rotate(173deg) brightness(97%) contrast(99%);
-}
-
-.sidebar li:hover .img-for-hover {
-    filter: invert(56%) sepia(92%) saturate(659%) hue-rotate(173deg) brightness(97%) contrast(99%);
-}
-
-img.img-for-hover {
-    width: 25px;
-    height: 25px;
-}
-
-.sidebar a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.active2 a,
-.sidebar li a:hover {
-    color: white;
-}
-
-.sidebar a span:last-child {
-    padding-left: 0.6rem;
-}
-
-#sidebar-toggle:checked~.sidebar {
-    width: 80px;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header,
-#sidebar-toggle:checked~.sidebar li span:last-child {
-    display: block;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header img {
-    width: 100%;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header,
-#sidebar-toggle:checked~.sidebar li {
-    display: flex;
-    justify-content: center;
-}
-
-#sidebar-toggle:checked~.sidebar>.bggreen {
-    display: none;
-}
-
-#sidebar-toggle:checked~.main-content {
-    margin-left: 80px;
-}
-
-#sidebar-toggle:checked~.main-content header {
-    left: 80px;
-    width: calc(100% - 80px)
-}
-
-.main-content {
+.mainSidebar {
+    width: 300px;
+    background: #393C41;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    padding: 50px 0px 60px 60px;
     position: relative;
-    margin-left: 80px;
-    transition: margin-left 500ms;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
 }
-
-header {
-    position: fixed;
-    top: 0;
-    left: 80px;
-    width: calc( 100% - 80px);
-    z-index: 100;
-    height: 70px;
-    padding: 0rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f1f1ff;
-    transition: left 500ms;
+.col-lg-9.mainCont {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 300px);
+    flex: 0 0 calc(100% - 300px);
+    max-width: calc(100% - 300px);
 }
-
-.searchwrapper {
-    display: flex;
-    align-items: center;
+div.mainCont {
+    padding: 50px 50px;
 }
-
-.social-icons {
-    display: flex;
-    align-items: center;
-}
-
-.uhaveamessage {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: red;
-    position: absolute;
-    top: 10px;
-}
-
-.member {
-    margin: 0px !important;
-}
-
-.social-icons span,
-.social-icons .image {
-    margin: 0 1.2rem;
-}
-
-.social-icons p {
-    margin: 0px;
-    margin-left: 1.2rem;
-}
-
-.social-icons .image {
-    height: 80px;
-    width: 80px;
+div.mainCont {
+    background-image: url(src/assets/img/mainBg.jpg);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../../../../assets/img/users/profile-img.png");
-    border-radius: 50%;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
 }
-
-
-/*.fa-bell:before,.fa-envelope:before ,.fa-flag:before {
-    background-color: #9cbf85;
-    color: #0A043C;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px;
-}*/
-
-.close-sidebar {
-    text-align: center;
-    color: white;
-    cursor: pointer;
-}
-
-.close-sidebar li {
-    text-align: center;
-    color: white;
-    cursor: pointer;
-}
-
-.close-sidebar label {
-    margin-bottom: 0px;
-}
-
-
-/* main {
-    margin-top: 70px;
-    background-color: #f3f2ff;
-    padding: 20px 30px;
-    min-height: 100vh;
-    overflow-x: hidden;
-} */
-
-.whitebg {
-    padding: 20px;
-    border-radius: 20px;
-    background: white;
-}
-
-
-/*Edited*/
-
-.dropdown button {
-    position: relative;
-    min-width: 250px;
-    width: auto;
-    height: 70px;
-    font-size: 18px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    cursor: pointer;
-    color: black;
-}
-
-.dropdown ul {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background: #ccc;
-    transform-origin: top;
-    transform: perspective(1000px) rotateX(-90deg);
-    transition: 0.5s;
-}
-
-.dropdown ul.dropdownactive2 {
-    transform: perspective(1000px) rotateX(0deg);
-}
-
-.dropdown ul li {
-    list-style: none;
-}
-
-.dropdown ul li a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    background: #3eb3f7;
-    color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
-    transition: 0.5s;
-}
-
-.dropdown ul li a:hover {
-    background: #1c1c32;
-    border-left: 3px solid #025faa;
-    border-right: 3px solid #025faa;
-}
-
-.twoicons a {
-    font-size: 20px;
-    color: black;
-}
-
-.reddot {
-    position: relative;
-}
-
-.reddot span {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: red;
-    margin: 0px;
-    top: 0;
-    right: -1px;
-    border-radius: 100%;
-}
-
-
-/*Main*/
-
-.breadcrumb {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding: 8px 1rem;
-    margin: 1rem;
-    list-style: none;
-    background-color: transparent;
-    border-radius: .25rem;
+.sports-tags.extra-class {
     align-items: center;
+    justify-content: center;
 }
-
-.breadcrumb-item a {
-    color: black;
-}
-
-.breadcrumb-item span {
-    color: #3e83bf;
-}
-
-
-/*New*/
-
-button.datedropbutton img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50px;
-    margin: 0px 6px;
-}
-
-.select-input {
-    position: relative;
-}
-
-.select-input i {
-    position: absolute;
-    left: 15px;
-    top: 20px;
-}
-
-.select-input input {
-    padding: 15px 40px;
-    border: 1px solid #f1f1ff;
-    border-radius: 4px;
-    width: 320px;
-}
-
-.fa-caret-down:before {
-    content: "\f0d7";
-    color: rgb(0 0 0 / 41%);
-}
-
-.time {
+.extra-class .imgTab {
+    background: #fff;
     width: auto;
-    background: white;
-    padding: 15px 30px;
-    border-radius: 10px;
-}
-
-.time h5 {
-    margin: 0;
-}
-
-.time span {
-    color: #b7bcc5;
-}
-
-.heading span {
-    color: #b7bcc5;
-    font-weight: 200;
-}
-
-.teammates img {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
-}
-
-.teammates {
-    height: 50px;
-    width: 100%;
-    overflow-y: auto;
-}
-
-.teammates::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-}
-
-.teammates-div,
-.leaders-div {
-    padding: 30px 0;
-}
-
-.sports-tags p {
     display: inline-block;
-    padding: 10px 15px;
-    background: #d5d5f7;
-    margin: 4px;
-    border-radius: 30px;
-    cursor: pointer;
-    min-width: 100px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+}
+.extra-class .imgTab img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 44px;
+}
+.extra-class .imgTab + span {
+    display: inline-block;
+}
+.sports-tags.extra-class .col-lg-3 > div {
+    width: 70px;
     text-align: center;
-    font-weight: 500;
 }
-
-.sports-tags p:hover {
-    background: #3db3f7;
-    color: white;
-    transition: 0.5s all;
+.sports-tags.extra-class .col-lg-3:nth-child(2) > div,.sports-tags.extra-class .col-lg-3:nth-child(3) > div {
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    color: #3eb3f7;
-    background-color: transparent;
-    border-bottom: 3px solid #3eb3f7;
-    border-radius: 0;
+.sports-tags.extra-class .col-lg-3:nth-child(4) > div {
+    margin-left: auto;
 }
-
-.nav-link {
-    color: #c3c7d1;
-}
-
-.tabs-side {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #d5d5f7;
-}
-
-.settings-pref ul {
-    display: flex;
-}
-
-
-/*Post*/
-
-.post-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #80808036;
-    padding: 30px 50px;
-}
-
-.profile-img-text {
-    display: flex;
-}
-
-.profile-img-text-2 p {
-    margin: 0;
-}
-
-.profile-img-text img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    margin: 15px;
-}
-
-.profile-img-text-2 {
-    margin: auto;
-}
-
-.profile-head-button {
-    margin: auto 0px;
-}
-
-.profile-head-button button {
-    padding: 10px 20px;
-    background: #d8f0fd;
-    border: none;
-    color: #3eb3f7;
-    font-weight: 600;
+.boxCommomn {
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px !important;
     border-radius: 10px;
 }
-
-.post {
-    background: white;
-    border-radius: 20px;
-}
-
-.post-image img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 50px;
-}
-
-.post-image {
-    padding: 40px 50px;
-}
-
-a:hover {
-    color: #3eb3f7;
-    text-decoration: underline;
-}
-
-.for-post-padding {
-    padding: 0px 50px 50px 50px;
-}
-
-.post-tips {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
-}
-
-.post-comments {
-    justify-content: space-between;
-    display: flex;
-    margin: 5px 0px;
-    color: #b7bcc5;
-}
-
-.post-a-comment {}
-
-.comment-box {
-    display: flex;
-}
-
-.comment-box img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50px;
-    margin: auto 10px;
-}
-
-.input-comment {
-    margin: auto 0;
+.PostWaliRow {
+    max-height: 700px;
+    margin-top: 10px;
+    overflow-y:scroll;
     position: relative;
+    padding-bottom: 250px;
+}
+.PostWaliRow::-webkit-scrollbar-track,
+.midBox::-webkit-scrollbar-track,
+.mainRight::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+    border-radius: 10px;
+    background-color: #f5f5f500;
+}
+.PostWaliRow::-webkit-scrollbar,
+.midBox::-webkit-scrollbar,
+.mainRight::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: transparent;
+}
+.PostWaliRow::-webkit-scrollbar-thumb,
+.midBox::-webkit-scrollbar-thumb,
+.mainRight::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+    background-color: transparent;
+}
+.PostWaliRow > .col-lg-12 {
+    padding-right: 0;
+    border-radius: 10px;
+}
+.boxCommomn h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.recentActivity img {
     width: 100%;
 }
-
-.input-comment input {
-    width: 100%;
-    padding: 10px 50px 10px 10px;
-    border: 1px solid #f1f2f4;
-    border-radius: 13px;
+.mainRight {
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 150px;
 }
-
-.input-comment i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #d5d5f7;
-}
-
-.views-likes {
-    display: flex;
-}
-
-.views-likes p {
-    margin: 0px 10px;
-    margin-bottom: 0;
-}
-
-.comments p {
-    margin-bottom: 5px;
-}
-
-.icon-not i {
-    padding: 17px;
-    border-radius: 50px;
-    border: 1px solid;
-    margin: 3px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    color: #b7bcc5;
-}
-
-.tips p {
-    margin: auto;
-    color: #b7bcc5;
-}
-
-.tips {
-    margin: auto 0px;
-}
-
-.icon-not img {
-    margin-left: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.team-1,
-.team-2 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.team-name p,
-.team-score p {
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.match {
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0px 25px;
-}
-
-.col-lg-mine {
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
-}
-
-.view-all {
-    width: 70%;
-    margin: auto;
-}
-
-.view-all button {
-    width: 100%;
-    padding: 12px 12px;
-    border: none;
-    background: white;
-    color: #3eb3f7;
-    border-radius: 30px;
-    transition: 0.5s all;
-}
-
-.view-all button:hover,
-.profile-head-button button:hover {
-    background: #3eb3f7;
-    color: white;
-    transition: 0.5s all;
-}
-
-.form-side h3 {
-    font-size: 22px;
-    line-height: 36px;
-    padding: 20px 0px;
-    font-weight: 600;
-}
-
-.forms-input-email label,
-.forms-input-password label {
+.tab-content>.tab-pane{
     display: block;
-    margin-bottom: 1px;
 }
+/*Common End*/
 
-.forms-input-email,
-.forms-input-password {
-    padding: 20px 0;
-}
-
-.forms-input-email input,
-.forms-input-password input {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid rgb(0, 0, 0, 0.2);
-    padding: 12px 0px 5px 10px;
-}
-
-
-/* .sign-in button {
-    background: black;
-    color: white;
-} */
-
-.btn-mm {
-    width: 100%;
-    padding: 10px 0px;
-    margin: 6px 0;
-    border: none;
-    font-weight: 600;
-    border-radius: 4px;
-    background: #3db3f7;
-    transition: 0.5s all;
-    color: white;
-    -webkit-transition: background 0.5s linear;
-    -moz-transition: background 0.5s linear;
-    -o-transition: background 0.5s linear;
-    transition: background 0.5s linear;
-}
-
-.btn-config {
-    width: 100px;
-    height: 40px;
-}
-
-.table thead th {
-    min-width: 110px;
-}
-
-.add-post {
+/*Self PageStart*/
+ul.maintab {
+    padding-left: 0;
     text-align: right;
 }
+ul.maintab li,.inTab li {
+    font-weight: normal;
+    color: #000000;
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 13px;
+    cursor: pointer;
+}
+ul.maintab li.activeTab,.inTab li.activeTab{
+    color:#1DAAA6;
+}
+.postData h3 {
+    font-size: 21px;
+    color: #000000;
+    font-weight: normal;
+}
+ul.inTab {
+    padding: 0;
+    text-align: right;
+}
+ul.maintab li:first-child, .inTab li:first-child {
+    margin-left: 0;
+}
+.postsTnOnPost .featuredImg {
+    border: 4px solid #1DAAA6;
+    border-radius: 10px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.postsTnOnPost {
+    margin-bottom: 30px;
+}
+.featuredImg {
+    margin-bottom: 15px;
+}
+.postsTnOnPost .featuredImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.pTitle {
+    position: absolute;
+    background: rgba(255,255,255,.8);
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    border-radius: 2px;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    left: -100%;
+    transition: all .3s linear 0s;
+    cursor: pointer;
+}
+.postsTnOnPost .featuredImg:hover .pTitle {
+    left: 0;
+}
+.uSerData img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.uSerData span.uName {
+    margin-left: 8px;
+    font-weight: 400;
+    color: #415365;
+    font-size: 13px;
+}
+.postBottomData {
+    display: flex;
+}
+.rightPostData button {
+    font-size: 12px;
+    color: #545454;
+}
+.rightPostData button i {
+    margin-right: 4px;
+}
+.postData {
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 30vh;
+}
+.postData::-webkit-scrollbar-track,
+.followWalaCol::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+    border-radius: 10px;
+    background-color: #f5f5f500;
+}
+.postData::-webkit-scrollbar,
+.followWalaCol::-webkit-scrollbar{
+    width: 12px;
+    background-color: transparent;
+}
+.postData::-webkit-scrollbar-thumb,
+.followWalaCol::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+    background-color: transparent;
+}
+.rightPostData button {
+    padding: 0;
+    padding-left: 13px;
+}
+.followWalaCol h4 {
+    font-size: 1em;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0;
+}
+.suggestionFor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.suggestionFor span {
+    margin-left: auto;
+}
+.followList {
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    flex-flow: row;
+    align-items: center;
+}
+.followBoxLeft {
+    flex: 0 0 75%;
+    display: flex;
+    align-items: center;
+}
+.followBoxLeft img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.followBoxData p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.followButton {
+    margin-left: auto;
+}
+.followBox {
+    margin-bottom: 20px;
+}
+.followButton button {
+    background: #fff;
+    border: 1px solid #fff;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    min-width: 90px;
+    position: relative;
+    color: #000000;
+    overflow: hidden;
+    transition: all .3s linear 0s;
+}
+.followBoxData p {
+    font-size: .8em;
+    font-weight: 400;
+    color: #000;
+}
+.followButton button:before {content: '';position: absolute;left: -100%;top: 0;width: 100%;height: 100%;background: #1DAAA6;border-radius: 5px;transition: all .3s linear 0s;}
+.followButton button:hover {
+    background: #1DAAA6;
+    border-color: #1DAAA6;
+    color: #fff;
+}
+.followButton button:hover:before {
+    left: 0;
+}
+.followButton button span {
+    position: relative;
+}
+.followButton button.followed {
+    background: #1daaa6;
+    border: #1daaa6;
+    color: #fff;
+}
+.latestPostActivity {
+    padding-top: 30px;
+}
+.latestPostActivity h4 {
+    margin-bottom: 15px;
+}
+.actBot {
+    margin-top: 10px;
+    display: flex;
+}
+.actRight {
+    margin-left: auto;
+}
+.latestPostActivity > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.actRight button {
+    padding: 0;
+    margin-left: 20px;
+}
+.actRight button i {
+    margin-right: 8px;
+}
+.allPost {
+    margin-top: 30px;
+    text-align: center;
+}
+.allPost button {
+    background: transparent;
+    color: #1daaa6;
+    border: 0;
+    padding: 0;
+    font-weight: 700;
+}
+.followWalaCol {
+    height: 100vh;
+    overflow: auto;
+    padding-bottom:50vh;
+}
+/*Self Page End*/
 
-@media only screen and (max-width: 768px) {
-    .select-input input {
-        width: 200px;
+/*992 to 1200*/
+@media(min-width:992px ) and (max-width: 1200px){
+    /*Common Css Start*/
+    .mainSidebar { 
+        width: 250px;
+        max-width: 250px;
+        padding: 30px 0px 40px 50px;
     }
+    .col-lg-9.mainCont {
+        flex: 0 0 calc(100% - 250px);
+        max-width: calc(100% - 250px);
+        padding: 30px 30px;
+    }
+    .extra-class .imgTab {
+        width: 40px;
+        height: 40px;
+    }
+    .extra-class .imgTab img {
+        max-width: 24px;
+    }
+    .sports-tags.extra-class .col-lg-3 > div {
+        width: 40px;
+        font-size: .6rem;
+    }
+    .mainRight {
+        padding-right: 0 !important;
+    }
+
+    .boxCommomn {
+        margin-bottom: 15px !important;
+    }
+    /*Common Css End*/
+    /*Self Start*/
+    ul.maintab li, .inTab li {
+        font-size: 9px;
+        margin-left: 12px;
+    }
+    main {
+        margin-top: 30px !important;
+    }
+    .postData h3 {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .postsTnOnPost .featuredImg {
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .uSerData img {
+        width: 16px;
+        height: 16px;
+    }
+    .uSerData span.uName {
+        margin-left: 5px;
+        font-size: 9px;
+        line-height: 1;
+    }
+    .rightPostData button {
+        padding-left: 7px;
+        font-size: 8px;
+    }
+    .rightPostData button:first-child {
+        padding-left: 0;
+    }
+    .postRepeaterDiv .col-lg-6:nth-child(odd) {
+        padding-right: 8px;
+    }
+    .postRepeaterDiv .col-lg-6:nth-child(even) {
+        padding-left: 8px;
+    }
+    .rightPostData {
+        margin-left: auto;
+    }
+    .followWalaCol h4 {
+        font-size: .7em;
+    }
+    .suggestionFor span {
+        font-size: .7em;
+    }
+    .followBoxLeft img {
+        width: 35px;
+        height: 35px;
+        margin-right: 7px;
+    }
+    .followBoxData p {
+        font-size: .5em;
+    }
+    .followButton button {
+        padding: 7px 4px;
+        min-width: 60px;
+        font-size: 10px;
+    }
+    .latestPostActivity {
+        padding-top: 10px;
+    }
+    .latestPostActivity > img {
+        height: 120px;
+        object-fit: cover;
+    }
+    .actRight {
+        margin-left: 0;
+        width: 50%;
+        text-align: right;
+    }
+    .actRight button {
+        margin-left: 10px;
+        display: inline-block;
+        font-size: 10px;
+    }
+    .allPost {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    .followWalaCol {
+        padding-bottom: 30vh;
+    }
+    .pTitle {
+        font-size: 7px;
+        padding: 8px;
+    }
+    /*Self End*/
+    
+}
+/*1201 to 1440*/
+@media(min-width:1201px ) and (max-width: 1440px){
+    /*Common Css Start*/
+    .mainSidebar {
+        width: 270px;
+        max-width: 250px;
+        padding: 30px 0px 40px 50px;
+    }
+    .col-lg-9.mainCont {
+        flex: 0 0 calc(100% - 270px);
+        max-width: calc(100% - 270px);
+        padding: 30px 30px;
+    }
+    .extra-class .imgTab {
+        width: 50px;
+        height: 50px;
+    }
+    .extra-class .imgTab img {
+        max-width: 24px;
+    }
+    .sports-tags.extra-class .col-lg-3 > div {
+        width: 50px;
+        font-size: .8rem;
+    }
+    .mainRight {
+        padding-right: 0 !important;
+    }
+    .boxCommomn {
+        margin-bottom: 20px !important;
+    }
+    /*Common Css End*/
+    /*Self Start*/
+    ul.maintab li, .inTab li {
+        font-size: 11px;
+        margin-left: 14px;
+    }
+    main {
+        margin-top: 40px !important;
+    }
+    .postData h3 {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .postsTnOnPost .featuredImg {
+        height: 130px;
+        margin-bottom: 12px;
+    }
+    .uSerData img {
+        width: 20px;
+        height: 20px;
+    }
+    .uSerData span.uName {
+        margin-left: 7px;
+        font-size: 11px;
+        line-height: 1;
+    }
+    .rightPostData button {
+        padding-left: 10px;
+        font-size: 10px;
+    }
+    .rightPostData button:first-child {
+        padding-left: 0;
+    }
+    .postRepeaterDiv .col-lg-6:nth-child(odd) {
+        padding-right: 10px;
+    }
+    .postRepeaterDiv .col-lg-6:nth-child(even) {
+        padding-left: 10px;
+    }
+    .rightPostData {
+        margin-left: auto;
+    }
+    .followWalaCol h4 {
+        font-size: .9em;
+    }
+    .suggestionFor span {
+        font-size: .9em;
+    }
+    .followBoxLeft img {
+        width: 40px;
+        height: 40px;
+        margin-right: 9px;
+    }
+    .followBoxData p {
+        font-size: .7em;
+    }
+    .followButton button {
+        padding: 9px 8px;
+        min-width: 80px;
+        font-size: 12px;
+    }
+    .latestPostActivity {
+        padding-top: 12px;
+    }
+    .latestPostActivity > img {
+        height: 150px;
+        object-fit: cover;
+    }
+    .actRight {
+        margin-left: 0;
+        width: 50%;
+        text-align: right;
+    }
+    .actRight button {
+        margin-left: 13px;
+        display: inline-block;
+        font-size: 12px;
+    }
+    .allPost {
+        margin-top: 24px;
+        font-size: 14px;
+    }
+    .followWalaCol {
+        padding-bottom: 40vh;
+    }
+    .pTitle {
+        font-size: 9px;
+        padding: 10px;
+    }
+    /*Self End*/
 }
 
-@media only screen and (max-width: 767px) {
-    .add-post button {
-        text-align: center;
-        width: 100%;
-        margin: 10px 0;
+@media(min-width:1441px ) and (max-width: 1620px){
+    /*Common Css Start*/
+    .sports-tags.extra-class .col-lg-3 > div {
+        width: 65px;
     }
+    .extra-class .imgTab {
+        width: 65px;
+        height: 65px;
+    }
+    .extra-class .imgTab img {
+        max-width: 38px;
+    }
+    .extra-class .imgTab + span {
+        font-size: 1rem;
+    }
+    /*Common Css End*/
+    /*Self Start*/
+    
+    /*Self End*/
 }
-
-@media only screen and (max-width: 375px) {}
-
-@media only screen and (max-width: 320px) {}

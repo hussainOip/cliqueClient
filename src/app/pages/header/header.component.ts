@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ApiService } from '../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -31,7 +32,7 @@ export class HeaderComponent implements OnInit {
   
   getUserName(){
     var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
-    return user.first_name +' '+ user.last_name+' '+'profile';
+    return user.first_name+' profile';
   }
 
   timeDifference(previous) {

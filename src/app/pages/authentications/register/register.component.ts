@@ -24,8 +24,17 @@ export class RegisterComponent implements OnInit {
   }
 
   signUp() {
-    console.log(this.userInfo);
-    if (this.apiService.isEmpty(this.userInfo.password)) return this.notificationsService.error('Error!', 'Enter your password');
+
+    if (this.apiService.isEmpty(this.userInfo.name)) return this.notificationsService.error('Error!', 'Please enter your name');
+    if (this.apiService.isEmpty(this.userInfo.email)) return this.notificationsService.error('Error!', 'Please enter your email');
+    if (!this.apiService.validateEmail(this.userInfo.email)) return this.notificationsService.error('Error!', 'Invalid email');
+
+    if (this.apiService.isEmpty(this.userInfo.address)) return this.notificationsService.error('Error!', 'Please enter your address');
+    if (this.apiService.isEmpty(this.userInfo.city)) return this.notificationsService.error('Error!', 'Please select your city');
+    if (this.apiService.isEmpty(this.userInfo.leader)) return this.notificationsService.error('Error!', 'Please select your leader');
+    if (this.apiService.isEmpty(this.userInfo.favourite_team)) return this.notificationsService.error('Error!', 'Please select your favourite team');
+    if (this.apiService.isEmpty(this.userInfo.favourite_player)) return this.notificationsService.error('Error!', 'Please select your favourite player'); 
+    if (this.apiService.isEmpty(this.userInfo.password)) return this.notificationsService.error('Error!', 'Enter your password');   
     if (this.apiService.isEmpty(this.userInfo.rePassword)) return this.notificationsService.error('Error!', 'Enter your confirm password');
     if (this.userInfo.password == this.userInfo.rePassword) {
     if(this.mobileNumber.length > 16) return this.notificationsService.error('Error!', 'Phone number length should be under 15 digits');
@@ -54,6 +63,8 @@ export class RegisterComponent implements OnInit {
       })
     });
   }
+
+  
 
   signOut(): void {
     this.authService.signOut();
