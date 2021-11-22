@@ -14,17 +14,19 @@
 
 export const environment = {
   production: false,
-  baseUrl:"http://localhost:5000/api",
-  baseUrlForImage:"http://localhost:5000/",
-  baseUrlForSocket:"localhost:5000/"
+  baseUrl:"https://click-server105.herokuapp.com/api",
+  baseUrlForImage:"https://click-server105.herokuapp.com/",
+  baseUrlForSocket:"//click-server105.herokuapp.com/"
 };
 
 
 
 // production: false,
-// baseUrl:"https://click-server105.herokuapp.com/api",
-// baseUrlForImage:"https://click-server105.herokuapp.com/",
-// baseUrlForSocket:"//click-server105.herokuapp.com/"
+// baseUrl:"http://localhost:5000/api",
+// baseUrlForImage:"http://localhost:5000/",
+// baseUrlForSocket:"localhost:5000/"
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
