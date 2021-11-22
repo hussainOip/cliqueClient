@@ -6,7 +6,6 @@ import { ApiService } from '../services/api.service';
 
 
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -17,6 +16,7 @@ export class ProfileComponent implements OnInit {
   matesLeaderData: any = {};
   imageUrl = environment.baseUrlForImage;
   constructor(public apiService: ApiService, public notificationsService: NotificationsService, public router: Router) { }
+ 
   userInfo: any = {};
   files: File[] = [];
   isShowImage = false;

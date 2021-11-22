@@ -11,6 +11,9 @@ import { GoogleLoginProvider } from "angularx-social-login";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
+  matesLeaderData: any = {};
+  loading = false;
   userInfo: any = {};
   isFormShow = false;
   isCodeBox = false;
@@ -89,4 +92,20 @@ export class RegisterComponent implements OnInit {
       })
     } else this.notificationsService.error('Please enter otp code.');
   }
+
+  
+getMatesAndLeaders() {
+  this.loading = true;
+  this.apiService.getRandomTeamMates().subscribe((res: any) => {
+
+    console.log("res",res);
+    this.loading = false;
+    this.matesLeaderData = res.data;
+  })
 }
+
+}
+
+
+
+  

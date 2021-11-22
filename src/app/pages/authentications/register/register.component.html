@@ -40,41 +40,28 @@
 
                     <div class="forms-input-email frmGroup">
                         <label>Address</label>
-                        <input type="text" name="address"  [(ngModel)]="userInfo.address"  placeholder="Lorem">
+                        <input type="text" name="address"  [(ngModel)]="userInfo.address"  placeholder="">
                     </div>
 
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
                         <label>State / City</label>
-                        <select  [(ngModel)]="userInfo.city" name="city">
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                        </select>
+                        <input type="text" name="city"  [(ngModel)]="userInfo.city" placeholder="California">
                     </div>
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
                         <label>Leader/Client</label>
-                        <select  [(ngModel)]="userInfo.leader" name="leader" >
-                            <option>X</option>
-                            <option>Y</option>
-                            <option>Z</option>
-                        </select>
+                        <select [(ngModel)]="userInfo.leader"   name="leader" >
+                            <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData.leaders"  >{{leader.first_name}}</option>
+                         </select>
                     </div>
+                    
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
                         <label>Favourite Team</label>
-                        <select  [(ngModel)]="userInfo.favourite_team" name="favourite_team" >
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                        <input type="text" name="favourite_team"  [(ngModel)]="userInfo.favourite_team" placeholder="Favourite Team">
                     </div>
 
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
                         <label>Favourite Player</label>
-                        <select [(ngModel)]="userInfo.favourite_player" name="favourite_player" >
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                        </select>
+                        <input type="text" name="favourite_player"  [(ngModel)]="userInfo.favourite_player" placeholder="Favourite Player">
                     </div>
 
                     <div class="forms-input-email frmGroup">

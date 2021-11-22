@@ -35,7 +35,7 @@ body {
     border-radius: 0.303vw;
     padding: 0.606vw 1.818vw;
     margin-top: 1.818vw;
-    letter-spacing: .0.303vw;
+    letter-spacing: 0 !important;
     transition: all .3s linear 0s;
     font-weight: 500;
     font-size: 1vw;
