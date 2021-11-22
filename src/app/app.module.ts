@@ -96,7 +96,7 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-                allowedDomains: ['localhost:5000', 'http://localhost:5000', 'webprojectmockup.com', 'https://ectmockup.com:9447', 'webprojectmockup.com:9447','https://click-server105.herokuapp.com','click-server105.herokuapp.com'],
+                allowedDomains: ['localhost:5000', 'http://localhost:5000', 'webprojectmockup.com', 'https://ectmockup.com:9447', 'webprojectmockup.com:9447','https://click-server105.herokuapp.com','click-server105.herokuapp.com','cliquesports.co','www.cliquesports.co'],
         authScheme: '',
       },
     }),
