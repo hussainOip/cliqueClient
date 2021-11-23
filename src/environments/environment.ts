@@ -13,14 +13,18 @@
 
 
 export const environment = {
-  production: false,
-  baseUrl:"https://click-server105.herokuapp.com/api",
-  baseUrlForImage:"https://click-server105.herokuapp.com/",
-  baseUrlForSocket:"//click-server105.herokuapp.com/"
+production: false,
+baseUrl:"https://click-server105.herokuapp.com/api",
+baseUrlForImage:"https://click-server105.herokuapp.com/",
+baseUrlForSocket:"//click-server105.herokuapp.com/"
 };
 
 
 
+// production: false,
+// baseUrl:"https://click-server105.herokuapp.com/api",
+// baseUrlForImage:"https://click-server105.herokuapp.com/",
+// baseUrlForSocket:"//click-server105.herokuapp.com/"
 
 
 

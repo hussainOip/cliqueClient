@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    document.getElementById("showBoard").classList.remove('d-block');
+    // document.getElementById("showBoard").classList.remove('d-block');
    // document.getElementById("showBoard").classList.add('d-none');
    
    //document.getElementById("showBoard").classList.add('d-block');
@@ -171,6 +171,8 @@ export class DashboardComponent implements OnInit {
     this.apiService.getRandomTeamMates().subscribe((res: any) => {
       this.loading = false;
       this.matesLeaderData = res.data;
+
+      console.log("res.data",res.data);
     })
   }
 
