@@ -146,8 +146,7 @@ export class ApiService {
   
   getRandomTeamMates() {
     return this.http.post(this.baseUrl + '/social/getRandomTeamMates', {});
-  }
-  
+  }  
   getAllUsersBySuperAdmin() {
     return this.http.post(this.baseUrl + '/user/getAllUserForAdmin', {});
   }
@@ -178,6 +177,9 @@ export class ApiService {
     })});
   }
 
+  getLead() {
+    return this.http.get(this.baseUrl + '/social/getLead', {});
+  }
   
 
 }

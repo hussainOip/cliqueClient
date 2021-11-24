@@ -22,8 +22,10 @@ export class RegisterComponent implements OnInit {
   constructor( public apiService: ApiService, public notificationsService: NotificationsService, public router: Router, public authService: SocialAuthService ) { }
 
   ngOnInit(): void {
-    document.getElementById("showBoard").classList.remove('d-block');
-    document.getElementById("showBoard").classList.add('d-none');
+
+    
+    this.getMatesAndLeaders();
+    
   }
 
   signUp() {
@@ -96,9 +98,7 @@ export class RegisterComponent implements OnInit {
   
 getMatesAndLeaders() {
   this.loading = true;
-  this.apiService.getRandomTeamMates().subscribe((res: any) => {
-
-    console.log("res",res);
+  this.apiService.getLead().subscribe((res: any) => {
     this.loading = false;
     this.matesLeaderData = res.data;
   })

@@ -43,20 +43,27 @@
                                                             </div>
                                                             <div class="postBottomData">
                                                                 <div class="uSerData">
-                                                                    <img src="assets/img/user.png">
-                                                                    <span class="uName">Saeed Khan</span>
+                                                                    <img src="{{baseUrlForImage}}{{post.user_image}}">
+                                                                    <span class="uName"> {{post.first_name}}</span>
                                                                 </div>
                                                                 <div class="rightPostData">
                                                                      <button class="btn btn-default" (click)="likePost(post.post_id)">
                                                                         <i class="far fa-heart"></i>
-                                                                        <span class="likeCount">520</span>
+                                                                        <span class="likeCount">{{post.total_likes}}</span>
                                                                     </button>
                                                                     <button class="btn btn-default">
                                                                         <i class="fas fa-comment"></i>
-                                                                        <span>512</span>
+                                                                        <span>{{post.comments.length}}</span>
                                                                     </button>
+
+                                                                    <button class="btn btn-default" (click)="staticModal.show(); setDeleteId(post.post_id)">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                    
+
                                                                 </div>
                                                             </div>
+
                                                             <!--      <button class="btn btn-primary btn-config" [routerLink]="['/postForm']">Add Post -->
                                                             <!-- <div class="pId">{{post.post_id}}</div> -->
                                                             <!-- <div class="updateBtn">

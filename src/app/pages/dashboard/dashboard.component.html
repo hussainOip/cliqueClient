@@ -55,7 +55,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                     <div class="row animate__animated animate__fadeIn PostWaliRow" *ngIf="isShowPost">
                                         <div class="col-lg-12">
                                             <div class="post my-3 boxCommomn" *ngFor="let post of postData">
@@ -63,7 +63,7 @@
                                                     <div class="profile-img-text">
                                                         <img src="{{setImageForPost(post.user_image)}}">
                                                         <div class="profile-img-text-2">
-                                                            <p>{{post.first_name}} {{post.last_name}}</p>
+                                                            <p>{{post.first_name}} </p>
                                                             <!-- <span>{{timeDifference(post.created_at)}}</span> -->
                                                             <span style="font-size: 10px; color: gray;">{{post.created_at|
                                                                 dateAgo}}</span>
@@ -137,7 +137,7 @@
                                                                     <img src="{{setImageForPost(comment.user_image)}}">
                                                                     <div class="input-comment">
                                                                         <p>
-                                                                            <strong>{{comment.first_name}} {{comment.last_name}}:</strong> {{comment.comment}}
+                                                                            <strong>{{comment.first_name}}:</strong> {{comment.comment}}
                                                                         </p>
                                                                         <p style="font-size: 10px; color: gray;">
                                                                             {{comment.created_at| dateAgo}}
@@ -204,11 +204,11 @@
                         <div class="col-lg-3 px-3 mainRight">
                             <div class="boxCommomn">
                                 <div class="recentActivity">
-                                    <!-- <h3>
-                                        Recent Activity 
-                                        <span>...</span>
-                                    </h3> -->
-                                    <img src="assets/img/recent oactivity1.jpg">
+                                     <h6>
+                                        <b>Recent Activity </b> 
+                                    </h6>
+                                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FClique-102385928950199&tabs=timeline&width=300&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="300" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                    <!-- <img src="assets/img/recent oactivity1.jpg"> -->
                                 </div>
                             </div>
                             <div class="boxCommomn">
@@ -217,7 +217,9 @@
                                         Recent Activity 
                                         <span>...</span>
                                     </h3> -->
-                                    <img src="assets/img/recent oactivity.jpg">
+                                    <!-- <img src="assets/img/recent oactivity.jpg"> -->
+                                    <a class="twitter-timeline" href="https://twitter.com/Muhamma57504077?ref_src=twsrc%5Etfw">Tweets by Muhamma57504077</a> 
+
                                 </div>
                             </div>
                         </div>

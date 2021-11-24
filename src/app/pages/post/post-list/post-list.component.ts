@@ -15,6 +15,11 @@ export class PostListComponent implements OnInit {
   config: any;
   isRecord = false;
   loading = false;
+  offset = 0;
+  page = 1;
+  totalPostCount = 0;
+  limit = 10;
+
   constructor( public apiService: ApiService, public notificationsService: NotificationsService) {
    }
 
@@ -49,7 +54,11 @@ export class PostListComponent implements OnInit {
 
   getPostList(){
     this.loading = true;
-    this.apiService.getPostList().subscribe((res: any)=>{
+
+
+    
+    this.apiService.getAllPost({ offset: this.offset }).subscribe((res: any) => {
+    // this.apiService.getPostList().subscribe((res: any)=>{
       this.loading = false;
       this.postList = res.data;
 

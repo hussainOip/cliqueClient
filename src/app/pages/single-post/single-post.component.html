@@ -13,7 +13,7 @@
                             <div class="profile-img-text">
                                 <img src="{{setImageForPost(post.user_image)}}">
                                 <div class="profile-img-text-2">
-                                    <p>{{post.first_name}} {{post.last_name}}</p>
+                                    <p>{{post.first_name}}</p>
                                     <span style="font-size: 10px; color: gray;">{{post.created_at| dateAgo}}</span>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                             <img src="{{setImageForPost(comment.user_image)}}">
                                             <div class="input-comment">
                                                 <p>
-                                                    <strong>{{comment.first_name}} {{comment.last_name}}: </strong>
+                                                    <strong>{{comment.first_name}}: </strong>
                                                     {{comment.comment}}
                                                 </p>
                                                 <p style="font-size: 10px; color: gray;">{{comment.created_at| dateAgo}}</p>

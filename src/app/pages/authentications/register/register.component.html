@@ -50,7 +50,7 @@
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
                         <label>Leader/Client</label>
                         <select [(ngModel)]="userInfo.leader"   name="leader" >
-                            <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData.leaders"  >{{leader.first_name}}</option>
+                            <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData"  >{{leader.first_name}}</option>
                          </select>
                     </div>
                     
@@ -81,7 +81,7 @@
                             <span>I accept the Terms and Conditions</span>
                         </label>
 
-                        <a [routerLink]="['/Login']">Already Account ?</a>
+                        <a  [routerLink]="['/login']">Already Account ?</a>
                     </div>
                     <div class="btn-m sign-in frmGroup">
                         <button (click)="signUp()">Sign Up</button>
