@@ -10,12 +10,12 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   homeTab: boolean = true;
   profileTab: boolean = false;
   today;
   postData: any = [];
   matesLeaderData: any = {};
+  groups: any = {};
   postIds = [];
   imageUrl = environment.baseUrlForImage;
   loading = false;
@@ -27,20 +27,23 @@ export class DashboardComponent implements OnInit {
   allGames: any = [];
   partialGames: any = [];
   constructor(public apiService: ApiService, public notificationsService: NotificationsService, public router: Router) {
+   
+    this.loadTwitter();
+   
+   
     setInterval(() => {
       this.today = new Date()
     }, 1000);
   }
 
   ngOnInit(): void {
-    // document.getElementById("showBoard").classList.remove('d-block');
-   // document.getElementById("showBoard").classList.add('d-none');
-   
-   //document.getElementById("showBoard").classList.add('d-block');
 
     this.getAllPsot();
     this.getMatesAndLeaders();
-     this.sports();
+    this.sports();
+    
+    this.getGroupsWithMembers();
+
   }
 
   setHomeTab() {
@@ -257,4 +260,30 @@ export class DashboardComponent implements OnInit {
       'left=450,top=200,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0'
     );
   }
+
+
+
+  
+  getGroupsWithMembers() {
+    this.loading = true;
+    this.apiService.getGroupsWithMembers().subscribe((res: any) => {
+      this.loading = false;
+      this.groups = res.data;
+
+      console.log("getGroupsWithMembers",res.data);
+    })
+  }
+
+
+
+  async loadTwitter ()  {     
+
+        var s = window.document.createElement("script");
+        s.id = "twitter-script";
+        s.charset = "utf-8";
+        s.src = "https://platform.twitter.com/widgets.js";
+        window.document.body.appendChild(s);
+  }
+
+
 }

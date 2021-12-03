@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -173,13 +174,73 @@ export class ApiService {
     {
     responseType: 'json',
     headers: new HttpHeaders({
-      title: id
+      userId: id
     })});
   }
 
   getLead() {
     return this.http.get(this.baseUrl + '/social/getLead', {});
   }
+
+  getAllGroups() {
+    return this.http.post(this.baseUrl + '/user/getAllGroups', {});
+  }
+
   
+  
+  // sendPost
+
+  createGroup(body, formData) {
+    var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
+    formData.append('title', body.title);
+    return this.http.post(this.baseUrl + '/social/createGroup', formData, {
+      reportProgress: true,
+      responseType: 'json',
+      headers: new HttpHeaders({
+        title: body.title,
+        token: user.token
+      })
+    });
+  }
+
+  updateGroupById(data) {
+    return this.http.post(this.baseUrl + '/user/updateGroup', data);
+  }
+  
+  getGroupById(data) {
+    return this.http.post(this.baseUrl + '/social/getGroupById', data);
+  }
+  
+  
+  updateGroup(body, formData) {
+    
+    var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
+    return this.http.post(this.baseUrl + '/social/updateGroup', formData, {
+      reportProgress: true,
+      responseType: 'json',
+      headers: new HttpHeaders({
+        title: body.title,
+        group_id: body.group_id,
+        imageAvailable: body.isImage == 1 ? 'yes' : 'no',
+        token: user.token
+      })
+    });
+  }
+  
+  deleteGroup(id) {
+    return this.http.post(this.baseUrl + '/social/deleteGroup', id);
+  }
+
+  getGroupsWithMembers() {
+    return this.http.post(this.baseUrl + '/user/getGroupsWithMembers', {});
+  }
+
+  paynow(data) {
+    return this.http.post(this.baseUrl + '/user/paynow', data);
+  }
+
+
+
+
 
 }

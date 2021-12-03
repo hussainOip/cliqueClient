@@ -177,7 +177,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="boxCommomn">
+                                        <!-- <div class="boxCommomn">
                                             <div class="teammates-div">
                                                 <h3><strong>Team Members</strong> (Active)</h3>
                                                 <div class="teammates" *ngFor="let mate of matesLeaderData.mates">
@@ -185,16 +185,37 @@
                                                     <span>{{mate.last_name}}</span>
                                                 </div>
                                             </div>
+                                        </div> -->
+                                        
+                                      
+
+                                        
+
+                                        <div class="boxCommomn" *ngFor="let group of groups" >
+                                            <div class="teammates-div">
+                                                <h3><strong>{{group.title}} Members </strong> (Active)</h3>
+                                                <div class="teammates" *ngFor="let mate of group.members">
+                                                    <img src="{{mate.user_image !='' ? imageUrl+mate.user_image : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{mate.first_name}} ">
+                                                    <span>{{mate.last_name}}</span>
+                                                </div>
+                                            </div>
                                         </div>
+                                          
+                                        
                                         <div class="boxCommomn">
                                             <div class="leaders-div">
-                                                <h3>Leaders <a href="/leaders">View All</a></h3>
+                                                <h3>Group Leaders <a href="/leaders">View All</a></h3>
                                                 <div class="teammates" *ngFor="let leader of matesLeaderData.leaders">
                                                     <img src="{{leader.user_image !='' ? imageUrl+leader.user_image : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{leader.first_name}} {{leader.last_name}}">
                                                     <span>{{leader.last_name}}</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> 
+
+                                        
+
+
+
                                     </div>
                                 </div>
                             </div>

@@ -46,6 +46,14 @@
                     <span class="textMenu">Profile Settings</span>
                 </li>
             </a>
+
+            <a [routerLink]="['/groupList']" *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin'" [ngClass]="{'active2': router.url == '/groupList'}">
+                <li>
+                    <span><i class="fas fa-align-left" style="font-size: 20px;"></i></span>
+                    <span class="textMenu">Manage Groups</span>
+                </li>
+            </a>
+
             <a href="javascript:void()">
                 <li class="" (click)="logout()">
                     <span ><i class="fas fa-sign-out-alt" style="font-size: 25px;"></i></span>

@@ -62,7 +62,7 @@
                                 	<div class="tableTn tableTnWithFilters">
                                 		<div class="topAreaTable">
                                 			<h3>Leaders</h3>
-                                			<div class="filtertable">
+                                			<!-- <div class="filtertable">
                                 				<div class="dropFilter">
                                 					<span>Filter By:</span>
                                 					<select>
@@ -82,7 +82,7 @@
                                 						<li>C</li>
                                 					</ul>
                                 				</div>
-                                			</div>
+                                			</div> -->
                                 		</div>
                                 		<div class="tableDiv">
 		                                	<table class="table">
@@ -92,6 +92,7 @@
 											      <th scope="col">Name</th>
 											      <th scope="col">Total Experience</th>
 											      <th scope="col">City</th>
+                                                  <th scope="col">Group</th>
 											      <th scope="col">profit Earned</th>
 											      <th scope="col">Fees</th>
 											      <th scope="col"></th>
@@ -107,6 +108,8 @@
 											      <td>{{leader.first_name}}</td>
 											      <td>{{leader.experience}}</td>
 											      <td>{{leader.city}}</td>
+                                                  <td>{{leader.group_title}}</td>
+                                                  
 											      <td>${{leader.profit}}</td>
 											      <td>$300</td>
 											      <td>

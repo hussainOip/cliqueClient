@@ -4,8 +4,8 @@
          <div class="logoPro" [routerLink]="['/dashboard']"><img src="assets/img/logoDark.png"></div>
          <div class="col-lg-3 pic-edit-profile">
             <img src="{{userImage}}">
-            <div class="changePhoto btnDiv"> <span>Change Photo</span></div>
-            <div class="backTo btnDiv"> <span>Back To Profile</span></div>
+            <!-- <div class="changePhoto btnDiv"> <span>Change Photo</span></div> -->
+            <div  [routerLink]="['/leaders']" style="cursor: pointer;" class="backTo btnDiv">  <span>Back</span> </div>
             <!-- <div style="position: relative;bottom: 162px;left: 325px;" *ngIf="isShowImage" class="UploaderPImg">
                <ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
                    <ngx-dropzone-label>Drop your image!</ngx-dropzone-label>
@@ -18,56 +18,54 @@
          <div class="col-lg-6 fieldsPForm">
             <div class="formMainHead">
                <h3>
-                  Leader Profile Setting
+                  Leader Profile
                </h3>
             </div>
             <div class="row formPRow">
                <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Name</span></label>
-                     <input type="text" name="fname" onkeypress="return /[a-z ]/i.test(event.key)"  [(ngModel)]="leaderData.first_name"  maxlength="20" placeholder="Jason">
+                     <input type="text" readonly name="fname" onkeypress="return /[a-z ]/i.test(event.key)"  [(ngModel)]="leaderData.first_name"  maxlength="20" placeholder="Jason">
                   </div>
                </div>
                <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Email</span></label>
-                     <input type="email" name="email"  [(ngModel)]="leaderData.email"  placeholder="email">
+                     <input type="email" readonly name="email"  [(ngModel)]="leaderData.email"  placeholder="email">
                   </div>
                </div>
                <div class="col-lg-12">
                   <div class="forms-input-email">
                      <label><span>Address</span></label>
-                     <input type="text" name="address"  [(ngModel)]="leaderData.address" placeholder="Address">
+                     <input type="text" readonly name="address"  [(ngModel)]="leaderData.address" placeholder="Address">
                   </div>
                </div>
                <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>State/City</span></label>
-                     <input type="text" name="city"  [(ngModel)]="leaderData.city" placeholder="City">
+                     <input type="text" readonly name="city"  [(ngModel)]="leaderData.city" placeholder="City">
                   </div>
                </div>
                <div class="col-lg-6">
                   <div class="forms-input-email">
-                     <label><span>Leader</span></label>
-                     <select [(ngModel)]="leaderData.leader"   name="leader" >
-                        <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData.leaders"  >{{leader.first_name}}</option>
-                     </select>
 
+                     <label><span>Group Title</span></label>
+                     <input type="text" readonly name="group_title"  [(ngModel)]="leaderData.group_title" placeholder="Group Title">
                   </div>
                </div>
                <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Experience</span></label>
-                     <input type="text" name="experience"  [(ngModel)]="leaderData.experience" placeholder="Experience">
+                     <input type="text" readonly name="experience"  [(ngModel)]="leaderData.experience" placeholder="Experience">
                   </div>
                </div>
                <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Profit</span></label>
-                     <input type="text" name="profit" [(ngModel)]="leaderData.profit" placeholder="Profit">
+                     <input type="text" readonly name="profit" [(ngModel)]="leaderData.profit" placeholder="Profit">
                   </div>
                </div>
-               <div class="col-lg-12">
+               <!-- <div class="col-lg-12">
                   <div class="forms-input-email uploaderInput">
                      <label for="fileUploader">
                         <span>Upload Verification Document</span>
@@ -77,31 +75,31 @@
                         </div>
                      </label>
                   </div>
-               </div>
+               </div> -->
                <div class="col-lg-6">
                   <div class="forms-input-email radioWithSelect">
                      <label for="feePro">
                         <span>Fees</span>
-                        <input type="radio" name="fee" id="feePro">
+                        <input type="radio" checked name="fee" id="feePro">
                         <div class="">$300</div>
                      </label>
                      <div class="optionProfile">
-                        <span>Trial</span>
-                        <select>
+                        <span>Trial: 30 days</span> 
+                        <!-- <select>
                            <option value="0">(No Of days)</option>
                            <option value="1">1</option>
-                        </select>
+                        </select> -->
                      </div>
                   </div>
                </div>
-               <div class="btn-m sign-in col-lg-12">
+               <div class="btn-m  text-center sign-in col-lg-12">
                   <a>
-                       <button><span>Save</span></button>
+                       <button (click)="makePayment(300)" ><span>Paynow</span></button>
                   </a>
                </div>
             </div>
          </div>
-         <div class="col-lg-3">
+         <!-- <div class="col-lg-3">
             <div class="formMainHead">
                <h3>Leader Profile Setting</h3>
                <div class="specialCheckBoxes">
@@ -130,7 +128,7 @@
                   </ul>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
    </div>
 </section>

@@ -1,0 +1,110 @@
+<div class="row" style="margin-left: 0;margin-right: 0;">
+    <div class="col-lg-3 mainSidebar">   
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9 mainCont">
+        <div class="main-content">
+            <app-header></app-header>
+
+            <main>
+
+                <section>
+                    <div class="row">
+                        <div class="col-lg-12 mainLeft">
+
+                            <div class="post">
+                                <div class="post-header">
+                                    <div class="row">
+                                        <div class="col-10">                                        
+                                            <h1>Manage Groups</h1>
+                                        </div>
+                                        <div class="col-2 welComeSearch">                                        
+                                            <button [routerLink]="['/postGroup']"  class="addNew">
+                                                <i class="fas fa-plus"></i> 
+                                                <span>Add New</span>
+                                            </button>                             
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-image table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="text-center" >No.</th>
+                                                <th scope="col" class="text-center">Group Image</th>
+                                                <th scope="col" class="text-center" >Group Name</th>
+                                                <th scope="col" class="text-center" >Leader</th>
+                                                <th scope="col" class="text-center">Update Leader</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let group of groupData | paginate: config; let i=index">
+                                                <td class="text-center" >{{i+1}}</td>
+                                                <td class="text-center" ><img src="{{group.image_url ? baseUrlForImage + group.image_url : 'assets/img/defaultProfileImage.png'}}" alt="" style="width: 50px; height: 50px; border-radius: 50px; object-fit: cover;"></td>
+                                                <td  class="text-center pt-3" >{{group.title}}</td>
+                                                <td  class="text-center" >
+                                          
+                                                        <!-- <select class="form-control" id="sel1" [(ngModel)]="user.user_roll">
+                                                          <option>Client</option>
+                                                          <option>Leader</option>
+                                                        </select> -->
+                                                        <select class="form-control" id="sel1" [(ngModel)]="group.leader_id"  name="leader" >
+                                                            <option value="{{leader.user_id}}" selected  *ngFor="let leader of matesLeaderData"  >{{leader.first_name}}</option>
+                                                         </select>
+
+                                                </td>
+                                                
+                                                <td  class="welComeSearch text-center" >   
+                                                    <div class=" d-flex justify-content-center">
+                                                        <div class="col-3 ">
+                                                            <button class="btn btn-primary btn-config addNew" (click)="updateGroupById(group.id, group.leader_id)">   <span>Update</span> </button>                                                    
+                                                        </div>                                                                                                      
+                                                        <div class="col-3 ">
+                                                            <button [routerLink]="['/group/'] + group.id" class="btn btn-primary btn-config addNew" >   <span>Edit</span> </button>                                                
+                                                        </div>                                                                                     
+                                                        <div class="col-3 ">
+                                                            <button (click)="staticModal.show(); setDeleteId(group.id)"  class="btn btn-primary btn-config addNew">   <span>Delete</span> </button>                                                
+                                                        </div>   
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="float-right">
+                                        <pagination-controls (pageChange)="pageChanged($event)" class="ngx-pagination-color"></pagination-controls>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </section>
+
+            </main>
+
+
+            <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+                <div class="modal-dialog modal-sm m-auto" style="padding: 10px 10px 0px 10px;">
+                    <div class="modal-content" style="padding: 10px;">
+                        <div class="modal-header">
+                            <h4 id="dialog-static-name" class="modal-title pull-left">Delete Post</h4>
+                            <button id="deleteModalOff" type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="p-2"> Are you sure you want to delete?</p>
+                            <div class="text-right">
+                                <button class="btn btn-primary btn-config mr-2" (click)="deleteGroup()"> Yes</button>
+                                <button class="btn btn-danger btn-config" (click)="staticModal.hide()">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+        </div>
+    </div>
+</div>

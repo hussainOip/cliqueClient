@@ -1,0 +1,471 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background: #f3f2ff;
+}
+
+button:focus{
+    outline: none;
+}
+
+main{
+    padding: 0 !important;
+}
+.mainRight {
+    padding-right: 0 !important;
+}
+
+div.mainRight > .boxCommomn {
+    padding-right: 0;
+}
+.mainSidebar {
+    width: 300px;
+    background: #393C41;
+    color: #fff;
+    height: 100vh;
+    padding: 50px 0px 60px 60px;
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
+}
+.col-lg-9.mainCont {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 300px);
+    flex: 0 0 calc(100% - 300px);
+    max-width: calc(100% - 300px);
+}
+div.mainCont {
+    padding: 50px 50px;
+}
+div.mainCont {
+    background-image: url(src/assets/img/mainBg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+}
+/*Main*/
+
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 8px 1rem;
+    margin: 1rem;
+    list-style: none;
+    background-color: transparent;
+    border-radius: .25rem;
+    align-items: center;
+}
+
+.breadcrumb-item a {
+    color: black;
+}
+
+.breadcrumb-item span {
+    color: #3e83bf;
+}
+
+
+/*New*/
+
+button.datedropbutton img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    margin: 0px 6px;
+}
+
+.select-input {
+    position: relative;
+}
+
+.select-input i {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+}
+
+.select-input input {
+    padding: 15px 40px;
+    border: 1px solid #f1f1ff;
+    border-radius: 4px;
+    width: 320px;
+}
+
+.fa-caret-down:before {
+    content: "\f0d7";
+    color: rgb(0 0 0 / 41%);
+}
+
+.time {
+    width: auto;
+    background: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.time h5 {
+    margin: 0;
+}
+
+.time span {
+    color: #b7bcc5;
+}
+
+.heading span {
+    color: #b7bcc5;
+    font-weight: 200;
+}
+
+.teammates img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.teammates {
+    height: 50px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.teammates::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.teammates-div,
+.leaders-div {
+    padding: 30px 0;
+}
+
+.sports-tags p {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #d5d5f7;
+    margin: 4px;
+    border-radius: 30px;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.sports-tags p:hover {
+    background: #1DAAA6;
+    color: white;
+    transition: 0.5s all;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #3eb3f7;
+    background-color: transparent;
+    border-bottom: 3px solid #3eb3f7;
+    border-radius: 0;
+}
+
+.nav-link {
+    color: #c3c7d1;
+}
+
+.tabs-side {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d5d5f7;
+}
+
+.settings-pref ul {
+    display: flex;
+}
+
+
+/*Post*/
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #80808036;
+    padding: 30px 50px;
+}
+
+.profile-img-text {
+    display: flex;
+}
+
+.profile-img-text-2 p {
+    margin: 0;
+}
+
+.profile-img-text img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin: 15px;
+}
+
+.profile-img-text-2 {
+    margin: auto;
+}
+
+.profile-head-button {
+    margin: auto 0px;
+}
+
+.profile-head-button button {
+    padding: 10px 20px;
+    background: #d8f0fd;
+    border: none;
+    color: #3eb3f7;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.post {
+    background: white;
+    border-radius: 20px;
+}
+
+.post-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.post-image {
+    padding: 40px 50px;
+}
+
+a:hover {
+    color: #3eb3f7;
+    text-decoration: underline;
+}
+
+.for-post-padding {
+    padding: 0px 50px 50px 50px;
+}
+
+.post-tips {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.post-comments {
+    justify-content: space-between;
+    display: flex;
+    margin: 5px 0px;
+    color: #b7bcc5;
+}
+
+.post-a-comment {}
+
+.comment-box {
+    display: flex;
+}
+
+.comment-box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin: auto 10px;
+}
+
+.input-comment {
+    margin: auto 0;
+    position: relative;
+    width: 100%;
+}
+
+.input-comment input {
+    width: 100%;
+    padding: 10px 50px 10px 10px;
+    border: 1px solid #f1f2f4;
+    border-radius: 13px;
+}
+
+.input-comment i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d5d5f7;
+}
+
+.views-likes {
+    display: flex;
+}
+
+.views-likes p {
+    margin: 0px 10px;
+    margin-bottom: 0;
+}
+
+.comments p {
+    margin-bottom: 5px;
+}
+
+.icon-not i {
+    padding: 17px;
+    border-radius: 50px;
+    border: 1px solid;
+    margin: 3px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #b7bcc5;
+}
+
+.tips p {
+    margin: auto;
+    color: #b7bcc5;
+}
+
+.tips {
+    margin: auto 0px;
+}
+
+.icon-not img {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-1,
+.team-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-name p,
+.team-score p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.match {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0px 25px;
+}
+
+.col-lg-mine {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.view-all {
+    width: 70%;
+    margin: auto;
+}
+
+.view-all button {
+    width: 100%;
+    padding: 12px 12px;
+    border: none;
+    background: white;
+    color: #3eb3f7;
+    border-radius: 30px;
+    transition: 0.5s all;
+}
+
+.view-all button:hover,
+.profile-head-button button:hover {
+    background: #3eb3f7;
+    color: white;
+    transition: 0.5s all;
+}
+
+.form-side h3 {
+    font-size: 22px;
+    line-height: 36px;
+    padding: 20px 0px;
+    font-weight: 600;
+}
+
+.forms-input-email label,
+.forms-input-password label {
+    display: block;
+    margin-bottom: 1px;
+}
+
+.forms-input-email,
+.forms-input-password {
+    padding: 20px 0;
+}
+
+.forms-input-email input,
+.forms-input-password input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+    padding: 12px 0px 5px 10px;
+}
+
+
+/* .sign-in button {
+    background: black;
+    color: white;
+} */
+
+.btn-mm {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 6px 0;
+    border: none;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #1DAAA6;
+    transition: 0.5s all;
+    color: white;
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+.mainLeft{
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 30vh
+}
+.mainLeft::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+    border-radius: 10px;
+    background-color: #f5f5f500;
+}
+.mainLeft::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: transparent;
+}
+.mainLeft::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0);
+    background-color: transparent;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .select-input input {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 425px) {}
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (max-width: 320px) {}

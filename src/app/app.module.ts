@@ -44,6 +44,9 @@ import { FirstComponent } from './pages/authentications/first/first.component';
 import { LeadersComponent } from './pages//leaders/leaders.component';
 import { ScoresidebarComponent } from './pages/scoresidebar/scoresidebar.component';
 import { LeadProfileComponent } from './pages/lead-profile/lead-profile.component';
+import { GroupListComponent } from './pages/groups/list-group/group-list.component';
+import { PostGroupComponent } from './pages/groups/post-group/post-group.component';
+
 
 export function tokenGetter() {
   var detail: any = JSON.parse(localStorage.getItem('socialUserDetails'));
@@ -82,7 +85,10 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
     FirstComponent,
     LeadersComponent,
     ScoresidebarComponent,
-    LeadProfileComponent
+    LeadProfileComponent,
+    PostGroupComponent,
+    GroupListComponent
+
   ],
   imports: [
     BrowserModule,

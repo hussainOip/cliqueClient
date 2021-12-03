@@ -21,6 +21,11 @@ import { SinglePostComponent } from './pages/single-post/single-post.component';
 import { UserSettingsComponent } from './pages/user-settings/user-settings.component';
 import { AuthService } from './pages/services/auth.service';
 
+import { GroupListComponent } from './pages/groups/list-group/group-list.component';
+import { PostGroupComponent } from './pages/groups/post-group/post-group.component';
+
+
+
 const routes: Routes = [
   {path:"", component: HomeComponent, pathMatch: "full" },
   {path:"login", component: LoginComponent },
@@ -43,6 +48,16 @@ const routes: Routes = [
   {path:"liveScore/:id", component: LiveScoresComponent, canActivate:[AuthService] },
   {path:"userSettings", component: UserSettingsComponent, canActivate:[AuthService] },
   {path:"post/:id", component: SinglePostComponent, canActivate:[AuthService] },
+
+
+  
+  {path:"postGroup", component: PostGroupComponent, canActivate:[AuthService] },
+  {path:"group/:id", component: PostGroupComponent, canActivate:[AuthService] },
+  {path:"groupList", component: GroupListComponent, canActivate:[AuthService] },
+  
+
+
+
 
 
 ];
