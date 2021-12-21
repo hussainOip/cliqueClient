@@ -53,10 +53,10 @@
                      <input type="text"[(ngModel)]="userInfo.city" name="city"  placeholder="city" >
                   </div>
                </div>
-               <div class="col-lg-6">
+               <div  *ngIf="!isLeader"  class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Leader</span></label>
-                     <select [(ngModel)]="userInfo.leader"   name="leader" >
+                     <select [(ngModel)]="userInfo.leader"  disabled  name="leader" >
                         <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData.leaders"  >{{leader.first_name}}</option>
                      </select>
                   </div>
@@ -73,6 +73,41 @@
                      <input type="text" name="profit"  [(ngModel)]="userInfo.profit" placeholder="Profit">
                   </div>
                </div>
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Profit</span></label>
+                     <input type="text" name="profit"  [(ngModel)]="userInfo.profit" placeholder="Profit">
+                  </div>
+               </div>
+
+               <div  *ngIf="isLeader"  class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Show profile?</span></label>
+                    
+                     <select [(ngModel)]="userInfo.show_profile" value="{{userInfo.show_profile}}"   name="show_profile" >
+                        <option value="1" >Yes</option>
+                        <option value="0" >No</option>                        
+                     </select>
+
+
+                  </div>
+               </div>
+
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Trial Days</span></label>
+                     <input type="text" name="trial_days"  [(ngModel)]="userInfo.trial_days" placeholder="trial Days">
+                  </div>
+               </div>
+               
+               <div class="col-lg-6">
+                  <div class="forms-input-email">
+                     <label><span>Trial Amount</span></label>
+                     <input type="text" name="trial_amount"  [(ngModel)]="userInfo.trial_amount" placeholder="Trial Amount">
+                  </div>
+               </div>
+
+
                <!-- <div class="col-lg-12">
                   <div class="forms-input-email uploaderInput">
                      <label for="fileUploader">
@@ -84,7 +119,7 @@
                      </label>
                   </div>
                </div> -->
-               <div class="col-lg-12">
+               <!-- <div class="col-lg-12">
                   <div class="forms-input-email selectPayment">
                      <span class="likelabel">Payment</span>
                      <div class="Selectedpayment">
@@ -102,7 +137,8 @@
                         </label>
                      </div>
                   </div>
-               </div>
+               </div> -->
+
                <div class="btn-m sign-in col-lg-12">
                   <a>
                        <button (click)="saveProfile()"><span>Save</span></button>
@@ -111,7 +147,7 @@
             </div>
          </div>
          <div class="col-lg-3">
-            <div class="formMainHead">
+            <!-- <div class="formMainHead">
                <h3>Leader Profile Setting</h3>
                <div class="specialCheckBoxes">
                   <ul class="socialFormSelection">
@@ -138,7 +174,7 @@
                      </li>
                   </ul>
                </div>
-            </div>
+            </div> -->
          </div>
       </div>
    </div>

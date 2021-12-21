@@ -46,6 +46,9 @@ const routes: Routes = [
   {path:"singleChat", component: SingleChatComponent, canActivate:[AuthService] },
   {path:"liveScore", component: LiveScoresComponent, canActivate:[AuthService] },
   {path:"liveScore/:id", component: LiveScoresComponent, canActivate:[AuthService] },
+  {path:"liveScore/:id/:page", component: LiveScoresComponent, canActivate:[AuthService] },
+
+
   {path:"userSettings", component: UserSettingsComponent, canActivate:[AuthService] },
   {path:"post/:id", component: SinglePostComponent, canActivate:[AuthService] },
 

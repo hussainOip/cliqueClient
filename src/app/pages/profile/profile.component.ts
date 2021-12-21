@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   userInfo: any = {};
   files: File[] = [];
   isShowImage = false;
+  isLeader = false;
   loading = false;
   userImage;
   ngOnInit(): void {
@@ -64,14 +65,30 @@ export class ProfileComponent implements OnInit {
 
   setUserImage(){
     var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
+
+    console.log("user",user);
+
     this.userInfo.name = user.first_name;
     this.userInfo.email = user.email;
     this.userInfo.address = user.address;
     this.userInfo.city = user.city;
-    this.userInfo.leader = user.leader;
+    //this.userInfo.leader = user.leader;
     this.userInfo.experience = user.experience;
     this.userInfo.profit = user.profit;
+    this.userInfo.show_profile = user.show_profile; 
+    this.userInfo.trial_days = user.trial_days;
+    this.userInfo.trial_amount = user.trial_amount;
 
+
+    
+
+
+    
+    if(user.user_roll == "Leader"){
+    this.isLeader = true
+    }else{
+      this.isLeader = false
+    }
 
     if(user.user_image != '' && user.user_image != undefined) this.userImage =  this.imageUrl+user.user_image;
     else this.userImage = "assets/img/defaultProfileImage.png";
@@ -96,7 +113,6 @@ export class ProfileComponent implements OnInit {
       console.log("this.userInfo",this.userInfo);
       this.apiService.updateProfile(isFile, this.userInfo, formData).subscribe((res: any)=>{
 
-console.log("res",res)
 
         this.loading = false;
         if(res.status){
@@ -106,9 +122,15 @@ console.log("res",res)
           user.name = res.first_name;
           user.address = res.address;
           user.city=  res.city;
-          user.leader= res.leader;
+          //user.leader= res.leader;
           user.experience= res.experience;
           user.profit= res.profit;
+          user.show_profile= res.show_profile;
+          user.trial_days= res.trial_days;
+          user.trial_amount= res.trial_amount;
+
+          
+
           
           if(res.user_image != '') user.user_image = res.user_image;
           localStorage.setItem('socialUserDetails', JSON.stringify(user));

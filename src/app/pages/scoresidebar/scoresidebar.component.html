@@ -7,38 +7,43 @@
 
     <div class="sidebar-menu">
         <ul>
-            <a class="active2">
+            <a   [routerLink]="['/liveScore/', sportId]"class="active2">
                 <li>
-                    <span><img src="assets/img/nfl.png"></span>
-                    <span class="textMenu">NFL</span>
+
+                    
+
+                    <span><img src="assets/img/{{(sportId == 'baseball')?'mlb':sportId}}.png"></span>
+                    <span class="textMenu">{{(sportId)?sportId.toUpperCase():''}}  </span>
                 </li>
             </a>
-            <a>
+            <a *ngIf="fixture"   [routerLink]="['/liveScore/', sportId,'fixture']" >
                 <li>
                     <span class="textMenu">Fixture & Results</span>
                 </li>
             </a>
-            <a>
+            <a *ngIf="scoreboard"  [routerLink]="['/liveScore/', sportId,'scoreboard']" >
                 <li>
                     <span class="textMenu">Scoreboard</span>
                 </li>
             </a>
-            <a>
+            <a  *ngIf="matchinfo"   [routerLink]="['/liveScore/', sportId,'matchinfo']" >
                 <li>
                     <span class="textMenu">Match Info</span>
                 </li>
             </a>
-            <a>
+            
+            <a  *ngIf="gameleaders"  [routerLink]="['/liveScore/', sportId,'gameleaders']" >
                 <li>
                     <span class="textMenu">Game Leaders</span>
                 </li>
             </a>
-            <a>
+
+            <a  *ngIf="playbyplay"   [routerLink]="['/liveScore/', sportId,'playbyplay']" >
                 <li>
                     <span class="textMenu">Play by Play</span>
                 </li>
             </a>
-            <a>
+            <a >
                 <li class="">
                     <span (click)="logout()">
                     	<i class="fas fa-sign-out-alt" style="font-size: 25px;"></i>

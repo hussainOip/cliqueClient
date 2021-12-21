@@ -19,7 +19,7 @@
 
                                         <div class="tab-pane" role="tabpanel" aria-labelledby="pills-home-tab">
                                             <div class="sports-tags extra-class row">
-                                                <div [routerLink]="['/liveScore/nba']" class="col-lg-3 activeSport">
+                                                <div [routerLink]="['/liveScore/nfl']" class="col-lg-3 {{(sportId =='nfl')?'activeSport':''}} ">
                                                     <div class="">
                                                         <div class="imgTab"> 
                                                             <img src="assets/img/nfl.png">
@@ -27,15 +27,15 @@
                                                         <span>NFL</span>
                                                     </div>
                                                 </div> 
-                                                <div  [routerLink]="['/liveScore/football']" class="col-lg-3">
+                                                <div  [routerLink]="['/liveScore/nba']" class="col-lg-3 {{(sportId =='nba')?'activeSport':''}}">
                                                     <div class="">
                                                         <div class="imgTab">
                                                             <img src="assets/img/nba.png">
                                                         </div>
-                                                        <span>Football</span>
+                                                        <span>NBA</span>
                                                     </div>
                                                 </div> 
-                                                <div  [routerLink]="['/liveScore/nhl']" class="col-lg-3">
+                                                <div  [routerLink]="['/liveScore/nhl']" class="col-lg-3 {{(sportId =='nhl')?'activeSport':''}}">
                                                     <div class="">    
                                                         <div class="imgTab">
                                                             <img src="assets/img/nhl.png">
@@ -43,7 +43,7 @@
                                                         <span>NHL</span>
                                                     </div>
                                                 </div>
-                                                <div  [routerLink]="['/liveScore/baseball']" class="col-lg-3">
+                                                <div  [routerLink]="['/liveScore/baseball']" class="col-lg-3 {{(sportId =='baseball')?'activeSport':''}}">
                                                     <div class="">
                                                         <div class="imgTab">
                                                             <img src="assets/img/mlb.png">
@@ -60,10 +60,12 @@
                                 <div class="col-lg-12 apiWaliRow">
                                     <div class="apiData boxCommomn">
                                         <div class="apiDataImg">
-                                            <img src="assets/img/api1.png">
+                                            <!-- <img src="assets/img/api1.png"> -->
+
+                                            <div id="DOM_element_id_in_your_website_1638543243477"></div>
                                         </div>
                                     </div>
-                                    <div class="row midBox">
+                                    <!-- <div class="row midBox">
                                         <div class="col-lg-6">
                                             <div class="boxCommomn">
                                                 <div class="teammates-div">
@@ -167,20 +169,23 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                         </div>
 
+                   
+
                         <div class="col-lg-3 px-3 mainRight">
                             <div class="boxCommomn">
                                 <div class="recentActivity">
-                                    <!-- <h3>
-                                        Recent Activity 
-                                        <span>...</span>
-                                    </h3> -->
-                                    <img src="assets/img/recent oactivity1.jpg">
+                                     <h6>
+                                        <b>Recent Activity  </b> 
+                                    </h6>
+                                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FClique-102385928950199&tabs=timeline&width=300&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="300" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                 
+                                    <!-- <img src="assets/img/recent oactivity1.jpg"> -->
                                 </div>
                             </div>
                             <div class="boxCommomn">
@@ -189,7 +194,9 @@
                                         Recent Activity 
                                         <span>...</span>
                                     </h3> -->
-                                    <img src="assets/img/recent oactivity.jpg">
+                                    <!-- <img src="assets/img/recent oactivity.jpg"> -->
+                                    <a class="twitter-timeline" href="https://twitter.com/Muhamma57504077?ref_src=twsrc%5Etfw">Tweets by Muhamma57504077</a> 
+
                                 </div>
                             </div>
                         </div>

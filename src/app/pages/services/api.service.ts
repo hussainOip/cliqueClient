@@ -118,9 +118,12 @@ export class ApiService {
         name: userInfo.name,
         address: userInfo.address,
         city:  userInfo.city,
-        leader: userInfo.leader,
+//        leader: userInfo.leader,
         experience: userInfo.experience,
-        profit: userInfo.profit
+        profit: userInfo.profit,
+        show_profile: userInfo.show_profile,
+        trial_amount: userInfo.trial_amount,
+        trial_days: userInfo.trial_days,
       })
     });
   }

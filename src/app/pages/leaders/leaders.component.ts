@@ -70,4 +70,9 @@ export class LeadersComponent implements OnInit {
     })
   }
 
+
+  filterProfileShow(arr){
+      return arr.filter(x => x.show_profile == 1);
+  }
+
 }

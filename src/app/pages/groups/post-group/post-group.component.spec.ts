@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostFormComponent } from './post-form.component';
+import { PostFormComponent } from './post-group.component';
 
 describe('PostFormComponent', () => {
   let component: PostFormComponent;

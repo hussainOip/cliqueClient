@@ -69,7 +69,7 @@ export class LeadProfileComponent implements OnInit {
       key: 'pk_test_51HetTIJW7BN24rpMNks6Tj161IWSRgoGvfuj6VrDLV8cU1G5d2ii6unhKJeC5WWhSrO78J8tqvTVmNiMN0cOOX0w00zpKPEmYh',
       locale: 'auto',
       token: (token: any) => {
-        this.paynow(token);
+        this.paynow(token,amount);
       }
     });
  
@@ -84,7 +84,7 @@ export class LeadProfileComponent implements OnInit {
 
 
   
-  paynow(token) {
+  paynow(token,amount) {
 
 var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
 const data ={

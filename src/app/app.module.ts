@@ -88,7 +88,6 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
     LeadProfileComponent,
     PostGroupComponent,
     GroupListComponent
-
   ],
   imports: [
     BrowserModule,

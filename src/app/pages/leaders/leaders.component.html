@@ -95,14 +95,16 @@
                                                   <th scope="col">Group</th>
 											      <th scope="col">profit Earned</th>
 											      <th scope="col">Fees</th>
-											      <th scope="col"></th>
+											      <th scope="col"> Action</th>
 											    </tr>
 											  </thead>
 
 
 											  <tbody>
-											    <tr  *ngFor="let leader of matesLeaderData.leaders">
-											      <td>
+											    <tr      *ngFor="let leader of  filterProfileShow(matesLeaderData.leaders) ">
+											      
+                                                  
+                                                <td>
 													<img src="{{leader.user_image !='' ? imageUrl+leader.user_image : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{leader.first_name}} {{leader.last_name}}">
 												  </td>
 											      <td>{{leader.first_name}}</td>
