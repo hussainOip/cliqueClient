@@ -53,14 +53,14 @@
                      <input type="text"[(ngModel)]="userInfo.city" name="city"  placeholder="city" >
                   </div>
                </div>
-               <div  *ngIf="!isLeader"  class="col-lg-6">
+               <!-- <div  *ngIf="!isLeader"  class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Leader</span></label>
                      <select [(ngModel)]="userInfo.leader"  disabled  name="leader" >
                         <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData.leaders"  >{{leader.first_name}}</option>
                      </select>
                   </div>
-               </div>
+               </div> -->
                <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Experience</span></label>
@@ -73,12 +73,12 @@
                      <input type="text" name="profit"  [(ngModel)]="userInfo.profit" placeholder="Profit">
                   </div>
                </div>
-               <div class="col-lg-6">
+               <!-- <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Profit</span></label>
                      <input type="text" name="profit"  [(ngModel)]="userInfo.profit" placeholder="Profit">
                   </div>
-               </div>
+               </div> -->
 
                <div  *ngIf="isLeader"  class="col-lg-6">
                   <div class="forms-input-email">
