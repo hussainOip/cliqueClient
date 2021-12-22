@@ -31,7 +31,7 @@ export class LiveScoresComponent implements OnInit {
      this.sportId = this.activatedRoute.params['value']['id'];
     
      var x = document.getElementById("showBoard");   
-     x.classList.remove("display-none");
+     x.classList.remove("d-none");
 
      
     this.activatedRoute.params.subscribe(
@@ -51,28 +51,28 @@ export class LiveScoresComponent implements OnInit {
             this.sportId = (params['id'])?params['id']:''
             this.page = (params['page'])?params['page']:''
 
-            if(this.sportId == "nba") {
-              this.nba();
-            }else if(this.sportId == "nfl"){
+            // if(this.sportId == "nba") {
+            //   this.nba();
+            // }else if(this.sportId == "nfl"){
 
-              this.gameleaders = false;  
+            //   this.gameleaders = false;  
 
-              this.nfl();
-            }else if(this.sportId == "nhl"){
+            //   this.nfl();
+            // }else if(this.sportId == "nhl"){
               
-              this.playbyplay = false;
+            //   this.playbyplay = false;
   
 
-              this.nhl();
-            }else if(this.sportId == "baseball"){
+            //   this.nhl();
+            // }else if(this.sportId == "baseball"){
 
-            this.matchinfo = false;
-            this.gameleaders = false;
-            this.playbyplay = false;
+            // this.matchinfo = false;
+            // this.gameleaders = false;
+            // this.playbyplay = false;
   
 
-              this.baseball();
-            }
+            //   this.baseball();
+            // }
        
       }
     );
