@@ -92,7 +92,14 @@ export class LiveScoresComponent implements OnInit {
       }else if(this.page == "playbyplay"){
         this.nbaPlaybyplay();
       }else{
-        this.nbaLive();
+
+        var i = document.getElementById( 'getelemeoddspedia-widget-live-score-popular-false-sports-false-leagues-false');
+        var d = document.getElementById( 'getelemeoddspedia-widget-live-score-popular-false-sports-false-leagues-false2' );
+        d.innerHTML += i.innerHTML;
+
+        
+
+        //this.nbaLive();
       }
 
 
