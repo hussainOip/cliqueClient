@@ -69,9 +69,6 @@ export class LiveScoresComponent implements OnInit {
             this.playbyplay = false;
   
 
-
-
-
               this.baseball();
             }
        
@@ -95,8 +92,7 @@ export class LiveScoresComponent implements OnInit {
       }else if(this.page == "playbyplay"){
         this.nbaPlaybyplay();
       }else{
-        this.nbaLive();    
-                    
+        this.nbaLive();
       }
 
 
@@ -299,74 +295,37 @@ async baseballLive ()  {
 
  
  async nbaLive ()  {     
-
-
-
-                          
-
-  var u = `
-window.oddspediaWidgetLiveScorePopularSportsfootballLeagues = {
-    api_token: "6c92ff95073e3e4e12ff9332046942902f5c3cddf33edd7c19c5fc259566",
-    type: "live-score",
-    domain: "cliquesports.co",
-    selector: "oddspedia-widget-live-score-popular-false-sports-football-leagues-false",
-    width: "0",
-    theme: "0",
-    odds_type: "1",
-    language: "en",
-    primary_color: "#283E5B",
-    accent_color: "#00B1FF",
-    font: "Roboto",
-    logos: "true",
-    inplay_only: "false",
-    extended_match_info: "true",
-    live_stream: "true",
-    limit: "15",
-    popular: "false",
-    sports: "football",
-    leagues: "",
-};`
-               
-setTimeout(function() {
-    var t = window.document.createElement("script");
-    t.append(u);
-    window.document.body.appendChild(t);
-}, 3000);
-
-
-
-
-  // var z = ` 
-  // (function(b, s, p, o, r, t) {
-  //   b["broadage"] = b["broadage"] || [];
-  //   if (!b["broadage"].length) {
-  //     r = document.createElement(s);
-  //     t = document.getElementsByTagName(s)[0];
-  //     r.async = true;
-  //     r.src = p;
-  //     t.parentNode.insertBefore(r, t);
-  //   }
-  //   b["broadage"].push({ "bundleId": o.bundleId, "widgets": o.widgets, "accountId": o.accountId });
-  // })(window, "script", "//cdn-saas.broadage.com/widgets/loader/loader.js", {
-  //   "bundleId": ["all-ls"],
-  //   "accountId": "872f164f-619b-4d1f-bd10-c1ece0adf3b7",
-  //   "widgets": {
-  //     "liveScore": [{
-  //       "element": "DOM_element_id_in_your_website_1638543243477",
-  //       "coverageId": "6bf0cf44-e13a-44e1-8008-ff17ba6c2128",
-  //       "options": {
-  //         "sportFilter": false,
-  //         "sportId": 2
-  //       }
-  //     }]
-  //   }
-  // });
-  //  `;
+  var z = ` 
+  (function(b, s, p, o, r, t) {
+    b["broadage"] = b["broadage"] || [];
+    if (!b["broadage"].length) {
+      r = document.createElement(s);
+      t = document.getElementsByTagName(s)[0];
+      r.async = true;
+      r.src = p;
+      t.parentNode.insertBefore(r, t);
+    }
+    b["broadage"].push({ "bundleId": o.bundleId, "widgets": o.widgets, "accountId": o.accountId });
+  })(window, "script", "//cdn-saas.broadage.com/widgets/loader/loader.js", {
+    "bundleId": ["all-ls"],
+    "accountId": "872f164f-619b-4d1f-bd10-c1ece0adf3b7",
+    "widgets": {
+      "liveScore": [{
+        "element": "DOM_element_id_in_your_website_1638543243477",
+        "coverageId": "6bf0cf44-e13a-44e1-8008-ff17ba6c2128",
+        "options": {
+          "sportFilter": false,
+          "sportId": 2
+        }
+      }]
+    }
+  });
+   `;
  
-  //    var s = window.document.createElement("script");
-  //    s.id = "scoring-widget";
-  //    s.append(z);
-  //    window.document.body.appendChild(s);
+     var s = window.document.createElement("script");
+     s.id = "scoring-widget";
+     s.append(z);
+     window.document.body.appendChild(s);
  }
 
 
