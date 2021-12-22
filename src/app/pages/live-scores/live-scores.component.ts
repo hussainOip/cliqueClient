@@ -326,11 +326,12 @@ window.oddspediaWidgetLiveScorePopularSportsfootballLeagues = {
     sports: "football",
     leagues: "",
 };`
-                    
-var t = window.document.createElement("script");
-t.append(u);
-window.document.body.appendChild(t);
-            
+               
+setTimeout(function() {
+    var t = window.document.createElement("script");
+    t.append(u);
+    window.document.body.appendChild(t);
+}, 3000);
 
 
 
