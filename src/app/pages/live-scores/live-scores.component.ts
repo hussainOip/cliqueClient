@@ -304,8 +304,7 @@ async baseballLive ()  {
 
                           
 
-  var u = ` <div id="oddspedia-widget-live-score-popular-false-sports-football-leagues-false">
-<script>
+  var u = `
 window.oddspediaWidgetLiveScorePopularSportsfootballLeagues = {
     api_token: "6c92ff95073e3e4e12ff9332046942902f5c3cddf33edd7c19c5fc259566",
     type: "live-score",
@@ -326,12 +325,9 @@ window.oddspediaWidgetLiveScorePopularSportsfootballLeagues = {
     popular: "false",
     sports: "football",
     leagues: "",
-};
-</script>
-<script src="https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetLiveScorePopularSportsfootballLeagues" async></script>
-</div>`
+};`
                     
-var t = window.document.createElement("div");
+var t = window.document.createElement("script");
 t.append(u);
 window.document.body.appendChild(t);
             
