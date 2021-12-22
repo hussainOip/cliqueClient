@@ -302,34 +302,36 @@ async baseballLive ()  {
 
 
 
-  var u = `
-  window.oddspediaWidgetLiveScorePopularSportsLeagues = {
-      api_token: "6c92ff95073e3e4e12ff9332046942902f5c3cddf33edd7c19c5fc259566",
-      type: "live-score",
-      domain: "cliquesports.co",
-      selector: "oddspedia-widget-live-score-popular-false-sports-false-leagues-false",
-      width: "0",
-      theme: "0",
-      odds_type: "1",
-      language: "en",
-      primary_color: "#283E5B",
-      accent_color: "#00B1FF",
-      font: "Roboto",
-      logos: "true",
-      inplay_only: "false",
-      extended_match_info: "true",
-      live_stream: "true",
-      limit: "15",
-      popular: "false",
-      sports: "",
-      leagues: "",
-  };`
+                          
 
-var s = window.document.createElement("script");
-s.src = "https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetLiveScorePopularSportsLeagues";
-window.document.body.appendChild(s);
-            
-var t = window.document.createElement("script");
+  var u = ` <div id="oddspedia-widget-live-score-popular-false-sports-football-leagues-false">
+<script>
+window.oddspediaWidgetLiveScorePopularSportsfootballLeagues = {
+    api_token: "6c92ff95073e3e4e12ff9332046942902f5c3cddf33edd7c19c5fc259566",
+    type: "live-score",
+    domain: "cliquesports.co",
+    selector: "oddspedia-widget-live-score-popular-false-sports-football-leagues-false",
+    width: "0",
+    theme: "0",
+    odds_type: "1",
+    language: "en",
+    primary_color: "#283E5B",
+    accent_color: "#00B1FF",
+    font: "Roboto",
+    logos: "true",
+    inplay_only: "false",
+    extended_match_info: "true",
+    live_stream: "true",
+    limit: "15",
+    popular: "false",
+    sports: "football",
+    leagues: "",
+};
+</script>
+<script src="https://widgets.oddspedia.com/js/widget/init.js?widgetId=oddspediaWidgetLiveScorePopularSportsfootballLeagues" async></script>
+</div>`
+                    
+var t = window.document.createElement("div");
 t.append(u);
 window.document.body.appendChild(t);
             
