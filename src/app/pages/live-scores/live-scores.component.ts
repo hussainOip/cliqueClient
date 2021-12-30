@@ -43,11 +43,18 @@ export class LiveScoresComponent implements OnInit {
      var x = document.getElementById("showBoard");   
      x.classList.remove("d-none");
      
-    var showBoard = document.getElementById( 'showBoard' );
-    var apiDataImg = document.getElementById( 'apiDataImg' );
-    apiDataImg.innerHTML += showBoard.innerHTML;
 
-    showBoard.parentElement.removeChild(showBoard);
+
+
+     
+setTimeout(function(){ 
+  var showBoard = document.getElementById( 'showBoard' );
+  var apiDataImg = document.getElementById( 'apiDataImg' );
+  apiDataImg.innerHTML += showBoard.innerHTML;
+  showBoard.parentElement.removeChild(showBoard);
+}, 6000);
+
+
 
 
      
