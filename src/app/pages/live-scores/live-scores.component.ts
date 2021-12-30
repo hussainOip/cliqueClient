@@ -32,6 +32,9 @@ export class LiveScoresComponent implements OnInit {
     var x = document.getElementById("showBoard");   
     x.classList.add("d-none");
 
+
+
+
   }
 
   ngOnInit(): void {
@@ -39,6 +42,11 @@ export class LiveScoresComponent implements OnInit {
     
      var x = document.getElementById("showBoard");   
      x.classList.remove("d-none");
+     
+    var showBoard = document.getElementById( 'showBoard' );
+    var apiDataImg = document.getElementById( 'apiDataImg' );
+    apiDataImg.innerHTML += showBoard.innerHTML;
+
 
      
     this.activatedRoute.params.subscribe(

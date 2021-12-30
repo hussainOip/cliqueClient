@@ -36,6 +36,24 @@
     width: 100%;
     word-break: break-word;
 }
+/* 30-12-21 */
+ul.numUl {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+ul.numUl li {
+    padding-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+ul.numUl li strong {
+    display: block;
+    text-transform: capitalize;
+}
+ul.numUl li:before {content: '';position: absolute;left: 0;top: 0;width: 5px;height: 100%;background: #212529;border-radius: 50px;}
 /*981 to 767*/
 @media(min-width: 981px) and (max-width: 1200px){
 	.logo img {
