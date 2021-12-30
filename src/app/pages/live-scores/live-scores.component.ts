@@ -47,6 +47,8 @@ export class LiveScoresComponent implements OnInit {
     var apiDataImg = document.getElementById( 'apiDataImg' );
     apiDataImg.innerHTML += showBoard.innerHTML;
 
+    showBoard.parentElement.removeChild(showBoard);
+
 
      
     this.activatedRoute.params.subscribe(
