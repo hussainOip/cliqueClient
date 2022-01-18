@@ -39,29 +39,52 @@
                     </div>
 
                     <div class="forms-input-email frmGroup">
-                        <label>Address</label>
-                        <input type="text" name="address"  [(ngModel)]="userInfo.address"  placeholder="">
+                        <label>DOB</label>
+                        <input type="text" name="address"  [(ngModel)]="userInfo.address"  placeholder="DOB">
                     </div>
 
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
-                        <label>State / City</label>
+                        <label>Country</label>
                         <input type="text" name="city"  [(ngModel)]="userInfo.city" placeholder="California">
                     </div>
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
-                        <label>Leader/Client</label>
-                        <select [(ngModel)]="userInfo.leader"   name="leader" >
+                        <label>Leader/Follower</label>
+                        <!-- <select [(ngModel)]="userInfo.leader"   name="leader" >
                             <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData"  >{{leader.first_name}}</option>
+                         </select> -->
+                         <select name="leader" >
+                            <option value="Leader">Leader</option>
+                            <option value="Follower">Follower</option>
                          </select>
                     </div>
                     
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
-                        <label>Favourite Team</label>
-                        <input type="text" name="favourite_team"  [(ngModel)]="userInfo.favourite_team" placeholder="Favourite Team">
+                        <label>Bets Per Week</label>
+                        <!-- <input type="text" name="favourite_team"  [(ngModel)]="userInfo.favourite_team" placeholder="Favourite Team"> -->
+                        <select name="betsPerWeek" >
+                            <option>Props</option>
+                            <option>Spreads</option>
+                            <option>Totals</option>
+                            <option>NCAA</option>
+                            <option>NHL</option>
+                            <option>NFL</option>
+                            <option>NBA</option>
+                            <option>MLB</option>
+                            <option>MMA</option>
+                            <option>Soccer</option>
+                            <option>Golf</option>
+                        </select>
                     </div>
 
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
-                        <label>Favourite Player</label>
-                        <input type="text" name="favourite_player"  [(ngModel)]="userInfo.favourite_player" placeholder="Favourite Player">
+                        <!-- <label>Favourite Player</label>
+                        <input type="text" name="favourite_player"  [(ngModel)]="userInfo.favourite_player" placeholder="Favourite Player"> -->
+                        <label>Betting Strategies</label>
+                        <select name="bettingStartegies" >
+                            <option>Only a few</option>
+                            <option>More than 10</option>
+                            <option>Normally very active</option>
+                        </select>
                     </div>
 
                     <div class="forms-input-email frmGroup">
