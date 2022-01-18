@@ -84,6 +84,12 @@ export class LiveScoresComponent implements OnInit {
       }
     );
 
+
+
+    var fragment = document.createDocumentFragment();
+      fragment.appendChild(document.querySelector('body#openHideMenu > div:first-child'));
+      document.getElementById('iFrameData').appendChild(fragment);
+      
     
     }
 

@@ -2,22 +2,22 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-// export const environment = {
-//   production: false,
-//   baseUrl:"http://localhost:5000/api",
-//   baseUrlForImage:"http://localhost:5000/",
-//   baseUrlForSocket:"http://localhost:5000/"
-// };
-
-
-
-
 export const environment = {
-production: false,
+ production: false,
 baseUrl:"https://click-server105.herokuapp.com/api",
 baseUrlForImage:"https://click-server105.herokuapp.com/",
 baseUrlForSocket:"//click-server105.herokuapp.com/"
 };
+
+
+
+
+// export const environment = {
+// production: false,
+// baseUrl:"https://click-server105.herokuapp.com/api",
+// baseUrlForImage:"https://click-server105.herokuapp.com/",
+// baseUrlForSocket:"//click-server105.herokuapp.com/"
+// };
 
 
 
