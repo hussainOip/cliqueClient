@@ -11,7 +11,7 @@
         </div>
         <div class="col-lg-6 text-white rightLogin" style="background-image: url(assets/img/loginRight.png);">            
             <div class="form-side">
-                <img width="100px;" src="assets/img/logon.png">
+                <img [routerLink]="['/login'] width="100px;" src="assets/img/logon.png">
                 <h3>Create Your Account</h3>
                 <div class="socialSign">
                     <h4>Sign Up Using</h4>
@@ -62,6 +62,17 @@
                         <label>Bets Per Week</label>
                         <!-- <input type="text" name="favourite_team"  [(ngModel)]="userInfo.favourite_team" placeholder="Favourite Team"> -->
                         <select name="betsPerWeek" >
+                            <option>Only a few</option>
+                            <option>More than 10</option>
+                            <option>Normally very active</option>
+                        </select>
+                    </div>
+
+                    <div class="forms-input-email frmGroup frmGroupHalf"> 
+                        <!-- <label>Favourite Player</label>
+                        <input type="text" name="favourite_player"  [(ngModel)]="userInfo.favourite_player" placeholder="Favourite Player"> -->
+                        <label>Betting Strategies</label>
+                        <select name="bettingStartegies" >
                             <option>Props</option>
                             <option>Spreads</option>
                             <option>Totals</option>
@@ -73,17 +84,6 @@
                             <option>MMA</option>
                             <option>Soccer</option>
                             <option>Golf</option>
-                        </select>
-                    </div>
-
-                    <div class="forms-input-email frmGroup frmGroupHalf"> 
-                        <!-- <label>Favourite Player</label>
-                        <input type="text" name="favourite_player"  [(ngModel)]="userInfo.favourite_player" placeholder="Favourite Player"> -->
-                        <label>Betting Strategies</label>
-                        <select name="bettingStartegies" >
-                            <option>Only a few</option>
-                            <option>More than 10</option>
-                            <option>Normally very active</option>
                         </select>
                     </div>
 
