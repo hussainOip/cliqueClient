@@ -389,7 +389,9 @@ ul.liveUl li img {
     color: #fff;
     opacity: .7;
 }
- 
+div#iFrameData iframe#odsp_wdg_iframeoddspedia-widget-live-score-popular-false-sports-false-leagues-false {
+    width: 100%;
+}
 /*992 to 1200*/
 @media(min-width:992px ) and (max-width: 1200px){
     /*Common Css Start*/
