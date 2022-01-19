@@ -68,6 +68,8 @@
                                                             <div class="chat-message-form">
                                                                 <div class="form-group">
                                                                     <input type="text" class="form-control message-input" name="message" placeholder="Enter a message" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && saveNewGroupChats()" style="margin-top: 10px;">
+                                                              
+                                                              <button type="button" (click)="saveNewGroupChats()" class="btn btn-primary"> Send</button>  
                                                                 </div>
                                                             </div>
                                                         </div>
