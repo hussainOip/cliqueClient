@@ -572,7 +572,16 @@ a.nav__link.order button {
 .mainRight .recentActivity iframe {
     width: calc(100% - 10px);
 }
-
+.chat-message-form .form-group {
+    position: relative;
+}
+.chat-message-form .form-group button.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+}
 
 @media screen and (max-width: 767px) {
     .nav-menu {
@@ -1012,6 +1021,339 @@ a.nav__link.order button {
     .footer-right ul {
         padding: 0px;
         margin-top: 65px;
+    }
+    /* 20-1-21 */
+    /*Sidebar*/
+    body#openHideMenu .mainSidebar {
+        width: 100px;
+        max-width: 100px;
+        padding-left: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 10;
+        overflow: hidden;
+    }
+    body#openHideMenu .post-image {
+        padding: 15px;
+    }
+    body#openHideMenu .sidebar .sidebar-header img {
+        display: none;
+    }
+    /*Main Area*/
+    body#openHideMenu .col-lg-9.mainCont {
+        flex: 0 0 calc(100% - 110px);
+        max-width: calc(100% - 110px);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 35px 20px;
+        margin-left: 110px;
+        overflow: auto;
+    }
+    body#openHideMenu .sidebar .sidebar-header {
+        margin: 0;
+    }
+    body#openHideMenu .sidebar-menu ul a {
+        height: 90px;
+        padding-left: 0;
+        margin-bottom: 10px;
+        padding-right: 0;
+    }
+    body#openHideMenu .sidebar-menu ul li span.textMenu {
+        display: none;
+    }
+    body#openHideMenu .sidebar-menu ul li {
+        text-align: center;
+        line-height: 100px;
+    }
+    body#openHideMenu .sidebar-menu ul a:before {
+        border-radius: 0;
+    }
+    body#openHideMenu button.datedropbutton {
+        font-size: 17px;
+    }
+    body#openHideMenu .welComeSearch {
+        text-align: center;
+    }
+    body#openHideMenu .welComeSearch button.addNew {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 24px;
+    }
+    body#openHideMenu .welComeSearch button {
+        margin-bottom: 20px;
+    }
+    body#openHideMenu main {
+        margin-top: 40px !important;
+    }
+    body#openHideMenu .sports-tags.extra-class > div {
+        width: 25%;
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    body#openHideMenu .extra-class .imgTab {
+    }
+    body#openHideMenu .extra-class .imgTab img {
+        max-width: 35px;
+    }
+    body#openHideMenu .extra-class .imgTab + span {
+        display: block;
+        font-size: 16px;
+    }
+    body#openHideMenu .bottomTextPost h5.text-post-h5 {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    body#openHideMenu .bottomTextPost .post-image img {
+        height: auto;
+    }
+    body#openHideMenu .post-image {
+        margin-bottom: 10px;
+    }
+    body#openHideMenu .leftPost button i {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 12px !important;
+    }
+    body#openHideMenu .leftPost button span {
+        font-size: 12px;
+    }
+    body#openHideMenu .post-a-comment .input-comment input {
+        font-size: 12px;
+    }
+    body#openHideMenu p {
+        font-size: 12px !important;
+        line-height: 20px !important;
+    }
+    body#openHideMenu div.mainCont {
+        height: auto;
+    }
+    body#openHideMenu .PostWaliRow {
+        padding-bottom: 60px;
+    }
+    body#openHideMenu .midBox .scrollClass {
+        height: auto !important;
+    }
+    body#openHideMenu .midBox .boxCommomn h3 {
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+    body#openHideMenu ul.liveUl {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    body#openHideMenu ul.liveUl li h6 {
+        font-size: 12px;
+    }
+    body#openHideMenu ul.liveUl li strong {
+        font-size: 12px;
+    }
+    body#openHideMenu .teammates-div, .leaders-div {width: 100%;}
+    body#openHideMenu .boxCommomn {
+        margin-bottom: 20px !important;
+    }
+    body#openHideMenu .recentActivity h6 {
+        font-size: 14px;
+    }
+    body#openHideMenu .recentActivity a.twitter-timeline.twitter-timeline-error {
+        font-size: 12px;
+    }
+    body#openHideMenu .backToMain {
+        font-size: 12px;
+        text-align: center;
+        bottom: auto;
+        top: 75%;
+    }
+    body#openHideMenu .apiData.boxCommomn {
+        margin-top: 0;
+    }
+    body#openHideMenu .col-lg-9.mainCont.mainContChat .wrapper.wrapper-content {
+        padding: 0;
+        height: auto;
+    }
+    body#openHideMenu .col-lg-9.mainCont.mainContChat .wrapper.wrapper-content .col-lg-12 {
+        padding: 0;
+    }
+    body#openHideMenu .col-lg-9.mainCont.mainContChat .wrapper.wrapper-content .col-lg-12 .ibox-content {
+        padding: 10px 5px;
+    }
+    div.chatTitle {
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+    body#openHideMenu {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    body#openHideMenu .message {
+        margin-left: 0;
+        text-align: left;
+    }
+    body#openHideMenu .form-control, .single-line {
+        font-size:12px;
+    }
+    body#openHideMenu .main-content {
+        margin-left: 0;
+    }
+    body#openHideMenu .post-header {
+        padding: 15px 15px;
+    }
+    body#openHideMenu .post-header h1 {
+        font-size: 17px !important;
+        padding-bottom: 10px;
+    }
+    body#openHideMenu .post-header .col-10 {
+        display: block;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    body#openHideMenu .post-header .col-2.welComeSearch {
+        width: 100%;
+        display: block;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .table thead th {
+        font-size: 12px;
+        vertical-align: middle;
+        line-height: 20px;
+    }
+    .table-bordered td, .table-bordered th {
+        vertical-align: middle;
+    }
+    body#openHideMenu td.welComeSearch button.btn.btn-config.addNew {
+        font-size: 10px;
+        padding: 10px 20px;
+    }
+    body#openHideMenu td.welComeSearch .col-3 {
+        -ms-flex: 0 0 33.333%;
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+    body#openHideMenu .post-image img {
+        height: auto;
+    }
+    /* register Login */
+    /*Mobile signin signup for clique*/
+
+    body#openHideMenu .leftLogin h1 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+    body#openHideMenu .leftLogin .left-img {
+        max-width: 80%;
+    }
+    body#openHideMenu .left-box-center {
+        text-align: center;
+    }
+    body#openHideMenu .leftLogin button {
+        border-radius: 10px;
+        padding: 10px 30px;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1;
+    }
+    body#openHideMenu .rightLogin .form-side {
+        max-width: 100%;
+        width: 100%;
+    }
+    body#openHideMenu .rightLogin .form-side > img {
+        right: 20px;
+        top: 20px;
+        width: 150px;
+        height: auto;
+    }
+    body#openHideMenu .rightLogin .form-side h3 {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    body#openHideMenu .formTn {
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+    body#openHideMenu .frmGroup {
+        margin-bottom: 20px;
+    }
+    body#openHideMenu .rightLogin .form-side label {
+        font-size: 14px;
+    }
+    body#openHideMenu .rightLogin .form-side input,body#openHideMenu .rightLogin .form-side select {
+        height: 42px;
+        padding: 0px 15px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        line-height: 42px;
+        font-size: 14px;
+    }
+    body#openHideMenu .rightLogin .formTn:before {
+        border-top: 1px solid #C0BDCC;
+        width: 80px;
+    }
+    body#openHideMenu .form-remember span {
+        padding-left: 15px;
+    }
+    body#openHideMenu .form-remember span:before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        top: 4px;
+    }
+    body#openHideMenu .form-remember.frmGroup > a {
+        font-size: 14px;
+    }
+    body#openHideMenu .sign-in.frmGroup {
+        margin-top: 20px;
+    }
+    body#openHideMenu .formTn button {
+        border: 1px solid #1DAAA6;
+        color: #fff;
+        padding: 15px 40px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 1;
+    }
+    body#openHideMenu .btn-m.sign-up {
+        margin-top: 11px;
+    }
+    body#openHideMenu .loginPageTn > div {
+        height: auto !important;
+        min-height: 100vh;
+    }
+    body#openHideMenu .leftLogin {
+        padding: 50px 30px;
+    }
+    body#openHideMenu .rightLogin {
+        padding: 70px 30px;
+    }
+    body#openHideMenu .socialSign h4 {
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    body#openHideMenu ul.socialUl li button {
+        font-size: 14px;
+        padding: 12px 35px;
+        border-radius: 10px;
+    }
+    body#openHideMenu ul.socialUl {
+        margin-top: 20px;
+    }
+    body#openHideMenu span.orSignUpWith {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+    body#openHideMenu .sidebar-menu ul li i {
+        font-size: 30px !important;
+    }
+    body#openHideMenu .postsTnOnPost .featuredImg {
+        height: auto;
     }
 }
 
