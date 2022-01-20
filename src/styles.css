@@ -569,9 +569,9 @@ a.nav__link.order button {
     letter-spacing: 0.5px;
     transition: all .3s linear 0s;
 }
-.mainRight .recentActivity iframe {
+/* .mainRight .recentActivity iframe {
     width: calc(100% - 10px);
-}
+} */
 .chat-message-form .form-group {
     position: relative;
 }
