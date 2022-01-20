@@ -963,6 +963,75 @@ a.nav__link.order button {
         font-size: 11px;
         margin-bottom: 15px;
     }
+    /* 20-1-22 */
+    body#openHideMenu .pic-edit-profile img {
+        width: 80px;
+        height: 80px; 
+    }
+    
+    body#openHideMenu .logoPro {
+        width: 90px;
+    }
+    
+    body#openHideMenu .btnDiv {
+        font-size: 12px;
+        padding: 10px 30px;
+        position: relative;
+        margin: 0 auto 30px;
+        max-width: unset;
+        margin-bottom: 15px;
+    }
+    
+    body#openHideMenu .pic-edit-profile.col-lg-3, body#openHideMenu .pic-edit-profile.col-lg-6, body#openHideMenu .pic-edit-profile.col-lg-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    body#openHideMenu .profileSection > .container {
+        max-width: 80%;
+        height: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    body#openHideMenu .col-lg-3.pic-edit-profile {
+        padding-top: 20px;
+    }
+    
+    body#openHideMenu .formMainHead h3 {
+        font-size: 17px;
+        margin-top: 30px;
+    }
+    
+    body#openHideMenu .forms-input-email label {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    body#openHideMenu .forms-input-email input[type=email], body#openHideMenu .forms-input-email input[type=phone], body#openHideMenu .forms-input-email input[type=text],body#openHideMenu .forms-input-email select,body#openHideMenugit .forms-input-email textarea {
+        font-size: 11px;
+        height: 32px;
+        border: 10px solid #fff;
+        padding: 0 0;
+        border-radius: .606vw;
+    }
+    
+    body#openHideMenu .forms-input-email {
+        margin-bottom: 15px;
+    }
+    
+    body#openHideMenu section.profileSection {
+        height: auto;
+        padding-bottom: 30px;
+    }
+    
+    body#openHideMenu .formPRow .btn-m.sign-in button {
+        border: 1px solid #1daaa6;
+        border-radius: 10px;
+        padding: 10px 30px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
 }
 
 @media screen and (max-width: 1660px) {
