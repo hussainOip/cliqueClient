@@ -847,6 +847,113 @@ a.nav__link.order button {
     body#openHideMenu .post-image img {
         height: auto;
     }
+    /* register Login */
+    /*Mobile signin signup for clique*/
+
+    body#openHideMenu .leftLogin h1 {
+        font-size: 20px !important;
+        text-align: center;
+    }
+    body#openHideMenu .leftLogin .left-img {
+        max-width: 80%;
+    }
+    body#openHideMenu .left-box-center {
+        text-align: center;
+    }
+    body#openHideMenu .leftLogin button {
+        border-radius: 10px;
+        padding: 10px 30px;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1;
+    }
+    body#openHideMenu .rightLogin .form-side {
+        max-width: 100%;
+        width: 100%;
+    }
+    body#openHideMenu .rightLogin .form-side > img {
+        right: 10px;
+        top: 10px;
+        width: 100px;
+        height: auto;
+    }
+    body#openHideMenu .rightLogin .form-side h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    body#openHideMenu .formTn {
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    body#openHideMenu .frmGroup {
+        margin-bottom: 10px;
+    }
+    body#openHideMenu .rightLogin .form-side label {
+        font-size: 10px;
+    }
+    body#openHideMenu .rightLogin .form-side input,body#openHideMenu .rightLogin .form-side select {
+        height: 32px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        line-height: 32px;
+        font-size: 11px;
+    }
+    body#openHideMenu .rightLogin .formTn:before {
+        border-top: 1px solid #C0BDCC;
+        width: 50px;
+    }
+    body#openHideMenu .form-remember span {
+        padding-left: 15px;
+    }
+    body#openHideMenu .form-remember span:before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        top: 4px;
+    }
+    body#openHideMenu .form-remember.frmGroup > a {
+        font-size: 9px;
+    }
+    body#openHideMenu .sign-in.frmGroup {
+        margin-top: 20px;
+    }
+    body#openHideMenu .formTn button {
+        border: 1px solid #1DAAA6;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 11px;
+        line-height: 1;
+    }
+    body#openHideMenu .btn-m.sign-up {
+        margin-top: 11px;
+    }
+    body#openHideMenu .loginPageTn > div {
+        height: auto !important;
+    }
+    body#openHideMenu .leftLogin {
+        padding: 50px 30px;
+    }
+    body#openHideMenu .rightLogin {
+        padding: 70px 30px;
+    }
+    body#openHideMenu .socialSign h4 {
+        font-size: 10px;
+        margin-top: 4px;
+    }
+    body#openHideMenu ul.socialUl li button {
+        font-size: 11px;
+        padding: 10px 30px;
+        border-radius: 10px;
+    }
+    body#openHideMenu ul.socialUl {
+        margin-top: 14px;
+    }
+    body#openHideMenu span.orSignUpWith {
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
 }
 
 @media screen and (max-width: 1660px) {
