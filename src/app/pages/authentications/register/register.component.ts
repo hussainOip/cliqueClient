@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
 
     if (this.apiService.isEmpty(this.userInfo.address)) return this.notificationsService.error('Error!', 'Please enter your address');
     if (this.apiService.isEmpty(this.userInfo.city)) return this.notificationsService.error('Error!', 'Please select your city');
-    if (this.apiService.isEmpty(this.userInfo.leader)) return this.notificationsService.error('Error!', 'Please select your leader');
+    // if (this.apiService.isEmpty(this.userInfo.leader)) return this.notificationsService.error('Error!', 'Please select your leader');
     if (this.apiService.isEmpty(this.userInfo.favourite_team)) return this.notificationsService.error('Error!', 'Please select your favourite team');
     if (this.apiService.isEmpty(this.userInfo.favourite_player)) return this.notificationsService.error('Error!', 'Please select your favourite player'); 
     if (this.apiService.isEmpty(this.userInfo.password)) return this.notificationsService.error('Error!', 'Enter your password');   
