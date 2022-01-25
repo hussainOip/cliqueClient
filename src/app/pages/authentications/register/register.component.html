@@ -52,7 +52,7 @@
                         <!-- <select [(ngModel)]="userInfo.leader"   name="leader" >
                             <option value="{{leader.user_id}}"   *ngFor="let leader of matesLeaderData"  >{{leader.first_name}}</option>
                          </select> -->
-                         <select name="leader" >
+                         <select [(ngModel)]="userInfo.leader"  name="leader" >
                             <option value="Leader">Leader</option>
                             <option value="Follower">Follower</option>
                          </select>
@@ -61,7 +61,7 @@
                     <div class="forms-input-email frmGroup frmGroupHalf"> 
                         <label>Bets Per Week</label>
                         <!-- <input type="text" name="favourite_team"  [(ngModel)]="userInfo.favourite_team" placeholder="Favourite Team"> -->
-                        <select name="betsPerWeek" >
+                        <select   [(ngModel)]="userInfo.favourite_team" name="betsPerWeek" >
                             <option>Only a few</option>
                             <option>More than 10</option>
                             <option>Normally very active</option>
@@ -72,7 +72,7 @@
                         <!-- <label>Favourite Player</label>
                         <input type="text" name="favourite_player"  [(ngModel)]="userInfo.favourite_player" placeholder="Favourite Player"> -->
                         <label>Betting Strategies</label>
-                        <select name="bettingStartegies" >
+                        <select [(ngModel)]="userInfo.favourite_player"   name="bettingStartegies" >
                             <option>Props</option>
                             <option>Spreads</option>
                             <option>Totals</option>

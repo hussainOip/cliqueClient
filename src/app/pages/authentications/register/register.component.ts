@@ -31,12 +31,12 @@ export class RegisterComponent implements OnInit {
   signUp() {
 
     if (this.apiService.isEmpty(this.userInfo.name)) return this.notificationsService.error('Error!', 'Please enter your name');
-    if (this.apiService.isEmpty(this.userInfo.email)) return this.notificationsService.error('Error!', 'Please enter your email');
+  //  if (this.apiService.isEmpty(this.userInfo.email)) return this.notificationsService.error('Error!', 'Please enter your email');
     if (!this.apiService.validateEmail(this.userInfo.email)) return this.notificationsService.error('Error!', 'Invalid email');
 
-    if (this.apiService.isEmpty(this.userInfo.address)) return this.notificationsService.error('Error!', 'Please enter your address');
+    if (this.apiService.isEmpty(this.userInfo.address)) return this.notificationsService.error('Error!', 'Please select date of birth');
     // if (this.apiService.isEmpty(this.userInfo.city)) return this.notificationsService.error('Error!', 'Please select your city');
-    // if (this.apiService.isEmpty(this.userInfo.leader)) return this.notificationsService.error('Error!', 'Please select your leader');
+     if (this.apiService.isEmpty(this.userInfo.leader)) return this.notificationsService.error('Error!', 'Please select leader or follower');
     // if (this.apiService.isEmpty(this.userInfo.favourite_team)) return this.notificationsService.error('Error!', 'Please select your favourite team');
     // if (this.apiService.isEmpty(this.userInfo.favourite_player)) return this.notificationsService.error('Error!', 'Please select your favourite player'); 
     if (this.apiService.isEmpty(this.userInfo.password)) return this.notificationsService.error('Error!', 'Enter your password');   
