@@ -23,11 +23,15 @@ import { AuthService } from './pages/services/auth.service';
 
 import { GroupListComponent } from './pages/groups/list-group/group-list.component';
 import { PostGroupComponent } from './pages/groups/post-group/post-group.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsServiceComponent } from './pages/terms-service/terms-service.component';
 
 
 
 const routes: Routes = [
   {path:"", component: HomeComponent, pathMatch: "full" },
+  {path:"privacy", component: PrivacyPolicyComponent},
+  {path:"terms", component: TermsServiceComponent},
   {path:"login", component: LoginComponent },
   {path:"first", component: FirstComponent },
   {path:"leadprofile", component: LeadProfileComponent },

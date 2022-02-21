@@ -46,6 +46,8 @@ import { ScoresidebarComponent } from './pages/scoresidebar/scoresidebar.compone
 import { LeadProfileComponent } from './pages/lead-profile/lead-profile.component';
 import { GroupListComponent } from './pages/groups/list-group/group-list.component';
 import { PostGroupComponent } from './pages/groups/post-group/post-group.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsServiceComponent } from './pages/terms-service/terms-service.component';
 
 
 export function tokenGetter() {
@@ -87,7 +89,9 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
     ScoresidebarComponent,
     LeadProfileComponent,
     PostGroupComponent,
-    GroupListComponent
+    GroupListComponent,
+    PrivacyPolicyComponent,
+    TermsServiceComponent
   ],
   imports: [
     BrowserModule,

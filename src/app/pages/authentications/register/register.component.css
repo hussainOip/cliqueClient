@@ -249,3 +249,54 @@ span.orSignUpWith {CLEAR: BOTH;font-size: 0.727vw;width: 100%;display: block;mar
 button:focus{
     outline: none;
 }
+
+.form-side .frmGroupHalf {
+    position: relative;
+}
+.form-side .frmGroupHalf .itemsPop {
+    background: #fff;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    border: 1px solid;
+    user-select: none;
+    box-shadow: -1px -1px 3px #5a5a5a;
+    display: none;
+}
+.form-side .frmGroupHalf .selectedStrategy{
+    background-color: #fff;
+    border-radius: 50px;
+    height: 50px;
+    color: #000;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    font-size: 1.25em;
+    padding-left: 18px;
+    user-select: none;
+}
+.form-side .frmGroupHalf .itemsPop.show{
+    display: block;
+}
+.form-side .frmGroupHalf .itemsPop div {
+    font-size: 1.31em;
+    padding-left: 0.5em;
+    user-select: none;
+}
+.form-side .frmGroupHalf .itemsPop div:hover {
+    background: #44abf5;
+    color: #ffff;
+}
+.form-side .frmGroupHalf .selectedStrategy .sItemCon{
+    overflow: hidden;
+    max-width: calc(100% - 10px);
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: start;
+    -webkit-justify-content: start;
+}

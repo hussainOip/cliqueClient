@@ -4,6 +4,7 @@
 
 export const environment = {
  production: false,
+// baseUrl:"http://localhost:5000/api",
 baseUrl:"https://click-server105.herokuapp.com/api",
 baseUrlForImage:"https://click-server105.herokuapp.com/",
 baseUrlForSocket:"//click-server105.herokuapp.com/"
