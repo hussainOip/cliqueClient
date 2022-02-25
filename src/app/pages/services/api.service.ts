@@ -94,7 +94,9 @@ export class ApiService {
   }
   
   getAllPost(offset) {
-    return this.http.post(this.baseUrl + '/social/getAllPost', offset);
+    var postResponse = this.http.post(this.baseUrl + '/social/getAllPost', offset);
+    console.log(postResponse);
+    return postResponse;
   }
   
   comment(data) {

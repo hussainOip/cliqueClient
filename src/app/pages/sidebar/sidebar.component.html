@@ -47,7 +47,7 @@
                 </li>
             </a>
 
-            <a [routerLink]="['/groupList']" *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin' || userRoll == 'Client'" [ngClass]="{'active2': router.url == '/groupList'}">
+            <a [routerLink]="['/groupList']" *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin' || userRoll == 'Leader'" [ngClass]="{'active2': router.url == '/groupList'}">
                 <li>
                     <span><i class="fas fa-align-left" style="font-size: 20px;"></i></span>
                     <span class="textMenu">Manage Groups</span>

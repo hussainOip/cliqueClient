@@ -78,7 +78,7 @@ export class ProfileComponent implements OnInit {
     this.userInfo.show_profile = user.show_profile; 
     this.userInfo.trial_days = user.trial_days;
     this.userInfo.trial_amount = user.trial_amount;
-
+    this.userInfo.user_roll = user.user_roll;
 
     
 

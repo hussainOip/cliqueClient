@@ -14,7 +14,10 @@ export class DashboardComponent implements OnInit {
   profileTab: boolean = false;
   today;
   postData: any = [];
-  matesLeaderData: any = {};
+  matesLeaderData: any = {
+    leaders: [],
+    mates: []
+  };
   groups: any = {};
   postIds = [];
   imageUrl = environment.baseUrlForImage;
@@ -26,6 +29,7 @@ export class DashboardComponent implements OnInit {
   isShowPost = true;
   allGames: any = [];
   partialGames: any = [];
+  userRoll = '';
   constructor(public apiService: ApiService, public notificationsService: NotificationsService, public router: Router) {
    
     this.loadTwitter();
@@ -38,10 +42,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
+    var user = JSON.parse(localStorage.getItem('socialUserDetails'));
+    this.userRoll = user.user_roll;
     this.getAllPsot();
     this.getMatesAndLeaders();
     this.sports();
-    
     this.getGroupsWithMembers();
 
   }
@@ -70,11 +75,10 @@ export class DashboardComponent implements OnInit {
           element.commentLimit = 5;
           self.totalPostCount = element.totalcount;
           element.comments.reverse();
-          console.log(self.totalPostCount);
         });
         this.apiService.seenPost({ postIds: this.postIds }).subscribe((res: any) => {
         })
-      } else if (res.status < 0) {
+      } else if (res.status <= 0) {
         localStorage.removeItem('socialUserDetails');
         this.router.navigateByUrl('/');
         this.notificationsService.error('Error!', res.msg);
@@ -173,9 +177,10 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.getRandomTeamMates().subscribe((res: any) => {
       this.loading = false;
+      // console.log(res.data);
       this.matesLeaderData = res.data;
 
-      console.log("res.data",res.data);
+      // console.log("res.data",JSON.parse(JSON.stringify(res.data)));
     })
   }
 
@@ -227,7 +232,7 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.sports().subscribe((res: any) => {
       this.loading = false;
-      console.log(res);
+      // console.log(res);
       if (res.status) {
         this.allGames = res.data.sports;
         if (res.data.sports > 3) {
@@ -270,7 +275,7 @@ export class DashboardComponent implements OnInit {
       this.loading = false;
       this.groups = res.data;
 
-      console.log("getGroupsWithMembers",res.data);
+      // console.log("getGroupsWithMembers",res.data);
     })
   }
 

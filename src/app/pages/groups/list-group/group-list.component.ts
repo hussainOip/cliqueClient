@@ -32,8 +32,6 @@ export class GroupListComponent implements OnInit {
     this.apiService.getAllGroups().subscribe((res: any) => {
       this.loading = false;
       this.groupData = res.data;
-      
-      console.log("this.groupData",this.groupData);
       this.config = {
         itemsPerPage: 10,
         currentPage: 1,
