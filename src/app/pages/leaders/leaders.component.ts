@@ -51,11 +51,21 @@ export class LeadersComponent implements OnInit {
   
   getMatesAndLeaders() {
     this.loading = true;
-    this.apiService.getRandomTeamMates().subscribe((res: any) => {
+    // this.apiService.getRandomTeamMates().subscribe((res: any) => {
+    this.apiService.getAllLeadersGroupsForUsers().subscribe((res: any) => {
       console.log("res",res);
       this.loading = false;
       this.matesLeaderData = res.data;
     })
+  }
+
+  sendGroupJoinReq(groupId) {
+    this.apiService.sendGroupJoinReq({ groupId: groupId }).subscribe((res: any) => {
+      if (res.status) {
+        this.notificationsService.success('Success!', res.msg);
+        this.getMatesAndLeaders();
+      } else this.notificationsService.info('info!', res.msg);
+    });
   }
 
 

@@ -19,7 +19,6 @@ export class RegisterComponent implements OnInit {
   isCodeBox = false;
   mobileNumber = '';
   otpCode='';
-  bettingStrategies = ['Props','Spreads','Totals','NCAA','NHL','NFL','NBA','MLB','MMA','Soccer','Golf'];
   constructor( public apiService: ApiService, public notificationsService: NotificationsService, public router: Router, public authService: SocialAuthService ) { }
 
   ngOnInit(): void {
@@ -94,25 +93,6 @@ export class RegisterComponent implements OnInit {
         } else this.notificationsService.error('Error!', res.msg);
       })
     } else this.notificationsService.error('Please enter otp code.');
-  }
-
-  addStrategy(item){
-    if(!this.userInfo.favourite_player) this.userInfo.favourite_player = [];
-    // this.userInfo.favourite_player.push(item);
-    if(this.userInfo.favourite_player.length > 0){
-      if(this.userInfo.favourite_player.filter(e => e == item).length == 0){
-        this.userInfo.favourite_player.push(item);
-      }else{
-        this.userInfo.favourite_player = this.userInfo.favourite_player.filter(e => e != item);
-      }
-    }else{
-      this.userInfo.favourite_player.push(item);
-    }
-  }
-
-  toggleOn:Boolean = true;
-  toggleStrategy(){
-    this.toggleOn = this.toggleOn ? false : true;
   }
 
   

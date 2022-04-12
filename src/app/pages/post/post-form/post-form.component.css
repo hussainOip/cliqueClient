@@ -406,12 +406,11 @@ a:hover {
 }
 
 .forms-input-email input,
-.forms-input-password input, .forms-input-email textarea {
+.forms-input-password input {
     width: 100%;
     border: none;
     border-bottom: 2px solid rgb(0, 0, 0, 0.2);
     padding: 12px 0px 5px 10px;
-    resize: none;
 }
 
 

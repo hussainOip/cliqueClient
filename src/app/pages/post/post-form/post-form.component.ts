@@ -13,7 +13,6 @@ import { ApiService } from '../../services/api.service';
 export class PostFormComponent implements OnInit {
   today;
   title = '';
-  desc = '';
   files: File[] = [];
   post_id;
   editImg;
@@ -52,8 +51,7 @@ export class PostFormComponent implements OnInit {
     if (!this.apiService.isEmpty(this.title)) {
       if (this.files.length > 0) {
         var body = {
-          title: this.title,
-          description: this.desc
+          title: this.title
         }
         const formData: FormData = new FormData();    
         formData.append('file', this.files[0]);
@@ -64,7 +62,6 @@ export class PostFormComponent implements OnInit {
           if(res.status){
             this.notificationsService.success('Success!', res.msg);
             this.title = '';
-            this.desc = '';
             this.files = [];
             this.router.navigateByUrl('/dashboard');
           } else this.notificationsService.error('Error!', res.msg);
@@ -83,7 +80,6 @@ export class PostFormComponent implements OnInit {
       if(res.status){
         this.title = res.data[0].title;
         this.editImg = res.data[0].image_url;
-        this.desc = res.data[0].description;
       } else {
 
       }
@@ -94,7 +90,6 @@ export class PostFormComponent implements OnInit {
     var temp = {
       post_id: this.post_id,
       title: this.title,
-      description: this.desc,
       isImage: this.files.length
     }
     console.log(temp);
@@ -108,7 +103,6 @@ export class PostFormComponent implements OnInit {
       if(res.status){
         this.notificationsService.success('Success!', res.msg);
         this.title = '';
-        this.desc = '';
         this.files = [];
         this.router.navigateByUrl('/postList');
       } else this.notificationsService.error('Error!', res.msg);

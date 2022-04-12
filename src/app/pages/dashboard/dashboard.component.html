@@ -49,7 +49,7 @@
                                                             <img src="assets/img/mlb.png">
                                                         </div>
                                                         <span>
-                                                            MLB
+                                                            Baseball
                                                         </span>
                                                     </div>
                                                 </div>
@@ -78,7 +78,6 @@
                                                         <img src="{{imageUrl}}{{post.image_url}}">
                                                     </div>
                                                     <h5 class="text-post-h5">{{post.title}}</h5>
-                                                    <h5 class="text-post-h5">{{post.description}}</h5>
                                                 </div>
 
                                                 <div class="for-post-padding">
@@ -91,11 +90,11 @@
                                                             </button>
                                                             <button>
                                                                 <i class="fas fa-comment"></i>
-                                                                <span [innerHtml]="post?.comments?.length"></span>
+                                                                <span>{{post.comments.length}}</span>
                                                             </button>
                                                             <button >
                                                                 <i class="fas fa-eye"></i>
-                                                                <span [innerHtml]="post?.total_views"></span>
+                                                                <span>{{post.total_views}}</span>
                                                             </button>
                                                         </div>
                                                         
@@ -203,12 +202,15 @@
                                         </div>
                                           
                                         
-                                        <div class="boxCommomn" *ngIf="matesLeaderData?.leaders?.length > 0">
+                                        <div class="boxCommomn">
                                             <div class="leaders-div">
-                                                <h3 *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin'">Group Leaders <a href="/leaders">View All</a></h3>
-                                                <div class="teammates" *ngFor="let leader of matesLeaderData.leaders">
-                                                    <img src="{{leader.user_image !='' ? imageUrl+leader.user_image : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{leader.first_name}} {{leader.last_name}}">
-                                                    <span>{{leader.last_name}}</span>
+                                                <h3>Groups <a href="/leaders">View All</a></h3>
+                                                <div class="teammates" *ngFor="let leader of matesLeaderData">
+                                                    <img src="{{leader.image_url !='' ? imageUrl+leader.image_url : 'assets/img/defaultProfileImage.png'}}" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 5px;" title="{{leader.title}}">
+                                                    <span>{{leader.title}}</span>
+                                                    <span *ngIf="leader.approval == null" style="cursor:pointer;" (click)="sendGroupJoinReq(leader.id)">JOIN</span>
+                                                    <span *ngIf="leader.approval == 'pending'" >pending</span>
+                                                    <span *ngIf="leader.approval == 'approved'" style="cursor:pointer;" (click)="openRoom(leader)" >View</span>
                                                 </div>
                                             </div>
                                         </div> 
@@ -243,8 +245,7 @@
                                         <span>...</span>
                                     </h3> -->
                                     <!-- <img src="assets/img/recent oactivity.jpg"> -->
-                                    <!-- <a class="twitter-timeline" href="https://twitter.com/Muhamma57504077?ref_src=twsrc%5Etfw">Tweets by Muhamma57504077</a>  -->
-                                    <a class="twitter-timeline" href="https://twitter.com/SoccerDoge2035?ref_src=twsrc%5Etfw">Tweets by SoccerDoge2035</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    <a class="twitter-timeline" href="https://twitter.com/Muhamma57504077?ref_src=twsrc%5Etfw">Tweets by Muhamma57504077</a> 
 
                                 </div>
                             </div>

@@ -81,10 +81,10 @@
                      <label for="feePro">
                         <span>Fees</span>
                         <input type="radio" checked name="fee" id="feePro">
-                        <div class="">${{(leaderData.trial_amount)?leaderData.trial_amount:300}}</div>
+                        <div class="">${{(leaderData.trial_amount)?leaderData.trial_amount: 0}}</div>
                      </label>
                      <div class="optionProfile">
-                        <span>Trial: {{(leaderData.trial_days)?leaderData.trial_days:300}} days</span> 
+                        <span>Trial: {{leaderData.trial_days}} days</span> 
                         <!-- <select>
                            <option value="0">(No Of days)</option>
                            <option value="1">1</option>
@@ -94,8 +94,12 @@
                </div>
                <div class="btn-m  text-center sign-in col-lg-12">
                   <a>
-                       <button (click)="makePayment((leaderData.trial_amount)?leaderData.trial_amount:300)" ><span>Paynow</span></button>
+                     <button (click)="getFreeTrial(leaderData.user_id)" class="mr-2" ><span>Get Your Free Trial</span></button>
+                     <button (click)="makePayment((leaderData.trial_amount)?leaderData.trial_amount:300)" ><span>Paynow</span></button>
                   </a>
+               </div>
+               <div class="btn-m  text-center sign-in col-lg-12" *ngIf="trialData?.isPaid && trialData?.isPaidExpire">
+                  <p>Your monthly package has been expired please pay for get services</p>
                </div>
             </div>
          </div>

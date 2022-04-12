@@ -21,9 +21,6 @@ main{
 
 div.mainRight > .boxCommomn {
     padding-right: 0;
-	max-height: 300px;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 .mainSidebar {
     width: 300px;

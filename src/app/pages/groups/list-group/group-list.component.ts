@@ -15,10 +15,12 @@ export class GroupListComponent implements OnInit {
   config: any;
   baseUrlForImage = environment.baseUrlForImage;
   loading = false;
+  userRoll = JSON.parse(localStorage.getItem("socialUserDetails")).user_roll;
+  
   constructor(public apiService: ApiService, public notificationsService: NotificationsService) { }
 
   ngOnInit(): void {
-    
+    console.log(this.userRoll);
     this.getMatesAndLeaders();
 
     // document.getElementById("showBoard").classList.remove('d-block');
@@ -32,6 +34,8 @@ export class GroupListComponent implements OnInit {
     this.apiService.getAllGroups().subscribe((res: any) => {
       this.loading = false;
       this.groupData = res.data;
+      
+      console.log("this.groupData",this.groupData);
       this.config = {
         itemsPerPage: 10,
         currentPage: 1,

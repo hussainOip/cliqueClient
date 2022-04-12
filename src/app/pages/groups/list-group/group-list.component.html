@@ -33,16 +33,16 @@
                                                 <th scope="col" class="text-center" >No.</th>
                                                 <th scope="col" class="text-center">Group Image</th>
                                                 <th scope="col" class="text-center" >Group Name</th>
-                                                <th scope="col" class="text-center" >Leader</th>
+                                                <th scope="col" class="text-center" *ngIf ="userRoll == 'SuperAdmin'">Leader</th>
                                                 <th scope="col" class="text-center">Update Leader</th>
                                             </tr>
                                         </thead>
-                                        <tbody *ngIf="groupData.length > 0">
+                                        <tbody>
                                             <tr *ngFor="let group of groupData | paginate: config; let i=index">
                                                 <td class="text-center" >{{i+1}}</td>
                                                 <td class="text-center" ><img src="{{group.image_url ? baseUrlForImage + group.image_url : 'assets/img/defaultProfileImage.png'}}" alt="" style="width: 50px; height: 50px; border-radius: 50px; object-fit: cover;"></td>
                                                 <td  class="text-center pt-3" >{{group.title}}</td>
-                                                <td  class="text-center" >
+                                                <td  class="text-center" *ngIf ="userRoll == 'SuperAdmin'">
                                           
                                                         <!-- <select class="form-control" id="sel1" [(ngModel)]="user.user_roll">
                                                           <option>Client</option>

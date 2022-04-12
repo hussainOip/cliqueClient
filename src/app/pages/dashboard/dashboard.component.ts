@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotificationsService } from 'angular2-notifications';
 import { environment } from 'src/environments/environment';
+import { DynamicGroupComponent } from '../chat/dynamic-group/dynamic-group.component';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -14,10 +15,7 @@ export class DashboardComponent implements OnInit {
   profileTab: boolean = false;
   today;
   postData: any = [];
-  matesLeaderData: any = {
-    leaders: [],
-    mates: []
-  };
+  matesLeaderData: any = {};
   groups: any = {};
   postIds = [];
   imageUrl = environment.baseUrlForImage;
@@ -29,7 +27,9 @@ export class DashboardComponent implements OnInit {
   isShowPost = true;
   allGames: any = [];
   partialGames: any = [];
-  userRoll = '';
+  
+  @ViewChild(DynamicGroupComponent, { static: false  }) room: DynamicGroupComponent;
+  
   constructor(public apiService: ApiService, public notificationsService: NotificationsService, public router: Router) {
    
     this.loadTwitter();
@@ -42,11 +42,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    var user = JSON.parse(localStorage.getItem('socialUserDetails'));
-    this.userRoll = user.user_roll;
     this.getAllPsot();
     this.getMatesAndLeaders();
     this.sports();
+    
     this.getGroupsWithMembers();
 
   }
@@ -75,10 +74,11 @@ export class DashboardComponent implements OnInit {
           element.commentLimit = 5;
           self.totalPostCount = element.totalcount;
           element.comments.reverse();
+          console.log(self.totalPostCount);
         });
         this.apiService.seenPost({ postIds: this.postIds }).subscribe((res: any) => {
         })
-      } else if (res.status <= 0) {
+      } else if (res.status < 0) {
         localStorage.removeItem('socialUserDetails');
         this.router.navigateByUrl('/');
         this.notificationsService.error('Error!', res.msg);
@@ -162,6 +162,15 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  sendGroupJoinReq(groupId) {
+    this.apiService.sendGroupJoinReq({ groupId: groupId }).subscribe((res: any) => {
+      if (res.status) {
+        this.notificationsService.success('Success!', res.msg);
+        this.getMatesAndLeaders();
+      } else this.notificationsService.info('info!', res.msg);
+    });
+  }
+
   setUserImage() {
     var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
     if (user.user_image != '' && user.user_image != undefined) return this.imageUrl + user.user_image;
@@ -175,12 +184,12 @@ export class DashboardComponent implements OnInit {
 
   getMatesAndLeaders() {
     this.loading = true;
-    this.apiService.getRandomTeamMates().subscribe((res: any) => {
+    // this.apiService.getRandomTeamMates().subscribe((res: any) => {
+    this.apiService.getAllLeadersGroupsForUsers().subscribe((res: any) => {
       this.loading = false;
-      // console.log(res.data);
       this.matesLeaderData = res.data;
 
-      // console.log("res.data",JSON.parse(JSON.stringify(res.data)));
+      console.log("res.data",res.data);
     })
   }
 
@@ -232,7 +241,7 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.sports().subscribe((res: any) => {
       this.loading = false;
-      // console.log(res);
+      console.log(res);
       if (res.status) {
         this.allGames = res.data.sports;
         if (res.data.sports > 3) {
@@ -266,17 +275,19 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-
-
-  
   getGroupsWithMembers() {
     this.loading = true;
     this.apiService.getGroupsWithMembers().subscribe((res: any) => {
       this.loading = false;
       this.groups = res.data;
 
-      // console.log("getGroupsWithMembers",res.data);
+      console.log("getGroupsWithMembers",res.data);
     })
+  }
+
+  openRoom(roomData){
+    localStorage.setItem("groupData", JSON.stringify(roomData))
+    this.router.navigateByUrl('/room')
   }
 
 

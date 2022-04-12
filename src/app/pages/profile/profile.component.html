@@ -24,11 +24,8 @@
          </div>
          <div class="col-lg-6 fieldsPForm">
             <div class="formMainHead">
-               <h3 *ngIf="userInfo.user_roll == 'Leader'">
+               <h3>
                   Leader Profile Setting
-               </h3>
-               <h3 *ngIf="userInfo.user_roll == 'Client'">
-                  Client Profile Setting
                </h3>
             </div>
             <div class="row formPRow">
@@ -85,7 +82,7 @@
 
                <div  *ngIf="isLeader"  class="col-lg-6">
                   <div class="forms-input-email">
-                     <label><span>Show profile?</span></label>
+                     <label><span>Services ?</span></label>
                     
                      <select [(ngModel)]="userInfo.show_profile" value="{{userInfo.show_profile}}"   name="show_profile" >
                         <option value="1" >Yes</option>
@@ -103,12 +100,12 @@
                   </div>
                </div>
                
-               <!-- <div class="col-lg-6" *ngIf="userInfo.user_roll == 'Client'">
+               <div class="col-lg-6">
                   <div class="forms-input-email">
                      <label><span>Trial Amount</span></label>
                      <input type="text" name="trial_amount"  [(ngModel)]="userInfo.trial_amount" placeholder="Trial Amount">
                   </div>
-               </div> -->
+               </div>
 
 
                <!-- <div class="col-lg-12">

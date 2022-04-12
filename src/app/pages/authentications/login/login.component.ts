@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     
    const userData = JSON.parse(localStorage.getItem('socialUserDetails'));
     
-   if(userData?.token){
+   if(userData.token){
     this.router.navigateByUrl('/dashboard');
    }
    

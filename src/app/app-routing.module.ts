@@ -23,15 +23,16 @@ import { AuthService } from './pages/services/auth.service';
 
 import { GroupListComponent } from './pages/groups/list-group/group-list.component';
 import { PostGroupComponent } from './pages/groups/post-group/post-group.component';
+import { RequestComponent } from './pages/request/request.component';
+import { DynamicGroupComponent } from './pages/chat/dynamic-group/dynamic-group.component';
+import { PaymentsDetailsComponent } from './pages/payments-details/payments-details.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { TermsServiceComponent } from './pages/terms-service/terms-service.component';
-
-
+import { TermConditionComponent } from './pages/term-condition/term-condition.component';
+import { SecurityComponent } from './pages/security/security.component';
+import { TrialUserComponent } from './pages/trial-user/trial-user.component';
 
 const routes: Routes = [
   {path:"", component: HomeComponent, pathMatch: "full" },
-  {path:"privacy", component: PrivacyPolicyComponent},
-  {path:"terms", component: TermsServiceComponent},
   {path:"login", component: LoginComponent },
   {path:"first", component: FirstComponent },
   {path:"leadprofile", component: LeadProfileComponent },
@@ -46,6 +47,8 @@ const routes: Routes = [
   {path:"postList", component: PostListComponent, canActivate:[AuthService] },
   {path:"profile", component: ProfileComponent, canActivate:[AuthService] },
   {path:"groupChat", component: GroupChatComponent, canActivate:[AuthService] },
+  {path:"room", component: DynamicGroupComponent, canActivate:[AuthService] },
+  {path:"request", component: RequestComponent, canActivate:[AuthService] },
   {path:"groupChat", component: GroupChatComponent, canActivate:[AuthService] },
   {path:"singleChat", component: SingleChatComponent, canActivate:[AuthService] },
   {path:"liveScore", component: LiveScoresComponent, canActivate:[AuthService] },
@@ -61,6 +64,12 @@ const routes: Routes = [
   {path:"postGroup", component: PostGroupComponent, canActivate:[AuthService] },
   {path:"group/:id", component: PostGroupComponent, canActivate:[AuthService] },
   {path:"groupList", component: GroupListComponent, canActivate:[AuthService] },
+  {path:"paymentsDetails", component: PaymentsDetailsComponent, canActivate:[AuthService] },
+  {path:"trialUserDetails", component: TrialUserComponent, canActivate:[AuthService] },
+  
+  {path:"privacy", component: PrivacyPolicyComponent },
+  {path:"termCondition", component: TermConditionComponent },
+  {path:"security", component: SecurityComponent },
   
 
 

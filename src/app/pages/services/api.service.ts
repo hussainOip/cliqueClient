@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 
 export class ApiService {
   baseUrl = environment.baseUrl;
+  groupData = {};
   constructor(public http: HttpClient) { }
 
   isEmpty(val) {
@@ -94,9 +95,7 @@ export class ApiService {
   }
   
   getAllPost(offset) {
-    var postResponse = this.http.post(this.baseUrl + '/social/getAllPost', offset);
-    console.log(postResponse);
-    return postResponse;
+    return this.http.post(this.baseUrl + '/social/getAllPost', offset);
   }
   
   comment(data) {
@@ -120,7 +119,6 @@ export class ApiService {
         name: userInfo.name,
         address: userInfo.address,
         city:  userInfo.city,
-//        leader: userInfo.leader,
         experience: userInfo.experience,
         profit: userInfo.profit,
         show_profile: userInfo.show_profile,
@@ -152,6 +150,10 @@ export class ApiService {
   
   getRandomTeamMates() {
     return this.http.post(this.baseUrl + '/social/getRandomTeamMates', {});
+  }  
+  
+  getAllLeadersGroupsForUsers() {
+    return this.http.post(this.baseUrl + '/user/getAllLeadersGroupsForUsers', {});
   }  
   getAllUsersBySuperAdmin() {
     return this.http.post(this.baseUrl + '/user/getAllUserForAdmin', {});
@@ -242,6 +244,34 @@ export class ApiService {
 
   paynow(data) {
     return this.http.post(this.baseUrl + '/user/paynow', data);
+  }
+ 
+  sendGroupJoinReq(data) {
+    return this.http.post(this.baseUrl + '/user/joinRequest', data);
+  }
+  
+  getAllGroupsRequest() {
+    return this.http.post(this.baseUrl + '/user/getAllApprovalRequestByleader', {});
+  }
+  
+  changeApprovalStatus(data) {
+    return this.http.post(this.baseUrl + '/user/approvedOrRejectRequestByLeader', data);
+  }
+ 
+  getFreeTrial(data) {
+    return this.http.post(this.baseUrl + '/user/getFreeTrial', data);
+  }
+ 
+  checkFreeTrialTaken(data) {
+    return this.http.post(this.baseUrl + '/user/checkFreeTrialTaken', data);
+  }
+  
+  getAllPaymentsDetails(data) {
+    return this.http.post(this.baseUrl + '/user/getPaymentDetailsByLeaderForService', data);
+  }
+  
+  getAllTrialUserDetails(data) {
+    return this.http.post(this.baseUrl + '/user/getTrialUserDetails', data);
   }
 
 

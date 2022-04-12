@@ -20,84 +20,114 @@ export class LeadProfileComponent implements OnInit {
   loading = false;
   leaderId;
   userImage;
-  handler:any = null;
+  trialData: any = {};
+  handler: any = null;
   paymentHandler: any = null;
-  constructor(public apiService: ApiService, public notificationsService: NotificationsService, public router: Router,public activatedRoute: ActivatedRoute) {
-  }  
+  constructor(public apiService: ApiService, public notificationsService: NotificationsService, public router: Router, public activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
-    
+
     this.leaderId = this.activatedRoute.params['value']['id'];
     this.getLeadById(this.leaderId);
     this.getMatesAndLeaders();
-    
+    this.checkFreeTrialTaken(this.leaderId);
+
     this.loadStripe();
 
   }
 
-  
+
   getLeadById(id) {
     this.loading = true;
     this.apiService.getLeadById(id).subscribe((res: any) => {
       this.loading = false;
       this.leaderData = res.data;
 
-      console.log("this.leaderData",this.leaderData);
-    if(this.leaderData.user_image != '' && this.leaderData.user_image != undefined) this.userImage =  this.imageUrl+this.leaderData.user_image;
-    else this.userImage = "assets/img/defaultProfileImage.png";
+      console.log("this.leaderData", this.leaderData);
+      if (this.leaderData.user_image != '' && this.leaderData.user_image != undefined) this.userImage = this.imageUrl + this.leaderData.user_image;
+      else this.userImage = "assets/img/defaultProfileImage.png";
 
     })
   }
 
-  
+
   getMatesAndLeaders() {
     this.loading = true;
     this.apiService.getRandomTeamMates().subscribe((res: any) => {
 
-      console.log("res",res);
+      console.log("res", res);
       this.loading = false;
       this.matesLeaderData = res.data;
     })
   }
 
-
-
-  
-  makePayment(amount: any) {    
- 
-    var handler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_51HetTIJW7BN24rpMNks6Tj161IWSRgoGvfuj6VrDLV8cU1G5d2ii6unhKJeC5WWhSrO78J8tqvTVmNiMN0cOOX0w00zpKPEmYh',
-      locale: 'auto',
-      token: (token: any) => {
-        this.paynow(token,amount);
+  getFreeTrial(leaderId) {
+    if (this.trialData.isTrialTaken) {
+      this.notificationsService.info('Info!', 'You already have taken your trial period please pay for taken services.')
+      if (this.trialData.isTrialExpired) {
+        this.notificationsService.error('Info!', 'Trial periad has been expired.')
       }
-    });
- 
-    handler.open({
-      name: "Clique Sports",
-      description: "Leader Fees",
-      amount: amount*100,
-    });
- 
+      return;
+    }
+    this.loading = true;
+    this.apiService.getFreeTrial({ leaderId: leaderId }).subscribe((res: any) => {
+
+      console.log("res", res);
+      this.loading = false;
+      this.notificationsService.info('Info!', res.data);
+    })
+  }
+
+  checkFreeTrialTaken(leaderId) {
+    this.loading = true;
+    this.apiService.checkFreeTrialTaken({ leaderId: leaderId }).subscribe((res: any) => {
+
+      console.log("res", res);
+      this.trialData = res.data;
+      this.loading = false;
+    })
   }
 
 
 
-  
-  paynow(token,amount) {
 
-var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
-const data ={
-  leaderId:this.leaderId,
-  userId:user.user_id,
-  token:token
-}
-console.log("data",data);
+  makePayment(amount: any) {
+
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51HetTIJW7BN24rpMNks6Tj161IWSRgoGvfuj6VrDLV8cU1G5d2ii6unhKJeC5WWhSrO78J8tqvTVmNiMN0cOOX0w00zpKPEmYh',
+      locale: 'auto',
+      token: (token: any) => {
+        this.paynow(token, amount);
+      }
+    });
+
+    handler.open({
+      name: "Clique Sports",
+      description: "Leader Fees",
+      amount: amount * 100,
+    });
+
+  }
+
+
+
+
+  paynow(token, amount) {
+
+    var user: any = JSON.parse(localStorage.getItem('socialUserDetails'));
+    const data = {
+      leaderId: this.leaderId,
+      userId: user.user_id,
+      trialDays: 31,
+      token: token
+    }
+    console.log("data", data);
     this.loading = true;
     this.apiService.paynow(data).subscribe((res: any) => {
       this.loading = false;
-      if(res.status){
-        this.notificationsService.success('Success!', res.msg);        
+      if (res.status) {
+        this.notificationsService.success('Success!', res.msg);
         this.router.navigateByUrl('/leaders');
       } else {
         this.notificationsService.error('Error!', res.msg);
@@ -107,11 +137,11 @@ console.log("data",data);
   }
 
 
- 
-  
+
+
   loadStripe() {
-     
-    if(!window.document.getElementById('stripe-script')) {
+
+    if (!window.document.getElementById('stripe-script')) {
       var s = window.document.createElement("script");
       s.id = "stripe-script";
       s.type = "text/javascript";
@@ -124,7 +154,7 @@ console.log("data",data);
           }
         });
       }
-       
+
       window.document.body.appendChild(s);
     }
   }

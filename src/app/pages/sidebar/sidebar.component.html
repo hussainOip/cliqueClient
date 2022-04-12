@@ -46,11 +46,31 @@
                     <span class="textMenu">Profile Settings</span>
                 </li>
             </a>
+           
+            <a [routerLink]="['/request']" *ngIf="userRoll == 'Leader'" [ngClass]="{'active2': router.url == '/userSettings'}">
+                <li>
+                    <span><i class="fas fa-users-cog" style="font-size: 25px;"></i></span>
+                    <span class="textMenu">Approval Request</span>
+                </li>
+            </a>
 
             <a [routerLink]="['/groupList']" *ngIf="userRoll == 'Admin' || userRoll == 'SuperAdmin' || userRoll == 'Leader'" [ngClass]="{'active2': router.url == '/groupList'}">
                 <li>
                     <span><i class="fas fa-align-left" style="font-size: 20px;"></i></span>
                     <span class="textMenu">Manage Groups</span>
+                </li>
+            </a>
+           
+            <a [routerLink]="['/paymentsDetails']" *ngIf="userRoll == 'Leader'" [ngClass]="{'active2': router.url == '/paymentsDetails'}">
+                <li>
+                    <span><i class="fas fa-align-left" style="font-size: 20px;"></i></span>
+                    <span class="textMenu">Payments Details</span>
+                </li>
+            </a>
+            <a [routerLink]="['/trialUserDetails']" *ngIf="userRoll == 'Leader'" [ngClass]="{'active2': router.url == '/trialUserDetails'}">
+                <li>
+                    <span><i class="fas fa-align-left" style="font-size: 20px;"></i></span>
+                    <span class="textMenu">Trial User Details</span>
                 </li>
             </a>
 

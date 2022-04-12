@@ -46,8 +46,13 @@ import { ScoresidebarComponent } from './pages/scoresidebar/scoresidebar.compone
 import { LeadProfileComponent } from './pages/lead-profile/lead-profile.component';
 import { GroupListComponent } from './pages/groups/list-group/group-list.component';
 import { PostGroupComponent } from './pages/groups/post-group/post-group.component';
+import { RequestComponent } from './pages/request/request.component';
+import { DynamicGroupComponent } from './pages/chat/dynamic-group/dynamic-group.component';
+import { PaymentsDetailsComponent } from './pages/payments-details/payments-details.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { TermsServiceComponent } from './pages/terms-service/terms-service.component';
+import { TermConditionComponent } from './pages/term-condition/term-condition.component';
+import { SecurityComponent } from './pages/security/security.component';
+import { TrialUserComponent } from './pages/trial-user/trial-user.component';
 
 
 export function tokenGetter() {
@@ -90,8 +95,13 @@ const config: SocketIoConfig = { url: environment.baseUrlForSocket, options: {
     LeadProfileComponent,
     PostGroupComponent,
     GroupListComponent,
+    RequestComponent,
+    DynamicGroupComponent,
+    PaymentsDetailsComponent,
     PrivacyPolicyComponent,
-    TermsServiceComponent
+    TermConditionComponent,
+    SecurityComponent,
+    TrialUserComponent,
   ],
   imports: [
     BrowserModule,
